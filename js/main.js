@@ -2,54 +2,63 @@
    MAIN.JS — Design Engineer Portfolio · PREMIUM
    Костянтин Оверченко · 2026
    GSAP + ScrollTrigger + Lenis · Premium Animations
+   Universal for all pages (index, portfolio, drawings, certificates)
    ═══════════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     // ════════════════════════════════
-    // PRELOADER
+    // PRELOADER (only on index.html)
     // ════════════════════════════════
     const preloader = document.getElementById('preloader');
     const preloaderFill = document.getElementById('preloaderFill');
     const preloaderCounter = document.getElementById('preloaderCounter');
-    let progress = 0;
 
-    function updateLoader() {
-        progress += Math.random() * 10 + 4;
-        if (progress > 100) progress = 100;
+    if (preloader) {
+        // Index page — run preloader
+        let progress = 0;
+        document.body.style.overflow = 'hidden';
 
-        const rounded = Math.round(progress);
-        if (preloaderCounter) preloaderCounter.textContent = rounded;
-        if (preloaderFill) preloaderFill.style.width = rounded + '%';
+        function updateLoader() {
+            progress += Math.random() * 10 + 4;
+            if (progress > 100) progress = 100;
 
-        if (progress < 100) {
-            setTimeout(updateLoader, 70 + Math.random() * 160);
-        } else {
-            setTimeout(() => {
-                if (typeof gsap !== 'undefined') {
-                    gsap.to(preloader, {
-                        opacity: 0,
-                        duration: 0.8,
-                        ease: 'power3.inOut',
-                        onComplete: () => {
-                            preloader.classList.add('is-hidden');
-                            preloader.style.display = 'none';
-                            document.body.style.overflow = '';
-                            initAll();
-                            playEntrance();
-                        }
-                    });
-                } else {
-                    preloader.classList.add('is-hidden');
-                    document.body.style.overflow = '';
-                    initAll();
-                }
-            }, 300);
+            const rounded = Math.round(progress);
+            if (preloaderCounter) preloaderCounter.textContent = rounded;
+            if (preloaderFill) preloaderFill.style.width = rounded + '%';
+
+            if (progress < 100) {
+                setTimeout(updateLoader, 70 + Math.random() * 160);
+            } else {
+                setTimeout(() => {
+                    if (typeof gsap !== 'undefined') {
+                        gsap.to(preloader, {
+                            opacity: 0,
+                            duration: 0.8,
+                            ease: 'power3.inOut',
+                            onComplete: () => {
+                                preloader.classList.add('is-hidden');
+                                preloader.style.display = 'none';
+                                document.body.style.overflow = '';
+                                initAll();
+                                playEntrance();
+                            }
+                        });
+                    } else {
+                        preloader.classList.add('is-hidden');
+                        preloader.style.display = 'none';
+                        document.body.style.overflow = '';
+                        initAll();
+                    }
+                }, 300);
+            }
         }
-    }
 
-    document.body.style.overflow = 'hidden';
-    setTimeout(updateLoader, 300);
+        setTimeout(updateLoader, 300);
+    } else {
+        // Sub-pages — no preloader, init immediately
+        initAll();
+    }
 
     // ════════════════════════════════
     // INIT
@@ -62,18 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
         initScrollAnimations();
         initParallax();
         initMagneticButtons();
-        initPortfolioTabs();
         initLightbox();
-        initTestimonialsSlider();
+        initCertLightbox();
         initCounterAnimations();
         initTimelineFill();
-        initDrawingsViewer();
         initContactForm();
         initTiltCards();
     }
 
     // ════════════════════════════════
-    // ENTRANCE ANIMATION (after preloader)
+    // ENTRANCE ANIMATION (after preloader, index only)
     // ════════════════════════════════
     function playEntrance() {
         if (typeof gsap === 'undefined') return;
@@ -106,6 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const actions = document.querySelector('.hero__actions');
         if (actions) {
             tl.fromTo(actions, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, 0.85);
+        }
+
+        // Hero visual (photo stack)
+        const visual = document.querySelector('.hero__visual');
+        if (visual) {
+            tl.fromTo(visual, { opacity: 0, y: 30, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.9 }, 0.5);
         }
 
         // Hero metrics
@@ -173,9 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('.mobile-menu__link') : [];
 
+        // Scroll detection for header background
         window.addEventListener('scroll', () => {
             if (header) header.classList.toggle('is-scrolled', window.scrollY > 60);
         });
+        // Check on load too
+        if (header && window.scrollY > 60) header.classList.add('is-scrolled');
 
         if (burger && mobileMenu) {
             burger.addEventListener('click', () => {
@@ -193,9 +209,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // Smooth scroll for anchor links (only same-page anchors)
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
-                const target = document.querySelector(link.getAttribute('href'));
+                const href = link.getAttribute('href');
+                if (!href || href === '#') return;
+                const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
                     if (lenis) {
@@ -235,13 +254,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function animateCursor() {
-            // Smooth follow for outer ring
             cursorX += (mouseX - cursorX) * 0.12;
             cursorY += (mouseY - cursorY) * 0.12;
             cursor.style.left = cursorX + 'px';
             cursor.style.top = cursorY + 'px';
 
-            // Faster follow for dot
             dotX += (mouseX - dotX) * 0.5;
             dotY += (mouseY - dotY) * 0.5;
             cursorDot.style.left = dotX + 'px';
@@ -251,8 +268,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         requestAnimationFrame(animateCursor);
 
-        // Hover states
-        const hoverTargets = document.querySelectorAll('a, button, .portfolio__item-inner, .featured__card, .stat-card, .process__card, .cert, .timeline__card, .drawings__sidebar-item, .contact__link, input, textarea');
+        // Hover states — updated selectors for all pages
+        const hoverTargets = document.querySelectorAll(
+            'a, button, .portfolio__item-inner, .featured__card, .stat-card, .process__card, ' +
+            '.cert, .cert-card, .timeline__card, .contact__link, .showcase__card, ' +
+            '.testimonial-card, .drawing-card, .portfolio-page__card, input, textarea'
+        );
         hoverTargets.forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('is-hover'));
@@ -313,6 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ════════════════════════════════
     function initScrollAnimations() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            // Fallback: show everything immediately
             document.querySelectorAll('[data-animate]').forEach(el => {
                 el.style.opacity = '1';
                 el.style.transform = 'none';
@@ -333,8 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 95%',
                     once: true,
+                    invalidateOnRefresh: true,
                 }
             });
         });
@@ -350,8 +373,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 95%',
                     once: true,
+                    invalidateOnRefresh: true,
                 }
             });
         });
@@ -367,8 +391,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 95%',
                     once: true,
+                    invalidateOnRefresh: true,
                 }
             });
         });
@@ -384,8 +409,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: el,
-                    start: 'top 88%',
+                    start: 'top 95%',
                     once: true,
+                    invalidateOnRefresh: true,
                 }
             });
         });
@@ -402,7 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: title,
-                        start: 'top 85%',
+                        start: 'top 92%',
                         once: true,
                     }
                 }
@@ -410,11 +436,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // ── Stagger reveal for card grids ──
-        const grids = ['.about__stats', '.process__grid', '.drawings__features', '.certs__grid'];
+        const grids = [
+            '.about__stats',
+            '.process__grid',
+            '.drawings__features',
+            '.certs__grid',
+            '.showcase__grid',
+            '.testimonials__grid',
+            '.certs-page__grid',
+            '.drawings-page__grid',
+            '.portfolio-page__grid',
+        ];
         grids.forEach(selector => {
             const grid = document.querySelector(selector);
             if (!grid) return;
             const cards = grid.children;
+            if (!cards.length) return;
             gsap.fromTo(cards,
                 { opacity: 0, y: 40, scale: 0.95 },
                 {
@@ -424,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: grid,
-                        start: 'top 82%',
+                        start: 'top 90%',
                         once: true,
                     }
                 }
@@ -443,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: featuredGrid,
-                        start: 'top 80%',
+                        start: 'top 88%',
                         once: true,
                     }
                 }
@@ -464,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // ── Portfolio items stagger on scroll ──
+        // ── Portfolio items stagger on scroll (old index grid, if present) ──
         const portfolioGrid = document.getElementById('portfolioGrid');
         if (portfolioGrid) {
             gsap.fromTo(portfolioGrid.children,
@@ -476,12 +513,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: portfolioGrid,
-                        start: 'top 80%',
+                        start: 'top 88%',
                         once: true,
                     }
                 }
             );
         }
+
+        // Force a ScrollTrigger refresh after all images load
+        window.addEventListener('load', () => {
+            ScrollTrigger.refresh();
+        });
     }
 
     // ════════════════════════════════
@@ -522,6 +564,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+
+        // Hero photo cards subtle parallax
+        const photoMain = document.querySelector('.hero__photo-card--main');
+        const photoSecondary = document.querySelector('.hero__photo-card--secondary');
+        if (photoMain) {
+            gsap.to(photoMain, {
+                y: -40,
+                ease: 'none',
+                scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2 }
+            });
+        }
+        if (photoSecondary) {
+            gsap.to(photoSecondary, {
+                y: -20,
+                ease: 'none',
+                scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2 }
+            });
+        }
     }
 
     // ════════════════════════════════
@@ -556,7 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function initTiltCards() {
         if (window.matchMedia('(hover: none)').matches) return;
 
-        const tiltTargets = document.querySelectorAll('.featured__card, .stat-card, .timeline__card');
+        const tiltTargets = document.querySelectorAll('.featured__card, .stat-card, .timeline__card, .showcase__card, .testimonial-card');
 
         tiltTargets.forEach(card => {
             card.addEventListener('mousemove', (e) => {
@@ -578,52 +638,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ════════════════════════════════
-    // PORTFOLIO TABS
-    // ════════════════════════════════
-    function initPortfolioTabs() {
-        const tabs = document.querySelectorAll('.portfolio__tab');
-        const items = document.querySelectorAll('.portfolio__item');
-        if (!tabs.length || !items.length) return;
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                const category = tab.dataset.tab;
-
-                items.forEach((item, i) => {
-                    const cats = item.dataset.category || '';
-                    const show = category === 'all' || cats.includes(category);
-
-                    if (show) {
-                        item.classList.remove('is-hidden');
-                        if (typeof gsap !== 'undefined') {
-                            gsap.fromTo(item,
-                                { opacity: 0, y: 24, scale: 0.96 },
-                                { opacity: 1, y: 0, scale: 1, duration: 0.5, delay: i * 0.04, ease: 'power3.out' }
-                            );
-                        } else {
-                            item.style.opacity = '1';
-                            item.style.transform = 'none';
-                        }
-                    } else {
-                        if (typeof gsap !== 'undefined') {
-                            gsap.to(item, {
-                                opacity: 0, y: 16, scale: 0.96,
-                                duration: 0.3,
-                                onComplete: () => item.classList.add('is-hidden')
-                            });
-                        } else {
-                            item.classList.add('is-hidden');
-                        }
-                    }
-                });
-            });
-        });
-    }
-
-    // ════════════════════════════════
-    // LIGHTBOX
+    // LIGHTBOX (generic image lightbox)
     // ════════════════════════════════
     function initLightbox() {
         const lightbox = document.getElementById('lightbox');
@@ -632,7 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lightboxClose = document.getElementById('lightboxClose');
         if (!lightbox || !lightboxImg) return;
 
-        // Portfolio items
+        // Portfolio items (old index grid)
         document.querySelectorAll('.portfolio__item-inner').forEach(item => {
             item.addEventListener('click', () => {
                 const img = item.querySelector('img');
@@ -679,68 +694,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ════════════════════════════════
-    // TESTIMONIALS SLIDER
+    // CERTIFICATE LIGHTBOX (certificates.html)
     // ════════════════════════════════
-    function initTestimonialsSlider() {
-        const track = document.getElementById('testimonialsTrack');
-        const prevBtn = document.getElementById('testPrev');
-        const nextBtn = document.getElementById('testNext');
-        const dotsContainer = document.getElementById('testDots');
-        if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+    function initCertLightbox() {
+        const certCards = document.querySelectorAll('.cert-card[data-cert]');
+        if (!certCards.length) return;
 
-        const cards = track.querySelectorAll('.testimonial');
-        const dots = dotsContainer.querySelectorAll('span');
-        let current = 0;
-        const total = cards.length;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        if (!lightbox || !lightboxImg) return;
 
-        function slide(index) {
-            current = index;
-            const card = cards[0];
-            if (!card) return;
-            const gap = 20;
-            const shift = current * (card.offsetWidth + gap);
-
-            if (typeof gsap !== 'undefined') {
-                gsap.to(track, {
-                    x: -shift,
-                    duration: 0.7,
-                    ease: 'power3.out',
-                });
-            } else {
-                track.style.transform = `translateX(-${shift}px)`;
-            }
-
-            dots.forEach((d, i) => d.classList.toggle('active', i === current));
-        }
-
-        nextBtn.addEventListener('click', () => slide(current < total - 1 ? current + 1 : 0));
-        prevBtn.addEventListener('click', () => slide(current > 0 ? current - 1 : total - 1));
-        dots.forEach((dot, i) => dot.addEventListener('click', () => slide(i)));
-
-        // Autoplay
-        let autoplay = setInterval(() => slide(current < total - 1 ? current + 1 : 0), 6000);
-        const slider = track.closest('.testimonials__slider');
-        if (slider) {
-            slider.addEventListener('mouseenter', () => clearInterval(autoplay));
-            slider.addEventListener('mouseleave', () => {
-                autoplay = setInterval(() => slide(current < total - 1 ? current + 1 : 0), 6000);
-            });
-        }
-
-        // Touch swipe
-        let touchStartX = 0;
-        let touchEndX = 0;
-        if (slider) {
-            slider.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-            slider.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) slide(current < total - 1 ? current + 1 : 0);
-                    else slide(current > 0 ? current - 1 : total - 1);
+        certCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const certSrc = card.dataset.cert;
+                const name = card.querySelector('.cert-card__name');
+                if (certSrc) {
+                    lightboxImg.src = certSrc;
+                    lightboxImg.alt = name ? name.textContent : 'Certificate';
+                    if (lightboxTitle && name) lightboxTitle.textContent = name.textContent;
+                    lightbox.classList.add('is-active');
+                    document.body.style.overflow = 'hidden';
                 }
-            }, { passive: true });
-        }
+            });
+        });
     }
 
     // ════════════════════════════════
@@ -757,7 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             ScrollTrigger.create({
                 trigger: counter,
-                start: 'top 90%',
+                start: 'top 95%',
                 once: true,
                 onEnter: () => {
                     if (triggered) return;
@@ -774,7 +751,6 @@ document.addEventListener('DOMContentLoaded', () => {
             function update(now) {
                 const elapsed = now - start;
                 const p = Math.min(elapsed / duration, 1);
-                // Ease out cubic
                 const eased = 1 - Math.pow(1 - p, 3);
                 el.textContent = Math.round(eased * target);
 
@@ -805,57 +781,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrub: 1,
             }
         });
-    }
-
-    // ════════════════════════════════
-    // DRAWINGS VIEWER
-    // ════════════════════════════════
-    function initDrawingsViewer() {
-        const sidebar = document.getElementById('drawingsList');
-        const preview = document.getElementById('drawingsPreview');
-        if (!sidebar || !preview) return;
-
-        const drawings = [
-            { name: 'Баскетбольна стійка з підйомником', file: 'assets/Зразки креслень/Баскетбольна стійка з підйомником для регулювання по висоті.pdf' },
-            { name: 'Баскетбольна стійка — Паспорт', file: 'assets/Зразки креслень/Баскетбольна стійка. Паспорт.PDF' },
-            { name: 'Баскетбольна стійка без щита', file: 'assets/Зразки креслень/Баскетольна стійка без щита.pdf' },
-            { name: 'Волейбольна суддівська вишка', file: 'assets/Зразки креслень/Волейбольна суддівська вишка.pdf' },
-            { name: 'Ворота для міні-футболу тип 2М', file: 'assets/Зразки креслень/Ворота для міні футболу та гандболу тип 2М.pdf' },
-            { name: 'Навіс', file: 'assets/Зразки креслень/Навіс.pdf' },
-            { name: 'Огородження футбольного поля', file: 'assets/Зразки креслень/Огородження футбольного поля.pdf' },
-            { name: 'Інструкція з монтажу огородження', file: 'assets/Зразки креслень/Огородження футбольного поля. Інструкція з монтажу.pdf' },
-            { name: 'Опорна конструкція СЕС 11×2', file: 'assets/Зразки креслень/Опорна конструкція СЕС -11х2.pdf' },
-            { name: 'Опорна конструкція СЕС 6×2 — ТЗ8', file: 'assets/Зразки креслень/Опорна конструкція СЕС-6х2. Технічне завдання 8.PDF' },
-            { name: 'Спортивний комплекс', file: 'assets/Зразки креслень/ХЗБВМ-ШЕ1т213-0000 СК.pdf' },
-        ];
-
-        function loadDrawing(d, listItem) {
-            sidebar.querySelectorAll('.drawings__sidebar-item').forEach(el => el.classList.remove('active'));
-            listItem.classList.add('active');
-
-            // Smooth transition
-            preview.style.opacity = '0';
-            setTimeout(() => {
-                preview.innerHTML = `<embed src="${d.file}" type="application/pdf" style="width:100%;height:100%;min-height:400px;border-radius:8px;">`;
-                preview.style.opacity = '1';
-            }, 200);
-        }
-
-        // Style transition
-        preview.style.transition = 'opacity 0.3s ease';
-
-        drawings.forEach((d, i) => {
-            const item = document.createElement('div');
-            item.className = 'drawings__sidebar-item';
-            item.textContent = d.name;
-            if (i === 0) item.classList.add('active');
-            item.addEventListener('click', () => loadDrawing(d, item));
-            sidebar.appendChild(item);
-        });
-
-        if (drawings.length) {
-            preview.innerHTML = `<embed src="${drawings[0].file}" type="application/pdf" style="width:100%;height:100%;min-height:400px;border-radius:8px;">`;
-        }
     }
 
     // ════════════════════════════════
