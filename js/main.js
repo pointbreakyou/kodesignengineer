@@ -132,6 +132,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (scroll) {
             tl.fromTo(scroll, { opacity: 0 }, { opacity: 1, duration: 0.8 }, 1.2);
         }
+
+        // Mechanism fade-in
+        const mechanism = document.querySelector('.hero__mechanism');
+        if (mechanism) {
+            tl.fromTo(mechanism,
+                { opacity: 0, scale: 0.85 },
+                { opacity: 0.7, scale: 1, duration: 1.5, ease: 'power2.out' },
+                0.3
+            );
+        }
     }
 
     // ── Split Text Helper ───────────────────────
@@ -578,6 +588,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (photoSecondary) {
             gsap.to(photoSecondary, {
                 y: -20,
+                ease: 'none',
+                scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2 }
+            });
+        }
+
+        // Hero mechanism parallax
+        const mechanism = document.querySelector('.hero__mechanism');
+        if (mechanism) {
+            gsap.to(mechanism, {
+                y: 60, rotate: 5,
                 ease: 'none',
                 scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2 }
             });

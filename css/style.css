@@ -133,6 +133,7 @@ body::before {
 .section--dark { background: var(--bg-dark); color: var(--text-white); overflow: hidden; }
 .section--dark .section__tag { color: var(--accent-light); }
 .section--dark .section__title { color: var(--text-white); }
+.section--dark .section__title span { color: inherit; }
 
 .section__header { margin-bottom: clamp(48px, 7vh, 80px); }
 .section__tag {
@@ -570,6 +571,75 @@ body::before {
 .hero__blueprint {
     position: absolute; inset: 0; width: 100%; height: 100%;
     pointer-events: none; z-index: 0;
+}
+
+/* Animated Mechanism */
+.hero__mechanism {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%);
+    width: clamp(500px, 55vw, 900px);
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+}
+.hero__gear--1 {
+    animation: gearRotateCW 30s linear infinite;
+}
+.hero__gear--2 {
+    animation: gearRotateCCW 22s linear infinite;
+}
+.hero__gear--3 {
+    animation: gearRotateCW 16s linear infinite;
+}
+.hero__ring--outer {
+    animation: gearRotateCCW 60s linear infinite;
+}
+.hero__ring--inner {
+    animation: gearRotateCW 45s linear infinite;
+}
+
+/* Piston reciprocating motion */
+.hero__piston {
+    animation: pistonMove 3s ease-in-out infinite;
+}
+
+/* Lever oscillation */
+.hero__lever {
+    animation: leverSwing 4s ease-in-out infinite;
+    transform-origin: 565px 270px;
+}
+
+@keyframes gearRotateCW {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes gearRotateCCW {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+@keyframes pistonMove {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(-20px) translateY(15px); }
+}
+@keyframes leverSwing {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(8deg); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero__gear--1,
+    .hero__gear--2,
+    .hero__gear--3,
+    .hero__ring--outer,
+    .hero__ring--inner,
+    .hero__piston,
+    .hero__lever {
+        animation: none;
+    }
 }
 
 /* Metrics */
@@ -2146,6 +2216,7 @@ body::before {
     /* New responsive styles at 1024px */
     .hero__layout { grid-template-columns: 1fr; }
     .hero__visual { display: none; }
+    .hero__mechanism { display: none; }
     .showcase__grid { grid-template-columns: 1fr; }
     .testimonials__grid { grid-template-columns: 1fr; }
     .certs-page__grid { grid-template-columns: repeat(2, 1fr); }
