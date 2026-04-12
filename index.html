@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Костянтин Оверченко — Інженер-конструктор SOLIDWORKS CSWP</title>
+    <meta name="description" content="Сертифікований інженер-конструктор SOLIDWORKS CSWP. Розробка технічно обґрунтованих конструкцій для реального виробництва. Топ-50 інженерів України.">
+    <meta property="og:title" content="Костянтин Оверченко — Інженер-конструктор SOLIDWORKS CSWP">
+    <meta property="og:description" content="Сертифікований інженер-конструктор SOLIDWORKS. Розробка конструкцій для виробництва.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ── Custom Cursor ── -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- ── Preloader ── -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__inner">
+            <div class="preloader__logo">KO</div>
+            <div class="preloader__bar">
+                <div class="preloader__fill" id="preloaderFill"></div>
+            </div>
+            <div class="preloader__counter" id="preloaderCounter">0</div>
+        </div>
+    </div>
+
+    <!-- ── Lightbox ── -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" id="lightboxClose">&times;</button>
+        <img class="lightbox__img" id="lightboxImg" src="" alt="">
+        <div class="lightbox__title" id="lightboxTitle"></div>
+    </div>
+
+    <!-- ── Navigation ── -->
+    <header class="header" id="header">
+        <div class="header__container">
+            <a href="#hero" class="header__logo">
+                <span class="header__logo-mark">KO</span>
+                <span class="header__logo-text">engineer</span>
+            </a>
+            <nav class="header__nav" id="headerNav">
+                <a href="#about" class="header__link">Про мене</a>
+                <a href="#experience" class="header__link">Досвід</a>
+                <a href="#process" class="header__link">Етапи</a>
+                <a href="#portfolio" class="header__link">Розробки</a>
+                <a href="#drawings" class="header__link">Креслення</a>
+                <a href="#testimonials" class="header__link">Відгуки</a>
+                <a href="#contact" class="header__link">Контакти</a>
+            </nav>
+            <div class="header__actions">
+                <a href="https://t.me/overchenkoooo" target="_blank" class="header__cta">
+                    <span class="header__cta-dot"></span>
+                    Зв'язатися
+                </a>
+                <button class="header__burger" id="burger" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Mobile Menu ── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__nav">
+            <a href="#about" class="mobile-menu__link">Про мене</a>
+            <a href="#experience" class="mobile-menu__link">Досвід</a>
+            <a href="#process" class="mobile-menu__link">Етапи роботи</a>
+            <a href="#portfolio" class="mobile-menu__link">Розробки</a>
+            <a href="#drawings" class="mobile-menu__link">Креслення</a>
+            <a href="#testimonials" class="mobile-menu__link">Відгуки</a>
+            <a href="#contact" class="mobile-menu__link">Контакти</a>
+        </nav>
+        <div class="mobile-menu__footer">
+            <a href="tel:0980433420">+38 (098) 043-34-20</a>
+            <a href="https://t.me/overchenkoooo" target="_blank">Telegram</a>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- HERO -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero__bg">
+            <div class="hero__grid"></div>
+            <div class="hero__gradient"></div>
+            <div class="hero__orb hero__orb--1"></div>
+            <div class="hero__orb hero__orb--2"></div>
+        </div>
+        <div class="container hero__container">
+            <div class="hero__content">
+                <div class="hero__badge" data-animate="fade-up" data-delay="0.3">
+                    <span class="hero__badge-dot"></span>
+                    SOLIDWORKS CSWP · TOP-50 UKRAINE
+                </div>
+                <h1 class="hero__title" data-animate="split-lines">
+                    <span class="hero__title-line">Костянтин</span>
+                    <span class="hero__title-line hero__title-line--accent">Оверченко</span>
+                </h1>
+                <p class="hero__subtitle" data-animate="fade-up" data-delay="0.8">
+                    Інженер-конструктор, який розробляє<br>
+                    <span class="hero__typed" id="typedText"></span><span class="hero__cursor">|</span>
+                </p>
+                <div class="hero__actions" data-animate="fade-up" data-delay="1.0">
+                    <a href="#contact" class="btn btn--primary">
+                        <span>Обговорити проєкт</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#portfolio" class="btn btn--ghost">
+                        <span>Дивитись розробки</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero__metrics" data-animate="fade-up" data-delay="1.2">
+                <div class="hero__metric">
+                    <span class="hero__metric-value" data-count="50">0</span>
+                    <span class="hero__metric-label">Top Engineers UA</span>
+                </div>
+                <div class="hero__metric-sep"></div>
+                <div class="hero__metric">
+                    <span class="hero__metric-value" data-count="20">0</span>
+                    <span class="hero__metric-suffix">+</span>
+                    <span class="hero__metric-label">Проєктів</span>
+                </div>
+                <div class="hero__metric-sep"></div>
+                <div class="hero__metric">
+                    <span class="hero__metric-value" data-count="6">0</span>
+                    <span class="hero__metric-label">Сертифікатів CSWP</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero__scroll">
+            <span>scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- ABOUT -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">01 / Про мене</span>
+                <h2 class="section__title">Про мене</h2>
+            </div>
+
+            <div class="about__grid">
+                <div class="about__visual" data-animate="fade-up" data-delay="0.2">
+                    <div class="about__photo">
+                        <img src="assets/Моє фото/photo_2026-01-16_13-50-56.jpg" alt="Костянтин Оверченко" loading="lazy">
+                        <div class="about__photo-border"></div>
+                    </div>
+                    <div class="about__badge-row">
+                        <span class="about__badge">CSWP Certified</span>
+                        <span class="about__badge">SolidWorks</span>
+                    </div>
+                </div>
+
+                <div class="about__content" data-animate="fade-up" data-delay="0.3">
+                    <h3 class="about__headline">Розробляю конструкції<br>без підходу <span class="text-accent">"потім допиляємо"</span></h3>
+                    <p class="about__text">Спеціалізуюсь на інженерному проєктуванні конструкцій, які підуть у запуск на виробництво та орієнтовані на реальні умови експлуатації.</p>
+                    <p class="about__text">Беру відповідальність за інженерні рішення: виявляю слабкі місця на ранніх етапах і пропоную технічно обґрунтовані альтернативи, щоб уникнути переробок і зайвих витрат.</p>
+                    <p class="about__text">Працюю з клієнтами по всьому світу. Спеціалізуюся на розробці технічно обґрунтованих, виробничо-придатних рішень.</p>
+                    <div class="about__actions">
+                        <a href="#portfolio" class="btn btn--primary">
+                            <span>Дивитись розробки</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="assets/Сертифікати/Certificate C-NYCSMXU37J_page-0001 (1).jpg" target="_blank" class="btn btn--ghost">
+                            <span>Завантажити резюме</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about__stats" data-animate="fade-up" data-delay="0.4">
+                <div class="stat-card">
+                    <div class="stat-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div class="stat-card__value">Top-50</div>
+                    <div class="stat-card__label">Certified CSWP<br>Engineers Ukraine</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="stat-card__value">2+</div>
+                    <div class="stat-card__label">Роки<br>досвіду</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <div class="stat-card__value" data-count="20">0</div>
+                    <div class="stat-card__label">Реалізованих<br>проєктів</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="stat-card__value">4+</div>
+                    <div class="stat-card__label">Довгострокових<br>клієнтів</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- EXPERIENCE -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">02 / Досвід</span>
+                <h2 class="section__title">Мій шлях</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline__line">
+                    <div class="timeline__progress" id="timelineProgress"></div>
+                </div>
+
+                <div class="timeline__item" data-animate="fade-up">
+                    <div class="timeline__dot"><span></span></div>
+                    <div class="timeline__card">
+                        <div class="timeline__meta">
+                            <span class="timeline__number">01</span>
+                            <span class="timeline__year">2024</span>
+                        </div>
+                        <h3 class="timeline__title">Перша робота</h3>
+                        <p class="timeline__role">Молодший конструктор — ТОВ ІДК Метал</p>
+                        <p class="timeline__desc">Ознайомлювався з виробничими процесами, вивчав конструктивну логіку виробів та основи 3D-моделювання. Основний фокус — розуміння того, як впроваджуються проєктні рішення на виробництві.</p>
+                        <span class="timeline__duration">8 місяців</span>
+                    </div>
+                </div>
+
+                <div class="timeline__item" data-animate="fade-up">
+                    <div class="timeline__dot"><span></span></div>
+                    <div class="timeline__card">
+                        <div class="timeline__meta">
+                            <span class="timeline__number">02</span>
+                            <span class="timeline__year">2025</span>
+                        </div>
+                        <h3 class="timeline__title">Подальша кар'єра</h3>
+                        <p class="timeline__role">Провідний конструктор — ПП Люкс Інстал</p>
+                        <p class="timeline__desc">Розробляв дитячі майданчики та спортивне обладнання з урахуванням вимог безпеки та експлуатаційних норм, створював паспорти виробів та їх монтажні креслення.</p>
+                        <span class="timeline__duration">7 місяців</span>
+                    </div>
+                </div>
+
+                <div class="timeline__item" data-animate="fade-up">
+                    <div class="timeline__dot"><span></span></div>
+                    <div class="timeline__card">
+                        <div class="timeline__meta">
+                            <span class="timeline__number">03</span>
+                            <span class="timeline__year">2026</span>
+                        </div>
+                        <h3 class="timeline__title">Освіта</h3>
+                        <p class="timeline__role">Бакалавр — Електрична інженерія</p>
+                        <p class="timeline__desc">Здобуваю ступінь бакалавра за напрямком електричної інженерії з фокусом на інженерне моделювання. Поглиблено вивчав роботу в САПР SolidWorks, зокрема 3D-моделювання деталей, створення збірок та КД.</p>
+                        <span class="timeline__duration">В процесі</span>
+                    </div>
+                </div>
+
+                <div class="timeline__item" data-animate="fade-up">
+                    <div class="timeline__dot"><span></span></div>
+                    <div class="timeline__card">
+                        <div class="timeline__meta">
+                            <span class="timeline__number">04</span>
+                            <span class="timeline__year">2026</span>
+                        </div>
+                        <h3 class="timeline__title">Сертифікація CSWP</h3>
+                        <p class="timeline__role">Підтвердження міжнародної експертності</p>
+                        <p class="timeline__desc">Ввійшов у топ-50 українських інженерів, підтвердивши свій професійний рівень 3D моделювання, шляхом складання ряду міжнародних екзаменів CSWP від Dassault Systèmes.</p>
+                        <span class="timeline__duration">6 сертифікатів</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- PROCESS -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="section section--dark process" id="process">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">03 / Як я працюю</span>
+                <h2 class="section__title">Етапи роботи</h2>
+            </div>
+
+            <div class="process__grid">
+                <div class="process__card">
+                    <span class="process__num">01</span>
+                    <div class="process__icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="24" cy="24" r="20"/><path d="M24 14v20M14 24h20"/><circle cx="24" cy="24" r="6"/>
+                        </svg>
+                    </div>
+                    <h3 class="process__title">Аналіз задачі та вимог</h3>
+                    <p class="process__desc">Розбираю призначення виробу, навантаження, умови експлуатації, виробничі обмеження та вимоги клієнта. Формую фінальне бачення задачі.</p>
+                </div>
+
+                <div class="process__card">
+                    <span class="process__num">02</span>
+                    <div class="process__icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="6" y="6" width="36" height="36" rx="2"/><path d="M6 18h36M18 6v36"/><circle cx="30" cy="30" r="8"/>
+                        </svg>
+                    </div>
+                    <h3 class="process__title">Інженерне проєктування</h3>
+                    <p class="process__desc">Розробляю конструктивне рішення з урахуванням логіки роботи виробу, матеріалів, допусків і технології виготовлення для реального виробництва.</p>
+                </div>
+
+                <div class="process__card">
+                    <span class="process__num">03</span>
+                    <div class="process__icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 24h8l4-12 6 24 6-18 4 6h12"/><circle cx="24" cy="24" r="20" stroke-dasharray="4 4"/>
+                        </svg>
+                    </div>
+                    <h3 class="process__title">Оптимізація та коригування</h3>
+                    <p class="process__desc">Виявляю слабкі місця, зайву складність і ризики у виробництві. Оптимізую конструкцію до готовності запуску без масштабних правок.</p>
+                </div>
+
+                <div class="process__card">
+                    <span class="process__num">04</span>
+                    <div class="process__icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M6 6h36v30H6z"/><path d="M6 36l12 6h12l12-6"/><path d="M15 18h18M15 24h12"/>
+                        </svg>
+                    </div>
+                    <h3 class="process__title">Передача КД на виробництво</h3>
+                    <p class="process__desc">Готую повний комплект конструкторської документації: креслення, специфікації та монтажні схеми, зрозумілі для виробництва.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- PORTFOLIO -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">04 / Портфоліо</span>
+                <h2 class="section__title">Реалізовані розробки</h2>
+            </div>
+
+            <!-- Featured -->
+            <div class="featured" data-animate="fade-up">
+                <h3 class="featured__label">Нещодавні проєкти</h3>
+                <div class="featured__grid">
+                    <article class="featured__card">
+                        <div class="featured__img">
+                            <img src="assets/Рендери проєктів/Передній важіль підвіски автомобіля.jpg" alt="Передній важіль підвіски для баггі" loading="lazy">
+                            <span class="featured__date">Січень 2026</span>
+                        </div>
+                        <div class="featured__body">
+                            <h4>Передній важіль підвіски для баггі</h4>
+                            <p>Розробка концептуальної конструкції переднього важеля підвіски автомобіля класу баггі на основі заданого положення опорних точок.</p>
+                        </div>
+                    </article>
+
+                    <article class="featured__card">
+                        <div class="featured__img">
+                            <img src="assets/Рендери проєктів/Транспортувальний кейс для мікшерного пульта -  Allen & Heath SQ-5.jpg" alt="Транспортувальний кейс" loading="lazy">
+                            <span class="featured__date">Лютий 2026</span>
+                        </div>
+                        <div class="featured__body">
+                            <h4>Транспортувальний кейс Allen & Heath SQ-5</h4>
+                            <p>Розробка транспортувального кейсу з урахуванням габаритів, форм-фактору та розташування роз'ємів пульта.</p>
+                        </div>
+                    </article>
+
+                    <article class="featured__card">
+                        <div class="featured__img">
+                            <img src="assets/Рендери проєктів/CARPORT_0/CARPORT.1.jpg" alt="Carport — сонячний навіс" loading="lazy">
+                            <span class="featured__date">Березень 2026</span>
+                        </div>
+                        <div class="featured__body">
+                            <h4>Carport — навіс для сонячних панелей</h4>
+                            <p>Розробка металоконструкції навісу для паркінгу з інтеграцією сонячних панелей та системи водовідведення.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="portfolio__tabs" data-animate="fade-up">
+                <button class="portfolio__tab active" data-tab="all">Всі</button>
+                <button class="portfolio__tab" data-tab="sports">Спортивні</button>
+                <button class="portfolio__tab" data-tab="industrial">Промислові</button>
+                <button class="portfolio__tab" data-tab="trade">Торгові</button>
+                <button class="portfolio__tab" data-tab="metal">Металокаркасні</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="portfolio__grid" id="portfolioGrid">
+                <div class="portfolio__item" data-category="sports">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Спортивні комлпекси/Спортивний комплекс LW-30/Спортивний комплекс LW-30.1.jpg" alt="Спортивний комплекс LW-30" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Спортивні</span>
+                            <h4>Спортивний комплекс LW-30</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="sports">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Нестандартні вироби/Баскетбольні стійки/Баскетбольна стійка 1/Баскетбольна стіфка з регулюванням висоти.1.jpg" alt="Баскетбольна стійка" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Спортивні</span>
+                            <h4>Баскетбольний стенд з регульованою висотою</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="sports">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Нестандартні вироби/Ворота для міні-футболу та гандболу, тип 2М/Ворота для міні-футболу та гандболу, тип 2М.1.jpg" alt="Ворота для міні-футболу" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Спортивні</span>
+                            <h4>Ворота для міні футболу та гандболу</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="sports">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Нестандартні вироби/Волейбольна суддівська вишка/Волейбольна суддівська вишка.1.jpg" alt="Волейбольна вишка" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Спортивні</span>
+                            <h4>Волейбольна суддівська вишка</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="sports">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Елементи спортивних комплексів/Упор для пресу/Упор для пресу.89.1.jpg" alt="Упор для пресу" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Спортивні</span>
+                            <h4>Упор для пресу</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="metal industrial">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/CARPORT_0/CARPORT.3.jpg" alt="Carport" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Металокаркасні</span>
+                            <h4>Carport — навіс для паркінгу</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="metal">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Опорна конструкція СЕС 11х2/Опорна конструкція СЕС 11х2.1.jpg" alt="Опорна конструкція СЕС" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Металокаркасні</span>
+                            <h4>Опорна конструкція СЕС 11x2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="metal">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Технічне завдання №8/Технічне завдання №8. Опорна конструкція СЕС 6х2.1.jpg" alt="Опорна конструкція СЕС 6x2" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Металокаркасні</span>
+                            <h4>Опорна конструкція СЕС 6x2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="industrial">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Передній важіль підвіски автомобіля.jpg" alt="Важіль підвіски" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Промислові</span>
+                            <h4>Передній важіль підвіски для баггі</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="industrial">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Транспортувальний кейс для мікшерного пульта -  Allen & Heath SQ-5.jpg" alt="Кейс для мікшерного пульта" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Промислові</span>
+                            <h4>Транспортувальний кейс Allen & Heath SQ-5</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="trade">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Торгове обладнання/1/1/1.1.jpg" alt="Торговий стенд" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Торгові</span>
+                            <h4>Торговий стенд для одягу</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item" data-category="trade">
+                    <div class="portfolio__item-inner">
+                        <img src="assets/Рендери проєктів/Торгове обладнання/1/1/1.4.jpg" alt="Торговий стенд 2" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <span class="portfolio__cat">Торгові</span>
+                            <h4>Торгове обладнання</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- DRAWINGS -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="section drawings" id="drawings">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">05 / Документація</span>
+                <h2 class="section__title">Конструкторська документація</h2>
+            </div>
+
+            <p class="drawings__intro" data-animate="fade-up">Кожен проєкт завершується повним комплектом конструкторської документації — креслення, специфікації та монтажні схеми, виконані за ДСТУ та готові для передачі на виробництво.</p>
+
+            <div class="drawings__viewer" data-animate="fade-up">
+                <div class="drawings__sidebar" id="drawingsList"></div>
+                <div class="drawings__preview" id="drawingsPreview">
+                    <p class="drawings__placeholder">Оберіть креслення для перегляду</p>
+                </div>
+            </div>
+
+            <div class="drawings__features">
+                <div class="drawings__feature">
+                    <div class="drawings__feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                    </div>
+                    <h4>Креслення деталей</h4>
+                    <p>Точні розміри, допуски, посадки та шорсткість поверхонь</p>
+                </div>
+                <div class="drawings__feature">
+                    <div class="drawings__feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h4>Специфікації</h4>
+                    <p>Повний перелік матеріалів, кріплень та комплектуючих</p>
+                </div>
+                <div class="drawings__feature">
+                    <div class="drawings__feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>Монтажні схеми</h4>
+                    <p>Порядок збірки, послідовність операцій та інструкції з монтажу</p>
+                </div>
+                <div class="drawings__feature">
+                    <div class="drawings__feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <h4>Паспорти виробів</h4>
+                    <p>Документація для сертифікації та контролю якості</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- CERTIFICATIONS -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="section section--dark certifications" id="certifications">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">06 / Кваліфікація</span>
+                <h2 class="section__title">Сертифікати</h2>
+            </div>
+
+            <div class="certs__grid">
+                <div class="cert">
+                    <img src="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL.png" alt="CSWP Design" loading="lazy">
+                    <h4>CSWP — Design</h4>
+                    <p>SolidWorks Professional</p>
+                </div>
+                <div class="cert">
+                    <img src="assets/Сертифікати/PROFESSIONAL - SHEET METAL.png" alt="CSWP Sheet Metal" loading="lazy">
+                    <h4>CSWP — Sheet Metal</h4>
+                    <p>Листовий метал</p>
+                </div>
+                <div class="cert">
+                    <img src="assets/Сертифікати/PROFESSIONAL - WELDMENTS.png" alt="CSWP Weldments" loading="lazy">
+                    <h4>CSWP — Weldments</h4>
+                    <p>Зварні конструкції</p>
+                </div>
+                <div class="cert">
+                    <img src="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS.png" alt="CSWP Drawing Tools" loading="lazy">
+                    <h4>CSWP — Drawing Tools</h4>
+                    <p>Інструменти креслення</p>
+                </div>
+                <div class="cert">
+                    <img src="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE.png" alt="CSWA" loading="lazy">
+                    <h4>CSWA — Design</h4>
+                    <p>SolidWorks Associate</p>
+                </div>
+                <div class="cert">
+                    <img src="assets/Сертифікати/certified-solidworks-simulation-associate (1).png" alt="CSWA Simulation" loading="lazy">
+                    <h4>CSWA — Simulation</h4>
+                    <p>Моделювання навантажень</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- TESTIMONIALS -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">07 / Відгуки</span>
+                <h2 class="section__title">Відгуки клієнтів</h2>
+            </div>
+
+            <div class="testimonials__slider" data-animate="fade-up">
+                <div class="testimonials__track" id="testimonialsTrack">
+                    <div class="testimonial">
+                        <div class="testimonial__quote">&ldquo;</div>
+                        <p class="testimonial__text">Ми найняли Костянтина для розробки конструктивних рішень для спортивних виробів. Під час співпраці він показував відмінні знання у середовищі SolidWorks. Ми були задоволені тим як він розробляв монтажні креслення, схеми бетонування, паспорти об'єктів та розрахунки навантаження. Його інженерні рішення були чіткими, практичними та готовими до запуску у виробництво.</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__avatar">ОМ</div>
+                            <div>
+                                <strong>Олексій Мазуренко</strong>
+                                <span>ПП Люкс Інстал · 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial__quote">&ldquo;</div>
+                        <p class="testimonial__text">Ми співпрацювали з Костянтином у рамках короткострокового проєкту. За цей час він продемонстрував високий рівень інженерного мислення та відповідальне ставлення до задач. Показав глибоке розуміння роботи з листовим металом і трубними конструкціями. Себе показав як відповідальний та надійний інженер, з яким комфортно працювати.</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__avatar">ОК</div>
+                            <div>
+                                <strong>Олександр Капустинський</strong>
+                                <span>ТОВ ІДК Метал · 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial__quote">&ldquo;</div>
+                        <p class="testimonial__text">Під час складання міжнародних сертифікаційних іспитів CSWP Костянтин продемонстрував впевнене володіння SolidWorks та здатність працювати з комплексними завданнями в умовах обмеженого часу. Як експерт, можу з впевненістю рекомендувати його для серйозних проєктів.</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__avatar">ВХ</div>
+                            <div>
+                                <strong>В'ячеслав Харжевський</strong>
+                                <span>Екзаменатор CSWP · ХНУ · 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial__quote">&ldquo;</div>
+                        <p class="testimonial__text">Протягом одного місяця ми працювали з Костею над проєктуванням деталей і вузлів для баггі, токарних та фрезерних виробів. Він впевнено працював із складною геометрією, допусками та посадками, та навантаженими елементами, чітко розуміючи вимоги до механічної міцності й ресурсу деталей.</p>
+                        <div class="testimonial__author">
+                            <div class="testimonial__avatar">СЛ</div>
+                            <div>
+                                <strong>Сергій Левицький</strong>
+                                <span>ТОВ Пеле Інжиніринг · 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonials__controls">
+                    <button class="testimonials__btn" id="testPrev" aria-label="Попередній">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <div class="testimonials__dots" id="testDots">
+                        <span class="active"></span><span></span><span></span><span></span>
+                    </div>
+                    <button class="testimonials__btn" id="testNext" aria-label="Наступний">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- CONTACT -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact__inner">
+                <div class="contact__info" data-animate="fade-up">
+                    <span class="section__tag">08 / Контакти</span>
+                    <h2 class="contact__title">Обговоримо<br>ваш <span class="text-accent">проєкт?</span></h2>
+                    <p class="contact__desc">Напишіть мені у Telegram або зателефонуйте — і ми обговоримо ваш проєкт, визначимо вимоги та знайдемо найкраще інженерне рішення.</p>
+
+                    <div class="contact__links">
+                        <a href="https://t.me/overchenkoooo" target="_blank" class="contact__link">
+                            <div class="contact__link-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                            </div>
+                            <div>
+                                <span class="contact__link-name">Telegram</span>
+                                <span class="contact__link-val">@overchenkoooo</span>
+                            </div>
+                        </a>
+                        <a href="tel:0980433420" class="contact__link">
+                            <div class="contact__link-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <span class="contact__link-name">Телефон</span>
+                                <span class="contact__link-val">+38 (098) 043-34-20</span>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/overchenkoooo" target="_blank" class="contact__link">
+                            <div class="contact__link-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+                            </div>
+                            <div>
+                                <span class="contact__link-name">Instagram</span>
+                                <span class="contact__link-val">@overchenkoooo</span>
+                            </div>
+                        </a>
+                        <a href="viber://chat?number=+380980433420" class="contact__link">
+                            <div class="contact__link-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                            </div>
+                            <div>
+                                <span class="contact__link-name">Viber</span>
+                                <span class="contact__link-val">+38 (098) 043-34-20</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact__form-wrap" data-animate="fade-up" data-delay="0.2">
+                    <form class="contact__form" id="contactForm">
+                        <div class="form__group">
+                            <label for="formName">Ім'я</label>
+                            <input type="text" id="formName" name="name" placeholder="Ваше ім'я" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="formEmail">Email або Telegram</label>
+                            <input type="text" id="formEmail" name="email" placeholder="email@example.com або @username" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="formMessage">Опишіть ваш проєкт</label>
+                            <textarea id="formMessage" name="message" rows="4" placeholder="Коротко опишіть задачу, яку потрібно вирішити..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">
+                            <span>Надіслати запит</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- FOOTER -->
+    <!-- ════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="#hero" class="header__logo">
+                        <span class="header__logo-mark">KO</span>
+                        <span class="header__logo-text">engineer</span>
+                    </a>
+                    <p>Engineering Precision meets Digital Elegance</p>
+                </div>
+                <div class="footer__links">
+                    <a href="#about">Про мене</a>
+                    <a href="#experience">Досвід</a>
+                    <a href="#portfolio">Розробки</a>
+                    <a href="#contact">Контакти</a>
+                </div>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/overchenkoooo" target="_blank" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg>
+                    </a>
+                    <a href="https://t.me/overchenkoooo" target="_blank" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    </a>
+                    <a href="viber://chat?number=+380980433420" aria-label="Viber">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>&copy; 2026 Костянтин Оверченко. All rights reserved.</span>
+                <span>Created by overchenko studio</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
