@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             span.textContent = char === ' ' ? '\u00A0' : char;
             span.style.display = 'inline-block';
             span.style.willChange = 'transform, opacity';
+            span.style.color = 'inherit';
             el.appendChild(span);
             spans.push(span);
         });
@@ -714,30 +715,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ════════════════════════════════
-    // CERTIFICATE LIGHTBOX (certificates.html)
+    // CERTIFICATE FLIP CARDS (certificates.html)
     // ════════════════════════════════
     function initCertLightbox() {
-        const certCards = document.querySelectorAll('.cert-card[data-cert]');
-        if (!certCards.length) return;
+        const flipCards = document.querySelectorAll('.cert-flip');
+        if (!flipCards.length) return;
 
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxTitle = document.getElementById('lightboxTitle');
-        if (!lightbox || !lightboxImg) return;
-
-        certCards.forEach(card => {
+        flipCards.forEach(card => {
             card.addEventListener('click', () => {
-                const certSrc = card.dataset.cert;
-                const name = card.querySelector('.cert-card__name');
-                if (certSrc) {
-                    lightboxImg.src = certSrc;
-                    lightboxImg.alt = name ? name.textContent : 'Certificate';
-                    if (lightboxTitle && name) lightboxTitle.textContent = name.textContent;
-                    lightbox.classList.add('is-active');
-                    document.body.style.overflow = 'hidden';
-                }
+                card.classList.toggle('cert-flip--flipped');
             });
         });
+
+        // Stagger entrance animation for cert flip cards
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            document.querySelectorAll('.certs-page__grid').forEach(grid => {
+                const cards = grid.querySelectorAll('.cert-flip');
+                if (!cards.length) return;
+
+                gsap.from(cards, {
+                    y: 60,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: grid,
+                        start: 'top 80%',
+                        once: true
+                    }
+                });
+            });
+        }
     }
 
     // ════════════════════════════════
