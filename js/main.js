@@ -204,6 +204,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check on load too
         if (header && window.scrollY > 60) header.classList.add('is-scrolled');
 
+        // Auto-detect dark hero for white nav text on sub-pages
+        const pageHero = document.querySelector('.page-hero');
+        if (header && pageHero) {
+            header.classList.add('header--dark');
+        }
+
         if (burger && mobileMenu) {
             burger.addEventListener('click', () => {
                 burger.classList.toggle('is-active');
@@ -454,7 +460,6 @@ document.addEventListener('DOMContentLoaded', () => {
             '.certs__grid',
             '.showcase__grid',
             '.testimonials__grid',
-            '.certs-page__grid',
             '.drawings-page__grid',
             '.portfolio-page__grid',
         ];
