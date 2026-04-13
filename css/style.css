@@ -99,8 +99,18 @@ body::before {
     transition: width 0.35s var(--ease), height 0.35s var(--ease),
                 border-color 0.3s, background 0.3s, opacity 0.3s;
     transform: translate(-50%, -50%);
-    mix-blend-mode: exclusion;
     opacity: 0;
+}
+.cursor.on-dark {
+    mix-blend-mode: normal;
+    border-color: var(--accent-light);
+    background: rgba(239, 68, 68, 0.12);
+}
+.cursor.on-dark.is-hover {
+    background: rgba(239, 68, 68, 0.15);
+}
+.cursor:not(.on-dark) {
+    mix-blend-mode: exclusion;
 }
 .cursor.is-visible { opacity: 1; }
 .cursor.is-hover {
@@ -605,6 +615,19 @@ body::before {
     pointer-events: none;
     z-index: 0;
     opacity: 0;
+}
+.hero__gear-canvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+.hero__gear-canvas canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 .hero__gear--1 {
     animation: gearRotateCW 30s linear infinite;
@@ -1741,6 +1764,120 @@ body::before {
     gap: 20px;
 }
 
+/* ── Vertical A4 Certificate Layout ── */
+.certs-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cert-a4-row {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: center;
+}
+
+.cert-a4 {
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 210 / 297;
+    position: relative;
+    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+    cursor: pointer;
+}
+.cert-a4:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 32px 80px rgba(220, 38, 38, 0.15);
+}
+.cert-a4::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(220, 38, 38, 0.08);
+    border-radius: 4px;
+    pointer-events: none;
+    transition: border-color 0.4s;
+}
+.cert-a4:hover::after {
+    border-color: rgba(220, 38, 38, 0.2);
+}
+.cert-a4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cert-a4-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cert-a4-badge {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.5s var(--ease);
+}
+.cert-a4-badge:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+.cert-a4-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(220, 38, 38, 0.2));
+}
+
+.cert-a4-name {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.section--dark .cert-a4-name {
+    color: var(--text-white);
+}
+
+.cert-a4-desc {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.section--dark .cert-a4-desc {
+    color: var(--text-on-dark);
+}
+
+.section:not(.section--dark) .cert-a4-desc {
+    color: var(--text-secondary);
+}
+
+.cert-a4-level {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--accent);
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    width: fit-content;
+}
+
+.cert-a4-level--assoc {
+    background: var(--text-secondary);
+}
+
 /* ── Flip Card ── */
 .cert-flip {
     perspective: 1000px;
@@ -2028,6 +2165,42 @@ body::before {
 }
 .portfolio-page__card-desc {
     font-size: 12px; color: var(--text-secondary); line-height: 1.6;
+}
+
+/* Category section headers in portfolio grid */
+.portfolio-page__category-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+}
+.portfolio-page__category-header:first-child {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+.portfolio-page__category-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.portfolio-page__category-label {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--text);
+}
+.portfolio-page__category-count {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-left: auto;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -2433,10 +2606,14 @@ body::before {
     .hero__layout { grid-template-columns: 1fr; }
     .hero__visual { display: none; }
     .hero__mechanism { display: none; }
+    .hero__gear-canvas { display: none; }
     .showcase__grid { grid-template-columns: 1fr; }
     .testimonials__grid { grid-template-columns: 1fr; }
     .certs-page__grid { grid-template-columns: repeat(2, 1fr); }
     .certs-page__levels { grid-template-columns: repeat(2, 1fr); }
+    .cert-a4-row { grid-template-columns: 1fr; gap: 24px; }
+    .cert-a4-info { align-items: center; text-align: center; }
+    .cert-a4-level { align-self: center; }
 }
 
 @media (max-width: 768px) {
@@ -2464,6 +2641,9 @@ body::before {
     .certs-page__levels { grid-template-columns: 1fr; }
     .portfolio-page__grid { grid-template-columns: 1fr; }
     .portfolio-detail__img { max-width: 95vw; max-height: 60vh; }
+    .cert-a4-row { grid-template-columns: 1fr; }
+    .cert-a4 { max-width: 400px; margin: 0 auto; }
+    .cert-a4-info { align-items: center; text-align: center; }
 }
 
 @media (max-width: 480px) {

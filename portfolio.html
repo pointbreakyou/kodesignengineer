@@ -702,30 +702,84 @@
     <!-- Portfolio Page Script -->
     <script>
     (function() {
-        /* ── Filter Tabs ── */
         const tabs = document.querySelectorAll('.portfolio-page__tab');
         const cards = document.querySelectorAll('.portfolio-page__card');
+        const grid = document.querySelector('.portfolio-page__grid');
+
+        const categoryNames = {
+            sports: 'Спортивні вироби',
+            industrial: 'Промислові вироби',
+            trade: 'Торгові вироби',
+            metal: 'Металокаркасні вироби',
+        };
+
+        const categoryOrder = ['sports', 'industrial', 'trade', 'metal'];
+
+        function buildCategorizedGrid(filter) {
+            const existingHeaders = grid.querySelectorAll('.portfolio-page__category-header');
+            existingHeaders.forEach(h => h.remove());
+
+            if (filter !== 'all') return;
+
+            const sortedCards = Array.from(cards);
+            const grouped = {};
+            categoryOrder.forEach(cat => grouped[cat] = []);
+
+            sortedCards.forEach(card => {
+                const cats = card.getAttribute('data-category').split(' ');
+                cats.forEach(cat => {
+                    if (grouped[cat]) grouped[cat].push(card);
+                });
+            });
+
+            let insertBefore = sortedCards[0];
+            categoryOrder.forEach(cat => {
+                if (grouped[cat] && grouped[cat].length > 0) {
+                    const header = document.createElement('div');
+                    header.className = 'portfolio-page__category-header';
+                    header.setAttribute('data-cat-header', cat);
+                    header.innerHTML = '<span class="portfolio-page__category-dot"></span>' +
+                        '<span class="portfolio-page__category-label">' + categoryNames[cat] + '</span>' +
+                        '<span class="portfolio-page__category-count">' + grouped[cat].length + ' проєктів</span>';
+                    grid.insertBefore(header, grouped[cat][0]);
+                }
+            });
+        }
+
+        function filterCards(filter) {
+            cards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                if (filter === 'all' || categories.split(' ').includes(filter)) {
+                    card.style.display = '';
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const headers = grid.querySelectorAll('.portfolio-page__category-header');
+            headers.forEach(h => {
+                if (filter === 'all') {
+                    h.style.display = '';
+                } else {
+                    const headerCat = h.getAttribute('data-cat-header');
+                    h.style.display = headerCat === filter ? '' : 'none';
+                }
+            });
+        }
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 tabs.forEach(t => t.classList.remove('portfolio-page__tab--active'));
                 tab.classList.add('portfolio-page__tab--active');
-
                 const filter = tab.getAttribute('data-tab');
-
-                cards.forEach(card => {
-                    const categories = card.getAttribute('data-category');
-                    if (filter === 'all' || categories.split(' ').includes(filter)) {
-                        card.style.display = '';
-                        card.style.animation = 'fadeInUp 0.5s ease forwards';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+                filterCards(filter);
             });
         });
 
-        /* ── Detail Modal ── */
+        buildCategorizedGrid('all');
+
+        /* Detail Modal */
         const modal = document.getElementById('portfolioDetail');
         const modalOverlay = modal.querySelector('.portfolio-detail__overlay');
         const modalClose = document.getElementById('portfolioDetailClose');

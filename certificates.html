@@ -15,18 +15,15 @@
 </head>
 <body>
 
-    <!-- ── Custom Cursor ── -->
     <div class="cursor"></div>
     <div class="cursor-dot"></div>
 
-    <!-- ── Lightbox ── -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox__close" id="lightboxClose">&times;</button>
         <img class="lightbox__img" id="lightboxImg" src="" alt="">
         <div class="lightbox__title" id="lightboxTitle"></div>
     </div>
 
-    <!-- ── Navigation ── -->
     <header class="header" id="header">
         <div class="header__container">
             <a href="index.html" class="header__logo">
@@ -55,7 +52,6 @@
         </div>
     </header>
 
-    <!-- ── Mobile Menu ── -->
     <div class="mobile-menu" id="mobileMenu">
         <nav class="mobile-menu__nav">
             <a href="index.html#about" class="mobile-menu__link">Про мене</a>
@@ -73,9 +69,7 @@
         </div>
     </div>
 
-    <!-- ════════════════════════════════════════════════ -->
     <!-- PAGE HERO -->
-    <!-- ════════════════════════════════════════════════ -->
     <section class="page-hero">
         <div class="container">
             <span class="page-hero__tag" data-animate="fade-up">Кваліфікація</span>
@@ -84,9 +78,7 @@
         </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════ -->
     <!-- CERT LEVELS DESCRIPTION -->
-    <!-- ════════════════════════════════════════════════ -->
     <section class="section certs-page__intro">
         <div class="container">
             <div class="certs-page__levels" data-animate="fade-up">
@@ -104,9 +96,7 @@
         </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════ -->
-    <!-- CERTIFICATES GRID — Professional (4) -->
-    <!-- ════════════════════════════════════════════════ -->
+    <!-- CERTIFICATES — Professional (4) — Vertical A4 Layout -->
     <section class="section section--dark certs-page">
         <div class="container">
             <div class="section__header" data-animate="fade-up">
@@ -114,73 +104,61 @@
                 <h2 class="section__title">Сертифікати CSWP</h2>
             </div>
 
-            <div class="certs-page__grid">
+            <div class="certs-vertical">
 
-                <!-- Card 1: CSWP — Design -->
-                <div class="cert-flip">
-                    <div class="cert-flip__inner">
-                        <div class="cert-flip__front">
-                            <div class="cert-flip__badge">
-                                <img src="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL.png" alt="CSWP — Design" loading="lazy">
-                            </div>
-                            <h3 class="cert-flip__name">CSWP — Design</h3>
-                            <p class="cert-flip__desc">Параметричне моделювання, збірки, конфігурації</p>
-                            <span class="cert-flip__hint">Натисніть, щоб побачити сертифікат</span>
+                <div class="cert-a4-row" data-animate="fade-up">
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL - CERTIFICATE.png">
+                        <img src="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL - CERTIFICATE.png" alt="CSWP Design — Сертифікат A4" loading="lazy">
+                    </div>
+                    <div class="cert-a4-info">
+                        <div class="cert-a4-badge">
+                            <img src="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL.png" alt="CSWP — Design Badge">
                         </div>
-                        <div class="cert-flip__back">
-                            <img src="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL - CERTIFICATE.png" alt="CSWP Design — Сертифікат A4" loading="lazy">
-                        </div>
+                        <h3 class="cert-a4-name">CSWP — Design</h3>
+                        <p class="cert-a4-desc">Параметричне моделювання, збірки, конфігурації</p>
+                        <span class="cert-a4-level">Professional</span>
                     </div>
                 </div>
 
-                <!-- Card 2: CSWP — Sheet Metal -->
-                <div class="cert-flip">
-                    <div class="cert-flip__inner">
-                        <div class="cert-flip__front">
-                            <div class="cert-flip__badge">
-                                <img src="assets/Сертифікати/PROFESSIONAL - SHEET METAL.png" alt="CSWP — Sheet Metal" loading="lazy">
-                            </div>
-                            <h3 class="cert-flip__name">CSWP — Sheet Metal</h3>
-                            <p class="cert-flip__desc">Листовий метал, згини, розгортки</p>
-                            <span class="cert-flip__hint">Натисніть, щоб побачити сертифікат</span>
+                <div class="cert-a4-row" data-animate="fade-up">
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/PROFESSIONAL - SHEET METAL - CERTIFICATE.png">
+                        <img src="assets/Сертифікати/PROFESSIONAL - SHEET METAL - CERTIFICATE.png" alt="CSWP Sheet Metal — Сертифікат A4" loading="lazy">
+                    </div>
+                    <div class="cert-a4-info">
+                        <div class="cert-a4-badge">
+                            <img src="assets/Сертифікати/PROFESSIONAL - SHEET METAL.png" alt="CSWP — Sheet Metal Badge">
                         </div>
-                        <div class="cert-flip__back">
-                            <img src="assets/Сертифікати/PROFESSIONAL - SHEET METAL - CERTIFICATE.png" alt="CSWP Sheet Metal — Сертифікат A4" loading="lazy">
-                        </div>
+                        <h3 class="cert-a4-name">CSWP — Sheet Metal</h3>
+                        <p class="cert-a4-desc">Листовий метал, згини, розгортки</p>
+                        <span class="cert-a4-level">Professional</span>
                     </div>
                 </div>
 
-                <!-- Card 3: CSWP — Weldments -->
-                <div class="cert-flip">
-                    <div class="cert-flip__inner">
-                        <div class="cert-flip__front">
-                            <div class="cert-flip__badge">
-                                <img src="assets/Сертифікати/PROFESSIONAL - WELDMENTS.png" alt="CSWP — Weldments" loading="lazy">
-                            </div>
-                            <h3 class="cert-flip__name">CSWP — Weldments</h3>
-                            <p class="cert-flip__desc">Зварні конструкції, профілі, обрізка</p>
-                            <span class="cert-flip__hint">Натисніть, щоб побачити сертифікат</span>
+                <div class="cert-a4-row" data-animate="fade-up">
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/PROFESSIONAL - WELDMENTS - CERTIFICATE.png">
+                        <img src="assets/Сертифікати/PROFESSIONAL - WELDMENTS - CERTIFICATE.png" alt="CSWP Weldments — Сертифікат A4" loading="lazy">
+                    </div>
+                    <div class="cert-a4-info">
+                        <div class="cert-a4-badge">
+                            <img src="assets/Сертифікати/PROFESSIONAL - WELDMENTS.png" alt="CSWP — Weldments Badge">
                         </div>
-                        <div class="cert-flip__back">
-                            <img src="assets/Сертифікати/PROFESSIONAL - WELDMENTS - CERTIFICATE.png" alt="CSWP Weldments — Сертифікат A4" loading="lazy">
-                        </div>
+                        <h3 class="cert-a4-name">CSWP — Weldments</h3>
+                        <p class="cert-a4-desc">Зварні конструкції, профілі, обрізка</p>
+                        <span class="cert-a4-level">Professional</span>
                     </div>
                 </div>
 
-                <!-- Card 4: CSWP — Drawing Tools -->
-                <div class="cert-flip">
-                    <div class="cert-flip__inner">
-                        <div class="cert-flip__front">
-                            <div class="cert-flip__badge">
-                                <img src="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS.png" alt="CSWP — Drawing Tools" loading="lazy">
-                            </div>
-                            <h3 class="cert-flip__name">CSWP — Drawing Tools</h3>
-                            <p class="cert-flip__desc">Оформлення креслень, види, розрізи, BOM</p>
-                            <span class="cert-flip__hint">Натисніть, щоб побачити сертифікат</span>
+                <div class="cert-a4-row" data-animate="fade-up">
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS - CERTIFICATE.png">
+                        <img src="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS - CERTIFICATE.png" alt="CSWP Drawing Tools — Сертифікат A4" loading="lazy">
+                    </div>
+                    <div class="cert-a4-info">
+                        <div class="cert-a4-badge">
+                            <img src="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS.png" alt="CSWP — Drawing Tools Badge">
                         </div>
-                        <div class="cert-flip__back">
-                            <img src="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS - CERTIFICATE.png" alt="CSWP Drawing Tools — Сертифікат A4" loading="lazy">
-                        </div>
+                        <h3 class="cert-a4-name">CSWP — Drawing Tools</h3>
+                        <p class="cert-a4-desc">Оформлення креслень, види, розрізи, BOM</p>
+                        <span class="cert-a4-level">Professional</span>
                     </div>
                 </div>
 
@@ -188,9 +166,7 @@
         </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════ -->
-    <!-- CERTIFICATES GRID — Associate (4) -->
-    <!-- ════════════════════════════════════════════════ -->
+    <!-- CERTIFICATES — Associate (4) — Vertical A4 Layout -->
     <section class="section certs-page">
         <div class="container">
             <div class="section__header" data-animate="fade-up">
@@ -198,73 +174,61 @@
                 <h2 class="section__title">Сертифікати CSWA</h2>
             </div>
 
-            <div class="certs-page__grid">
+            <div class="certs-vertical">
 
-                <!-- Card 5: CSWA — Design -->
-                <div class="cert-flip">
-                    <div class="cert-flip__inner">
-                        <div class="cert-flip__front">
-                            <div class="cert-flip__badge">
-                                <img src="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE.png" alt="CSWA — Design" loading="lazy">
-                            </div>
-                            <h3 class="cert-flip__name">CSWA — Design</h3>
-                            <p class="cert-flip__desc">Основи 3D-моделювання та збірок</p>
-                            <span class="cert-flip__hint">Натисніть, щоб побачити сертифікат</span>
+                <div class="cert-a4-row" data-animate="fade-up">
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE - CERTIFICATE.png">
+                        <img src="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE - CERTIFICATE.png" alt="CSWA Design — Сертифікат A4" loading="lazy">
+                    </div>
+                    <div class="cert-a4-info">
+                        <div class="cert-a4-badge">
+                            <img src="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE.png" alt="CSWA — Design Badge">
                         </div>
-                        <div class="cert-flip__back">
-                            <img src="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE - CERTIFICATE.png" alt="CSWA Design — Сертифікат A4" loading="lazy">
-                        </div>
+                        <h3 class="cert-a4-name">CSWA — Design</h3>
+                        <p class="cert-a4-desc">Основи 3D-моделювання та збірок</p>
+                        <span class="cert-a4-level cert-a4-level--assoc">Associate</span>
                     </div>
                 </div>
 
-                <!-- Card 6: CSWA — Simulation -->
-                <div class="cert-flip">
-                    <div class="cert-flip__inner">
-                        <div class="cert-flip__front">
-                            <div class="cert-flip__badge">
-                                <img src="assets/Сертифікати/certified-solidworks-simulation-associate (1).png" alt="CSWA — Simulation" loading="lazy">
-                            </div>
-                            <h3 class="cert-flip__name">CSWA — Simulation</h3>
-                            <p class="cert-flip__desc">Моделювання навантажень, міцність, деформації</p>
-                            <span class="cert-flip__hint">Натисніть, щоб побачити сертифікат</span>
+                <div class="cert-a4-row" data-animate="fade-up">
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/certified-solidworks-simulation-associate (1).png">
+                        <img src="assets/Сертифікати/certified-solidworks-simulation-associate (1).jpg" alt="CSWA Simulation — Сертифікат A4" loading="lazy">
+                    </div>
+                    <div class="cert-a4-info">
+                        <div class="cert-a4-badge">
+                            <img src="assets/Сертифікати/certified-solidworks-simulation-associate (1).png" alt="CSWA — Simulation Badge">
                         </div>
-                        <div class="cert-flip__back">
-                            <img src="assets/Сертифікати/certified-solidworks-simulation-associate (1).jpg" alt="CSWA Simulation — Сертифікат A4" loading="lazy">
-                        </div>
+                        <h3 class="cert-a4-name">CSWA — Simulation</h3>
+                        <p class="cert-a4-desc">Моделювання навантажень, міцність, деформації</p>
+                        <span class="cert-a4-level cert-a4-level--assoc">Associate</span>
                     </div>
                 </div>
 
-                <!-- Card 7: CSWA — Electrical -->
-                <div class="cert-flip">
-                    <div class="cert-flip__inner">
-                        <div class="cert-flip__front">
-                            <div class="cert-flip__badge">
-                                <img src="assets/Сертифікати/certified-solidworks-electrical-associate.png" alt="CSWA — Electrical" loading="lazy">
-                            </div>
-                            <h3 class="cert-flip__name">CSWA — Electrical</h3>
-                            <p class="cert-flip__desc">Електричні схеми, кабельні траси</p>
-                            <span class="cert-flip__hint">Натисніть, щоб побачити сертифікат</span>
+                <div class="cert-a4-row" data-animate="fade-up">
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/certified-solidworks-electrical-associate (1).png">
+                        <img src="assets/Сертифікати/certified-solidworks-electrical-associate (1).png" alt="CSWA Electrical — Сертифікат A4" loading="lazy">
+                    </div>
+                    <div class="cert-a4-info">
+                        <div class="cert-a4-badge">
+                            <img src="assets/Сертифікати/certified-solidworks-electrical-associate.png" alt="CSWA — Electrical Badge">
                         </div>
-                        <div class="cert-flip__back">
-                            <img src="assets/Сертифікати/certified-solidworks-electrical-associate (1).png" alt="CSWA Electrical — Сертифікат A4" loading="lazy">
-                        </div>
+                        <h3 class="cert-a4-name">CSWA — Electrical</h3>
+                        <p class="cert-a4-desc">Електричні схеми, кабельні траси</p>
+                        <span class="cert-a4-level cert-a4-level--assoc">Associate</span>
                     </div>
                 </div>
 
-                <!-- Card 8: CSWA — Additive Manufacturing -->
-                <div class="cert-flip">
-                    <div class="cert-flip__inner">
-                        <div class="cert-flip__front">
-                            <div class="cert-flip__badge">
-                                <img src="assets/Сертифікати/certified-solidworks-additive-manufacturing-associa.png" alt="CSWA — Additive Manufacturing" loading="lazy">
-                            </div>
-                            <h3 class="cert-flip__name">CSWA — Additive Mfg</h3>
-                            <p class="cert-flip__desc">Адитивне виробництво, 3D-друк, підготовка моделей</p>
-                            <span class="cert-flip__hint">Натисніть, щоб побачити сертифікат</span>
+                <div class="cert-a4-row" data-animate="fade-up">
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/certified-solidworks-additive-manufacturing-associa (2).png">
+                        <img src="assets/Сертифікати/certified-solidworks-additive-manufacturing-associa (2).png" alt="CSWA Additive Mfg — Сертифікат A4" loading="lazy">
+                    </div>
+                    <div class="cert-a4-info">
+                        <div class="cert-a4-badge">
+                            <img src="assets/Сертифікати/certified-solidworks-additive-manufacturing-associa.png" alt="CSWA — Additive Manufacturing Badge">
                         </div>
-                        <div class="cert-flip__back">
-                            <img src="assets/Сертифікати/certified-solidworks-additive-manufacturing-associa (2).png" alt="CSWA Additive Manufacturing — Сертифікат A4" loading="lazy">
-                        </div>
+                        <h3 class="cert-a4-name">CSWA — Additive Mfg</h3>
+                        <p class="cert-a4-desc">Адитивне виробництво, 3D-друк, підготовка моделей</p>
+                        <span class="cert-a4-level cert-a4-level--assoc">Associate</span>
                     </div>
                 </div>
 
@@ -272,9 +236,7 @@
         </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════ -->
     <!-- FOOTER -->
-    <!-- ════════════════════════════════════════════════ -->
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
@@ -312,7 +274,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>

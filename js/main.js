@@ -135,10 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mechanism fade-in
         const mechanism = document.querySelector('.hero__mechanism');
+        const gearCanvas = document.getElementById('heroGearCanvas');
         if (mechanism) {
             tl.fromTo(mechanism,
                 { opacity: 0, scale: 0.85 },
                 { opacity: 0.7, scale: 1, duration: 1.5, ease: 'power2.out' },
+                0.3
+            );
+        }
+        if (gearCanvas) {
+            tl.fromTo(gearCanvas,
+                { opacity: 0 },
+                { opacity: 1, duration: 2, ease: 'power2.out' },
                 0.3
             );
         }
@@ -270,6 +278,15 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorDot.classList.remove('is-visible');
         });
 
+        function isOverDarkSection(x, y) {
+            const darkSections = document.querySelectorAll('.section--dark, .page-hero, [class*="certs-page"]');
+            for (const sec of darkSections) {
+                const r = sec.getBoundingClientRect();
+                if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return true;
+            }
+            return false;
+        }
+
         function animateCursor() {
             cursorX += (mouseX - cursorX) * 0.12;
             cursorY += (mouseY - cursorY) * 0.12;
@@ -280,6 +297,14 @@ document.addEventListener('DOMContentLoaded', () => {
             dotY += (mouseY - dotY) * 0.5;
             cursorDot.style.left = dotX + 'px';
             cursorDot.style.top = dotY + 'px';
+
+            if (isOverDarkSection(mouseX, mouseY)) {
+                cursor.classList.add('on-dark');
+                cursorDot.style.background = '#fff';
+            } else {
+                cursor.classList.remove('on-dark');
+                cursorDot.style.background = '';
+            }
 
             requestAnimationFrame(animateCursor);
         }
@@ -608,6 +633,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2 }
             });
         }
+        const gearCanvas = document.getElementById('heroGearCanvas');
+        if (gearCanvas) {
+            gsap.to(gearCanvas, {
+                y: 40,
+                ease: 'none',
+                scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2 }
+            });
+        }
     }
 
     // ════════════════════════════════
@@ -724,31 +757,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // ════════════════════════════════
     function initCertLightbox() {
         const flipCards = document.querySelectorAll('.cert-flip');
-        if (!flipCards.length) return;
-
-        flipCards.forEach(card => {
-            card.addEventListener('click', () => {
-                card.classList.toggle('cert-flip--flipped');
+        if (flipCards.length) {
+            flipCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('cert-flip--flipped');
+                });
             });
-        });
 
-        // Stagger entrance animation for cert flip cards
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-            document.querySelectorAll('.certs-page__grid').forEach(grid => {
-                const cards = grid.querySelectorAll('.cert-flip');
-                if (!cards.length) return;
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                document.querySelectorAll('.certs-page__grid').forEach(grid => {
+                    const cards = grid.querySelectorAll('.cert-flip');
+                    if (!cards.length) return;
+                    gsap.from(cards, {
+                        y: 60, opacity: 0, duration: 0.8,
+                        stagger: 0.15, ease: 'power3.out',
+                        scrollTrigger: { trigger: grid, start: 'top 80%', once: true }
+                    });
+                });
+            }
+        }
 
-                gsap.from(cards, {
-                    y: 60,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.15,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: grid,
-                        start: 'top 80%',
-                        once: true
+        const certA4Cards = document.querySelectorAll('.cert-a4');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        if (certA4Cards.length && lightbox && lightboxImg) {
+            certA4Cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const imgSrc = card.dataset.certImg || (card.querySelector('img') ? card.querySelector('img').src : '');
+                    const row = card.closest('.cert-a4-row');
+                    const nameEl = row ? row.querySelector('.cert-a4-name') : null;
+                    if (imgSrc) {
+                        lightboxImg.src = imgSrc;
+                        lightboxImg.alt = nameEl ? nameEl.textContent : '';
+                        if (lightboxTitle && nameEl) lightboxTitle.textContent = nameEl.textContent;
+                        lightbox.classList.add('is-active');
+                        document.body.style.overflow = 'hidden';
                     }
+                });
+            });
+        }
+
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            document.querySelectorAll('.certs-vertical').forEach(container => {
+                const rows = container.querySelectorAll('.cert-a4-row');
+                if (!rows.length) return;
+                gsap.from(rows, {
+                    y: 60, opacity: 0, duration: 0.8,
+                    stagger: 0.2, ease: 'power3.out',
+                    scrollTrigger: { trigger: container, start: 'top 85%', once: true }
                 });
             });
         }
