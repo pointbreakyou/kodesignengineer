@@ -183,16 +183,18 @@ document.addEventListener('DOMContentLoaded', () => {
             smoothWheel: true,
         });
 
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        if (typeof ScrollTrigger !== 'undefined') {
+        // Use ONLY gsap ticker if available — avoids double RAF
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             lenis.on('scroll', ScrollTrigger.update);
             gsap.ticker.add((time) => lenis.raf(time * 1000));
             gsap.ticker.lagSmoothing(0);
+        } else {
+            // Fallback single RAF loop
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
         }
     }
 
@@ -262,6 +264,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const cursorDot = document.querySelector('.cursor-dot');
         if (!cursor || !cursorDot) return;
 
+        // Activate CSS cursor:none only after JS confirms cursor is ready
+        document.body.classList.add('cursor-ready');
+
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
         let dotX = 0, dotY = 0;
@@ -279,10 +284,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function isOverDarkSection(x, y) {
-            const darkSections = document.querySelectorAll('.section--dark, .page-hero, [class*="certs-page"]');
+            const darkSections = document.querySelectorAll('.section--dark, .page-hero, [class*="certs-page"], .pf-category--alt, .pf-hero');
             for (const sec of darkSections) {
                 const r = sec.getBoundingClientRect();
                 if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return true;
+            }
+            const bg = document.elementFromPoint(x, y);
+            if (bg) {
+                const style = getComputedStyle(bg.closest('section, .pf-hero, .pf-category') || bg);
+                if (style.backgroundColor && style.backgroundColor !== 'rgba(0, 0, 0, 0)' && style.backgroundColor !== 'transparent') {
+                    const match = style.backgroundColor.match(/rgb\((\d+)/);
+                    if (match && parseInt(match[1]) < 80) return true;
+                }
             }
             return false;
         }
@@ -314,7 +327,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const hoverTargets = document.querySelectorAll(
             'a, button, .portfolio__item-inner, .featured__card, .stat-card, .process__card, ' +
             '.cert, .cert-card, .timeline__card, .contact__link, .showcase__card, ' +
-            '.testimonial-card, .drawing-card, .portfolio-page__card, input, textarea'
+            '.testimonial-card, .drawing-card, .portfolio-page__card, .pf-card, ' +
+            '.certs-showcase__card, .cert-a4, input, textarea'
         );
         hoverTargets.forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
@@ -375,7 +389,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCROLL ANIMATIONS (GSAP premium)
     // ════════════════════════════════
     function initScrollAnimations() {
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        // Respect prefers-reduced-motion
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || prefersReduced) {
             // Fallback: show everything immediately
             document.querySelectorAll('[data-animate]').forEach(el => {
                 el.style.opacity = '1';
@@ -886,8 +903,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = form.querySelector('button[type="submit"]');
             if (!btn) return;
 
+            const nameEl = form.querySelector('#formName');
+            const contactEl = form.querySelector('#formEmail');
+            const msgEl = form.querySelector('#formMessage');
+            const name = nameEl ? nameEl.value : '';
+            const contact = contactEl ? contactEl.value : '';
+            const msg = msgEl ? msgEl.value : '';
+
+            // Build Telegram message and open chat
+            const text = encodeURIComponent(
+                `\u041dове повідомлення з сайту:\n\n` +
+                `\u0406м'\u044f: ${name}\n` +
+                `\u041aонтакт: ${contact}\n\n` +
+                `\u041fовідомлення:\n${msg}`
+            );
+            window.open(`https://t.me/overchenkoooo?text=${text}`, '_blank', 'noopener,noreferrer');
+
             const originalHTML = btn.innerHTML;
-            btn.innerHTML = '<span>Надіслано &#10003;</span>';
+            btn.innerHTML = '<span>\u0412ідправляємо &#10003;</span>';
             btn.style.background = '#16a34a';
 
             if (typeof gsap !== 'undefined') {

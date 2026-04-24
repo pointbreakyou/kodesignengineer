@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сертифікати — Костянтин Оверченко</title>
     <meta name="description" content="Міжнародні сертифікати CSWP від Dassault Systèmes. Підтвердження професійної експертності в SolidWorks.">
+    <link rel="canonical" href="https://kodesignengineer.com/certificates.html">
     <meta property="og:title" content="Сертифікати — Костянтин Оверченко">
-    <meta property="og:description" content="Міжнародні сертифікати CSWP від Dassault Systèmes, що підтверджують рівень експертності в SolidWorks.">
+    <meta property="og:description" content="Міжнародні сертифікати CSWP від Dassault Systèmes.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kodesignengineer.com/certificates.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23DC2626'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='bold' fill='white'%3EKO%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,11 +23,11 @@
 
     <div class="lightbox" id="lightbox">
         <button class="lightbox__close" id="lightboxClose">&times;</button>
-        <img class="lightbox__img" id="lightboxImg" src="" alt="">
+        <img class="lightbox__img" id="lightboxImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
         <div class="lightbox__title" id="lightboxTitle"></div>
     </div>
 
-    <header class="header" id="header">
+    <header class="header header--dark" id="header">
         <div class="header__container">
             <a href="index.html" class="header__logo">
                 <span class="header__logo-mark">KO</span>
@@ -41,7 +44,7 @@
                 <a href="index.html#contact" class="header__link">Контакти</a>
             </nav>
             <div class="header__actions">
-                <a href="https://t.me/overchenkoooo" target="_blank" class="header__cta">
+                <a href="https://t.me/overchenkoooo" target="_blank" rel="noopener noreferrer" class="header__cta">
                     <span class="header__cta-dot"></span>
                     Зв'язатися
                 </a>
@@ -64,21 +67,53 @@
             <a href="index.html#contact" class="mobile-menu__link">Контакти</a>
         </nav>
         <div class="mobile-menu__footer">
-            <a href="tel:0980433420">+38 (098) 043-34-20</a>
-            <a href="https://t.me/overchenkoooo" target="_blank">Telegram</a>
+            <a href="tel:+380980433420">+38 (098) 043-34-20</a>
+            <a href="https://t.me/overchenkoooo" target="_blank" rel="noopener noreferrer">Telegram</a>
         </div>
     </div>
 
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-        <div class="container">
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- PAGE HERO — Enhanced with credential stats -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section class="page-hero" style="position:relative;overflow:hidden;">
+        <!-- dot pattern -->
+        <div class="page-hero__bg-dots"></div>
+        <!-- subtle red particle layer -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(220,38,38,0.07) 0%,transparent 50%),radial-gradient(ellipse at 70% 30%,rgba(220,38,38,0.05) 0%,transparent 45%);z-index:0;pointer-events:none;"></div>
+
+        <div class="container" style="position:relative;z-index:1;">
             <span class="page-hero__tag" data-animate="fade-up">Кваліфікація</span>
-            <h1 class="page-hero__title" data-animate="fade-up">8 сертифікатів від Dassault Systèmes</h1>
-            <p class="page-hero__subtitle" data-animate="fade-up">Кожен іспит — це реальні інженерні задачі під контролем часу. 4 Professional + 4 Associate — повне покриття ключових напрямків SolidWorks.</p>
+            <h1 class="page-hero__title" data-animate="fade-up">8 сертифікатів від<br>Dassault Systèmes</h1>
+            <p class="page-hero__subtitle" data-animate="fade-up">Кожен іспит — реальні інженерні задачі під контролем часу. 4 Professional + 4 Associate — повне покриття ключових напрямків SolidWorks.</p>
+
+            <!-- Credential stats row -->
+            <div class="certs-hero-stats" data-animate="fade-up">
+                <div class="certs-hero-stat">
+                    <span class="certs-hero-stat__num" id="heroStatTotal">08</span>
+                    <span class="certs-hero-stat__label">Сертифікатів</span>
+                </div>
+                <div class="certs-hero-sep"></div>
+                <div class="certs-hero-stat">
+                    <span class="certs-hero-stat__num">04</span>
+                    <span class="certs-hero-stat__label">CSWP Professional</span>
+                </div>
+                <div class="certs-hero-sep"></div>
+                <div class="certs-hero-stat">
+                    <span class="certs-hero-stat__num">04</span>
+                    <span class="certs-hero-stat__label">CSWA Associate</span>
+                </div>
+                <div class="certs-hero-sep"></div>
+                <div class="certs-hero-stat">
+                    <span class="certs-hero-stat__num">100%</span>
+                    <span class="certs-hero-stat__label">Verified</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CERT LEVELS DESCRIPTION -->
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- CERT LEVELS + ACHIEVEMENT BARS -->
+    <!-- ════════════════════════════════════════════════ -->
     <section class="section certs-page__intro">
         <div class="container">
             <div class="certs-page__levels" data-animate="fade-up">
@@ -88,15 +123,41 @@
                     <p class="certs-page__level-desc">Здатність вирішувати складні інженерні задачі: параметричне моделювання, листовий метал, зварні конструкції, оформлення креслень.</p>
                 </div>
                 <div class="certs-page__level">
-                    <span class="certs-page__level-tag">CSWA</span>
+                    <span class="certs-page__level-tag" style="background:#64748b;">CSWA</span>
                     <h3 class="certs-page__level-title">Associate</h3>
                     <p class="certs-page__level-desc">Базові та спеціалізовані компетенції: проєктування, симуляція навантажень, електрика, адитивне виробництво.</p>
+                </div>
+            </div>
+
+            <!-- Achievement progress bars -->
+            <div class="cert-achievements" data-animate="fade-up" style="margin-top:40px;">
+                <div class="cert-achievement" data-bar>
+                    <div class="cert-achievement__info">
+                        <span class="cert-achievement__title">CSWP · Professional</span>
+                        <span class="cert-achievement__count">Design · Sheet Metal · Weldments · Drawing Tools</span>
+                    </div>
+                    <div class="cert-achievement__bar-wrap">
+                        <div class="cert-achievement__fill"></div>
+                    </div>
+                    <span class="cert-achievement__num">4/4</span>
+                </div>
+                <div class="cert-achievement cert-achievement--assoc" data-bar>
+                    <div class="cert-achievement__info">
+                        <span class="cert-achievement__title">CSWA · Associate</span>
+                        <span class="cert-achievement__count">Design · Simulation · Electrical · Additive Mfg</span>
+                    </div>
+                    <div class="cert-achievement__bar-wrap">
+                        <div class="cert-achievement__fill"></div>
+                    </div>
+                    <span class="cert-achievement__num">4/4</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CERTIFICATES — Professional (4) — Vertical A4 Layout -->
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- CERTIFICATES — Professional (4) -->
+    <!-- ════════════════════════════════════════════════ -->
     <section class="section section--dark certs-page">
         <div class="container">
             <div class="section__header" data-animate="fade-up">
@@ -106,9 +167,13 @@
 
             <div class="certs-vertical">
 
-                <div class="cert-a4-row" data-animate="fade-up">
+                <div class="cert-a4-row" data-animate="fade-up" data-stamp>
                     <div class="cert-a4" data-cert-img="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL - CERTIFICATE.png">
                         <img src="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL - CERTIFICATE.png" alt="CSWP Design — Сертифікат A4" loading="lazy">
+                        <div class="cert-a4__overlay">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            <span>Переглянути</span>
+                        </div>
                     </div>
                     <div class="cert-a4-info">
                         <div class="cert-a4-badge">
@@ -117,12 +182,20 @@
                         <h3 class="cert-a4-name">CSWP — Design</h3>
                         <p class="cert-a4-desc">Параметричне моделювання, збірки, конфігурації</p>
                         <span class="cert-a4-level">Professional</span>
+                        <button class="cert-a4-btn" data-open-cert="assets/Сертифікати/SOLIDWORKS DESIGN - PROFESSIONAL - CERTIFICATE.png" data-cert-title="CSWP — Design">
+                            Відкрити сертифікат
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </button>
                     </div>
                 </div>
 
-                <div class="cert-a4-row" data-animate="fade-up">
+                <div class="cert-a4-row" data-animate="fade-up" data-stamp>
                     <div class="cert-a4" data-cert-img="assets/Сертифікати/PROFESSIONAL - SHEET METAL - CERTIFICATE.png">
                         <img src="assets/Сертифікати/PROFESSIONAL - SHEET METAL - CERTIFICATE.png" alt="CSWP Sheet Metal — Сертифікат A4" loading="lazy">
+                        <div class="cert-a4__overlay">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            <span>Переглянути</span>
+                        </div>
                     </div>
                     <div class="cert-a4-info">
                         <div class="cert-a4-badge">
@@ -131,12 +204,20 @@
                         <h3 class="cert-a4-name">CSWP — Sheet Metal</h3>
                         <p class="cert-a4-desc">Листовий метал, згини, розгортки</p>
                         <span class="cert-a4-level">Professional</span>
+                        <button class="cert-a4-btn" data-open-cert="assets/Сертифікати/PROFESSIONAL - SHEET METAL - CERTIFICATE.png" data-cert-title="CSWP — Sheet Metal">
+                            Відкрити сертифікат
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </button>
                     </div>
                 </div>
 
-                <div class="cert-a4-row" data-animate="fade-up">
+                <div class="cert-a4-row" data-animate="fade-up" data-stamp>
                     <div class="cert-a4" data-cert-img="assets/Сертифікати/PROFESSIONAL - WELDMENTS - CERTIFICATE.png">
                         <img src="assets/Сертифікати/PROFESSIONAL - WELDMENTS - CERTIFICATE.png" alt="CSWP Weldments — Сертифікат A4" loading="lazy">
+                        <div class="cert-a4__overlay">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            <span>Переглянути</span>
+                        </div>
                     </div>
                     <div class="cert-a4-info">
                         <div class="cert-a4-badge">
@@ -145,12 +226,20 @@
                         <h3 class="cert-a4-name">CSWP — Weldments</h3>
                         <p class="cert-a4-desc">Зварні конструкції, профілі, обрізка</p>
                         <span class="cert-a4-level">Professional</span>
+                        <button class="cert-a4-btn" data-open-cert="assets/Сертифікати/PROFESSIONAL - WELDMENTS - CERTIFICATE.png" data-cert-title="CSWP — Weldments">
+                            Відкрити сертифікат
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </button>
                     </div>
                 </div>
 
-                <div class="cert-a4-row" data-animate="fade-up">
+                <div class="cert-a4-row" data-animate="fade-up" data-stamp>
                     <div class="cert-a4" data-cert-img="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS - CERTIFICATE.png">
                         <img src="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS - CERTIFICATE.png" alt="CSWP Drawing Tools — Сертифікат A4" loading="lazy">
+                        <div class="cert-a4__overlay">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            <span>Переглянути</span>
+                        </div>
                     </div>
                     <div class="cert-a4-info">
                         <div class="cert-a4-badge">
@@ -159,6 +248,10 @@
                         <h3 class="cert-a4-name">CSWP — Drawing Tools</h3>
                         <p class="cert-a4-desc">Оформлення креслень, види, розрізи, BOM</p>
                         <span class="cert-a4-level">Professional</span>
+                        <button class="cert-a4-btn" data-open-cert="assets/Сертифікати/PROFESSIONAL - DRAWING TOOLS - CERTIFICATE.png" data-cert-title="CSWP — Drawing Tools">
+                            Відкрити сертифікат
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </button>
                     </div>
                 </div>
 
@@ -166,7 +259,9 @@
         </div>
     </section>
 
-    <!-- CERTIFICATES — Associate (4) — Vertical A4 Layout -->
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- CERTIFICATES — Associate (4) -->
+    <!-- ════════════════════════════════════════════════ -->
     <section class="section certs-page">
         <div class="container">
             <div class="section__header" data-animate="fade-up">
@@ -176,9 +271,13 @@
 
             <div class="certs-vertical">
 
-                <div class="cert-a4-row" data-animate="fade-up">
+                <div class="cert-a4-row" data-animate="fade-up" data-stamp>
                     <div class="cert-a4" data-cert-img="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE - CERTIFICATE.png">
                         <img src="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE - CERTIFICATE.png" alt="CSWA Design — Сертифікат A4" loading="lazy">
+                        <div class="cert-a4__overlay">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            <span>Переглянути</span>
+                        </div>
                     </div>
                     <div class="cert-a4-info">
                         <div class="cert-a4-badge">
@@ -187,12 +286,20 @@
                         <h3 class="cert-a4-name">CSWA — Design</h3>
                         <p class="cert-a4-desc">Основи 3D-моделювання та збірок</p>
                         <span class="cert-a4-level cert-a4-level--assoc">Associate</span>
+                        <button class="cert-a4-btn cert-a4-btn--assoc" data-open-cert="assets/Сертифікати/SOLIDWORKS DESIGN - ASSOCIATE - CERTIFICATE.png" data-cert-title="CSWA — Design">
+                            Відкрити сертифікат
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </button>
                     </div>
                 </div>
 
-                <div class="cert-a4-row" data-animate="fade-up">
-                    <div class="cert-a4" data-cert-img="assets/Сертифікати/certified-solidworks-simulation-associate (1).png">
+                <div class="cert-a4-row" data-animate="fade-up" data-stamp>
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/certified-solidworks-simulation-associate (1).jpg">
                         <img src="assets/Сертифікати/certified-solidworks-simulation-associate (1).jpg" alt="CSWA Simulation — Сертифікат A4" loading="lazy">
+                        <div class="cert-a4__overlay">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            <span>Переглянути</span>
+                        </div>
                     </div>
                     <div class="cert-a4-info">
                         <div class="cert-a4-badge">
@@ -201,26 +308,42 @@
                         <h3 class="cert-a4-name">CSWA — Simulation</h3>
                         <p class="cert-a4-desc">Моделювання навантажень, міцність, деформації</p>
                         <span class="cert-a4-level cert-a4-level--assoc">Associate</span>
+                        <button class="cert-a4-btn cert-a4-btn--assoc" data-open-cert="assets/Сертифікати/certified-solidworks-simulation-associate (1).jpg" data-cert-title="CSWA — Simulation">
+                            Відкрити сертифікат
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </button>
                     </div>
                 </div>
 
-                <div class="cert-a4-row" data-animate="fade-up">
-                    <div class="cert-a4" data-cert-img="assets/Сертифікати/certified-solidworks-electrical-associate (1).png">
-                        <img src="assets/Сертифікати/certified-solidworks-electrical-associate (1).png" alt="CSWA Electrical — Сертифікат A4" loading="lazy">
+                <div class="cert-a4-row" data-animate="fade-up" data-stamp>
+                    <div class="cert-a4" data-cert-img="assets/Сертифікати/certified-solidworks-electrical-associate.png">
+                        <img src="assets/Сертифікати/certified-solidworks-electrical-associate.png" alt="CSWA Electrical — Сертифікат A4" loading="lazy">
+                        <div class="cert-a4__overlay">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            <span>Переглянути</span>
+                        </div>
                     </div>
                     <div class="cert-a4-info">
                         <div class="cert-a4-badge">
-                            <img src="assets/Сертифікати/certified-solidworks-electrical-associate.png" alt="CSWA — Electrical Badge">
+                            <img src="assets/Сертифікати/certified-solidworks-electrical-associate (1).png" alt="CSWA — Electrical Badge">
                         </div>
                         <h3 class="cert-a4-name">CSWA — Electrical</h3>
                         <p class="cert-a4-desc">Електричні схеми, кабельні траси</p>
                         <span class="cert-a4-level cert-a4-level--assoc">Associate</span>
+                        <button class="cert-a4-btn cert-a4-btn--assoc" data-open-cert="assets/Сертифікати/certified-solidworks-electrical-associate.png" data-cert-title="CSWA — Electrical">
+                            Відкрити сертифікат
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </button>
                     </div>
                 </div>
 
-                <div class="cert-a4-row" data-animate="fade-up">
+                <div class="cert-a4-row" data-animate="fade-up" data-stamp>
                     <div class="cert-a4" data-cert-img="assets/Сертифікати/certified-solidworks-additive-manufacturing-associa (2).png">
                         <img src="assets/Сертифікати/certified-solidworks-additive-manufacturing-associa (2).png" alt="CSWA Additive Mfg — Сертифікат A4" loading="lazy">
+                        <div class="cert-a4__overlay">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                            <span>Переглянути</span>
+                        </div>
                     </div>
                     <div class="cert-a4-info">
                         <div class="cert-a4-badge">
@@ -229,6 +352,10 @@
                         <h3 class="cert-a4-name">CSWA — Additive Mfg</h3>
                         <p class="cert-a4-desc">Адитивне виробництво, 3D-друк, підготовка моделей</p>
                         <span class="cert-a4-level cert-a4-level--assoc">Associate</span>
+                        <button class="cert-a4-btn cert-a4-btn--assoc" data-open-cert="assets/Сертифікати/certified-solidworks-additive-manufacturing-associa (2).png" data-cert-title="CSWA — Additive Mfg">
+                            Відкрити сертифікат
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </button>
                     </div>
                 </div>
 
@@ -256,10 +383,10 @@
                     <a href="index.html#contact">Контакти</a>
                 </div>
                 <div class="footer__social">
-                    <a href="https://www.instagram.com/overchenkoooo" target="_blank" aria-label="Instagram">
+                    <a href="https://www.instagram.com/overchenkoooo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg>
                     </a>
-                    <a href="https://t.me/overchenkoooo" target="_blank" aria-label="Telegram">
+                    <a href="https://t.me/overchenkoooo" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
                     </a>
                     <a href="viber://chat?number=+380980433420" aria-label="Viber">
@@ -278,5 +405,78 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+    /* ── Lightbox ── */
+    (function () {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightboxImg');
+        var lightboxTitle = document.getElementById('lightboxTitle');
+        if (!lightbox || !lightboxImg) return;
+
+        function openLightbox(src, title) {
+            lightboxImg.src = src;
+            lightboxImg.alt = title || '';
+            if (lightboxTitle) lightboxTitle.textContent = title || '';
+            lightbox.classList.add('is-active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.querySelectorAll('.cert-a4-btn').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                openLightbox(btn.dataset.openCert, btn.dataset.certTitle);
+            });
+        });
+
+        lightbox.addEventListener('click', function () {
+            lightbox.classList.remove('is-active');
+            document.body.style.overflow = '';
+        });
+        document.getElementById('lightboxClose').addEventListener('click', function (e) {
+            e.stopPropagation();
+            lightbox.classList.remove('is-active');
+            document.body.style.overflow = '';
+        });
+    })();
+
+    /* ── Achievement bar IntersectionObserver ── */
+    (function () {
+        var fills = document.querySelectorAll('[data-bar] .cert-achievement__fill');
+        if (!fills.length) return;
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.querySelector('.cert-achievement__fill').classList.add('is-animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+        document.querySelectorAll('[data-bar]').forEach(function (el) {
+            observer.observe(el);
+        });
+    })();
+
+    /* ── Stamp reveal for cert A4 images ── */
+    (function () {
+        var rows = document.querySelectorAll('[data-stamp]');
+        if (!rows.length) return;
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var img = entry.target.querySelector('.cert-a4');
+                    if (img) {
+                        /* small delay so GSAP fade-up finishes first */
+                        setTimeout(function () {
+                            img.classList.add('stamp-revealed');
+                        }, 300);
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25 });
+        rows.forEach(function (row) { observer.observe(row); });
+    })();
+    </script>
 </body>
 </html>
