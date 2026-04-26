@@ -3,573 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Розробки — Костянтин Оверченко</title>
-    <meta name="description" content="30+ реалізованих проєктів: спортивне обладнання, промислові конструкції, торгове обладнання та металокаркасні споруди.">
-    <link rel="canonical" href="https://kodesignengineer.com/portfolio.html">
-    <meta property="og:title" content="Розробки — Костянтин Оверченко">
-    <meta property="og:description" content="30+ реалізованих проєктів.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kodesignengineer.com/portfolio.html">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23DC2626'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='bold' fill='white'%3EKO%3C/text%3E%3C/svg%3E">
+    <title>Портфоліо · 43+ проєктів | Костянтин Оверченко SolidWorks CSWP</title>
+    <meta name="description" content="Портфоліо інженера-конструктора SolidWorks: спортобладнання, металокаркас, СЕС, промислові вироби. 43+ реалізованих проєктів.">
+    <meta name="theme-color" content="#F5F2E8">
+    <link rel="canonical" href="https://kodesignengineer.pages.dev/portfolio.html">
+    <meta property="og:title" content="Портфоліо · 43+ проєктів | KO Design Engineer">
+    <meta property="og:description" content="43+ проєктів: спорт, металокаркас, СЕС, промисловість.">
+    <meta property="og:image" content="https://kodesignengineer.pages.dev/assets/og-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23F5F2E8'/%3E%3Crect x='2' y='2' width='36' height='36' fill='none' stroke='%230E0E0C' stroke-width='2'/%3E%3Ctext x='50%25' y='62%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='22' font-weight='400' fill='%23C5352A'%3Eko%3C/text%3E%3C/svg%3E">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/gallery-data.js" defer></script>
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
 
-    <header class="header" id="header">
-        <div class="header__container">
-            <a href="index.html" class="header__logo"><span class="header__logo-mark">KO</span><span class="header__logo-text">engineer</span></a>
-            <nav class="header__nav" id="headerNav">
-                <a href="index.html#about" class="header__link">Про мене</a>
-                <a href="index.html#experience" class="header__link">Досвід</a>
-                <a href="index.html#process" class="header__link">Етапи</a>
-                <a href="portfolio.html" class="header__link header__link--active">Розробки</a>
-                <a href="drawings.html" class="header__link">Креслення</a>
-                <a href="certificates.html" class="header__link">Сертифікати</a>
-                <a href="index.html#testimonials" class="header__link">Відгуки</a>
-                <a href="index.html#contact" class="header__link">Контакти</a>
+<div class="micrometer"><div class="micrometer__ticks"></div><div class="micrometer__fill" id="micrometerFill"></div></div>
+<div class="cursor" id="cursor"><div class="cursor__ring"></div></div>
+<div class="cursor-coords" id="cursorCoords">X:000 Y:000</div>
+
+<header class="site-head" id="siteHead">
+    <div class="container">
+        <div class="site-head__row">
+            <a href="/" class="brand">
+                <span class="brand__mark">k<em>o</em></span>
+                <span class="brand__meta"><span>DESIGN ENGINEER</span><span>DWG · 2026</span></span>
+            </a>
+            <nav class="nav" aria-label="Головне меню">
+                <a href="/#services" class="nav__link" data-hover>Послуги</a>
+                <a href="/#calc" class="nav__link" data-hover>Прорахунок</a>
+                <a href="/#cases" class="nav__link" data-hover>Кейси</a>
+                <a href="portfolio.html" class="nav__link" data-hover style="color:var(--drafting)">Портфоліо</a>
+                <a href="certificates.html" class="nav__link" data-hover>Сертифікати</a>
+                <a href="drawings.html" class="nav__link" data-hover>Креслення</a>
+                <a href="/#faq" class="nav__link" data-hover>FAQ</a>
             </nav>
-            <div class="header__actions">
-                <a href="https://t.me/overchenkoooo" target="_blank" rel="noopener noreferrer" class="header__cta"><span class="header__cta-dot"></span>Зв&#39;язатися</a>
-                <button class="header__burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
-            </div>
-        </div>
-    </header>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-menu__nav">
-            <a href="index.html#about" class="mobile-menu__link">Про мене</a>
-            <a href="index.html#experience" class="mobile-menu__link">Досвід</a>
-            <a href="index.html#process" class="mobile-menu__link">Етапи роботи</a>
-            <a href="portfolio.html" class="mobile-menu__link">Розробки</a>
-            <a href="drawings.html" class="mobile-menu__link">Креслення</a>
-            <a href="certificates.html" class="mobile-menu__link">Сертифікати</a>
-            <a href="index.html#testimonials" class="mobile-menu__link">Відгуки</a>
-            <a href="index.html#contact" class="mobile-menu__link">Контакти</a>
-        </nav>
-        <div class="mobile-menu__footer">
-            <a href="tel:+380980433420">+38 (098) 043-34-20</a>
-            <a href="https://t.me/overchenkoooo" target="_blank" rel="noopener noreferrer">Telegram</a>
-        </div>
-    </div>
-
-    <section class="pf-hero">
-        <div class="container">
-            <div class="pf-hero__inner">
-                <div class="pf-hero__left" data-animate="fade-up">
-                    <span class="section__tag">Портфоліо</span>
-                    <h1 class="pf-hero__title">30+ <span class="text-accent">реалізованих</span> проєктів</h1>
-                    <p class="pf-hero__desc">Від спортивного обладнання до промислових конструкцій — кожен проєкт доведено до виробництва з повним комплектом документації.</p>
+            <div class="head-actions">
+                <div class="lang-toggle">
+                    <button class="is-active" data-lang="ua">UA</button>
+                    <button data-lang="en" onclick="window.location.href='/en/'">EN</button>
                 </div>
-                <div class="pf-hero__stats" data-animate="fade-up" data-delay="0.15">
-                    <div class="pf-hero__stat"><span class="pf-hero__stat-num">4</span><span class="pf-hero__stat-label">Категорії</span></div>
-                    <div class="pf-hero__stat-sep"></div>
-                    <div class="pf-hero__stat"><span class="pf-hero__stat-num">30<span class="text-accent">+</span></span><span class="pf-hero__stat-label">Проєктів</span></div>
-                    <div class="pf-hero__stat-sep"></div>
-                    <div class="pf-hero__stat"><span class="pf-hero__stat-num">100<span class="text-accent">%</span></span><span class="pf-hero__stat-label">Виробництво</span></div>
-                </div>
-            </div>
-            <div class="pf-hero__nav" data-animate="fade-up" data-delay="0.25">
-                <a href="#cat-01" class="pf-hero__nav-link"><span class="pf-hero__nav-num">01</span>Спортивні</a>
-                <a href="#cat-02" class="pf-hero__nav-link"><span class="pf-hero__nav-num">02</span>Промислові</a>
-                <a href="#cat-03" class="pf-hero__nav-link"><span class="pf-hero__nav-num">03</span>Торгові</a>
-                <a href="#cat-04" class="pf-hero__nav-link"><span class="pf-hero__nav-num">04</span>Металокаркасні</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="pf-filter" id="pfFilter">
-        <div class="container">
-            <div class="pf-filter__inner">
-                <button class="pf-filter__btn pf-filter__btn--active" data-filter="all">Всі категорії</button>
-                <button class="pf-filter__btn" data-filter="cat-01"><span class="pf-filter__num">01</span>Спортивні</button>
-                <button class="pf-filter__btn" data-filter="cat-02"><span class="pf-filter__num">02</span>Промислові</button>
-                <button class="pf-filter__btn" data-filter="cat-03"><span class="pf-filter__num">03</span>Торгові</button>
-                <button class="pf-filter__btn" data-filter="cat-04"><span class="pf-filter__num">04</span>Металокаркасні</button>
+                <a href="/#brief" class="cta" data-hover><span class="cta__dot"></span><span>ОБГОВОРИТИ</span></a>
+                <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
             </div>
         </div>
     </div>
+</header>
 
-<section class="section pf-category" id="cat-01">
-        <div class="container">
-            <div class="pf-category__header" data-animate="fade-up">
-                <div class="pf-category__number">01</div>
-                <div class="pf-category__info">
-                    <h2 class="pf-category__title">Спортивні вироби</h2>
-                    <p class="pf-category__desc">Спортивні комплекси, рукоходи, шведські стінки, баскетбольні стійки та інше обладнання для майданчиків</p>
-                </div>
-                <div class="pf-category__count">22</div>
-            </div>
-            <div class="pf-category__grid ">
-                <div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Спортивний комплекс LW-30/Спортивний комплекс LW-30.1.jpg","assets/Рендери проєктів/Спортивні вироби/Спортивний комплекс LW-30/Спортивний комплекс LW-30.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Спортивний комплекс LW-30/Спортивний комплекс LW-30.1.jpg" alt="Спортивний комплекс LW-30" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Спортивний комплекс LW-30</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Спортивні вироби/Баскетбольні стійки/Баскетбольна стійка 1/Баскетбольна стіфка з регулюванням висоти.1.jpg","assets/Рендери проєктів/Спортивні вироби/Баскетбольні стійки/Баскетбольна стійка 1/Баскетбольна стіфка з регулюванням висоти.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Баскетбольні стійки/Баскетбольна стійка 1/Баскетбольна стіфка з регулюванням висоти.1.jpg" alt="Баскетбольні стійки" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Баскетбольні стійки</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Волейбольна суддівська вишка/Волейбольна суддівська вишка.1.jpg","assets/Рендери проєктів/Спортивні вироби/Волейбольна суддівська вишка/Волейбольна суддівська вишка.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Волейбольна суддівська вишка/Волейбольна суддівська вишка.1.jpg" alt="Волейбольна суддівська вишка" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Волейбольна суддівська вишка</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Ворота для міні-футболу та гандболу, тип 2М/Ворота для міні-футболу та гандболу, тип 2М.1.jpg","assets/Рендери проєктів/Спортивні вироби/Ворота для міні-футболу та гандболу, тип 2М/Ворота для міні-футболу та гандболу, тип 2М.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Ворота для міні-футболу та гандболу, тип 2М/Ворота для міні-футболу та гандболу, тип 2М.1.jpg" alt="Ворота для міні-футболу та гандболу" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Ворота для міні-футболу та гандболу</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Спортивні вироби/Лава зі зміною висоти/Лава зі зміною висоти.1.jpg","assets/Рендери проєктів/Спортивні вироби/Лава зі зміною висоти/Лава зі зміною висоти.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Лава зі зміною висоти/Лава зі зміною висоти.1.jpg" alt="Лава зі зміною висоти" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Лава зі зміною висоти</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Рукохід змійка/Рукохід змійка.1.jpg","assets/Рендери проєктів/Спортивні вироби/Рукохід змійка/Рукохід змійка.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Рукохід змійка/Рукохід змійка.1.jpg" alt="Рукохід змійка" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Рукохід змійка</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Рукохід маятник/Рукохід маятник.1.jpg","assets/Рендери проєктів/Спортивні вироби/Рукохід маятник/Рукохід маятник.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Рукохід маятник/Рукохід маятник.1.jpg" alt="Рукохід маятник" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Рукохід маятник</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Рукохід навіс/Рукохід навіс.1.jpg","assets/Рендери проєктів/Спортивні вироби/Рукохід навіс/Рукохід навіс.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Рукохід навіс/Рукохід навіс.1.jpg" alt="Рукохід навіс" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Рукохід навіс</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Спортивні вироби/Рукохід під кутом/Рукохід під кутом.1.jpg","assets/Рендери проєктів/Спортивні вироби/Рукохід під кутом/Рукохід під кутом.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Рукохід під кутом/Рукохід під кутом.1.jpg" alt="Рукохід під кутом" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Рукохід під кутом</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Рукохід прямий/Рукохід прямий.1.jpg","assets/Рендери проєктів/Спортивні вироби/Рукохід прямий/Рукохід прямий.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Рукохід прямий/Рукохід прямий.1.jpg" alt="Рукохід прямий" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Рукохід прямий</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Рукохід ручка/Рукохід ручка.1.jpg","assets/Рендери проєктів/Спортивні вироби/Рукохід ручка/Рукохід ручка.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Рукохід ручка/Рукохід ручка.1.jpg" alt="Рукохід ручка" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Рукохід ручка</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Стійка канат/Стійка канат.1.jpg","assets/Рендери проєктів/Спортивні вироби/Стійка канат/Стійка канат.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Стійка канат/Стійка канат.1.jpg" alt="Стійка канат" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Стійка канат</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Спортивні вироби/Стійка кільце/Стійка кільце.1.jpg","assets/Рендери проєктів/Спортивні вироби/Стійка кільце/Стійка кільце.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Стійка кільце/Стійка кільце.1.jpg" alt="Стійка кільце" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Стійка кільце</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Стінка з зачепами/Стінка з зачепами.1.jpg","assets/Рендери проєктів/Спортивні вироби/Стінка з зачепами/Стінка з зачепами.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Стінка з зачепами/Стінка з зачепами.1.jpg" alt="Стінка з зачепами" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Стінка з зачепами</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Стінка канат/Стінка канат.1.jpg","assets/Рендери проєктів/Спортивні вироби/Стінка канат/Стінка канат.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Стінка канат/Стінка канат.1.jpg" alt="Стінка канат" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Стінка канат</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Стінка ручка/Стінка ручка.1.jpg","assets/Рендери проєктів/Спортивні вироби/Стінка ручка/Стінка ручка.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Стінка ручка/Стінка ручка.1.jpg" alt="Стінка ручка" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Стінка ручка</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Спортивні вироби/Турнік/Турнік.87.1.jpg","assets/Рендери проєктів/Спортивні вироби/Турнік/Турнік.87.2.jpg","assets/Рендери проєктів/Спортивні вироби/Турнік/Турнік.87.3.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Турнік/Турнік.87.1.jpg" alt="Турнік" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Турнік</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Упор для пресу/Упор для пресу.89.1.jpg","assets/Рендери проєктів/Спортивні вироби/Упор для пресу/Упор для пресу.89.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Упор для пресу/Упор для пресу.89.1.jpg" alt="Упор для пресу" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Упор для пресу</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Упор для рук/Упор для рук.1.jpg","assets/Рендери проєктів/Спортивні вироби/Упор для рук/Упор для рук.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Упор для рук/Упор для рук.1.jpg" alt="Упор для рук" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Упор для рук</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Упори для віджимання/Упори для віджимання.1.jpg","assets/Рендери проєктів/Спортивні вироби/Упори для віджимання/Упори для віджимання.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Упори для віджимання/Упори для віджимання.1.jpg" alt="Упори для віджимання" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Упори для віджимання</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/Шведська стінка/Шведська стінка.1.jpg","assets/Рендери проєктів/Спортивні вироби/Шведська стінка/Шведська стінка.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/Шведська стінка/Шведська стінка.1.jpg" alt="Шведська стінка" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Шведська стінка</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Спортивні вироби/TRX/TRX.1.jpg","assets/Рендери проєктів/Спортивні вироби/TRX/TRX.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Спортивні вироби/TRX/TRX.1.jpg" alt="TRX" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>TRX</h3></div>
-                </div>
-            </div>
-        </div>
-    </section><section class="section pf-category pf-category--alt" id="cat-02">
-        <div class="container">
-            <div class="pf-category__header" data-animate="fade-up">
-                <div class="pf-category__number">02</div>
-                <div class="pf-category__info">
-                    <h2 class="pf-category__title">Промислові вироби</h2>
-                    <p class="pf-category__desc">Верстаки, стільці, двері, вихлопні системи, логотипи та декоративні вироби</p>
-                </div>
-                <div class="pf-category__count">10</div>
-            </div>
-            <div class="pf-category__grid pf-category__grid--3">
-                <div class="pf-card pf-card--wide" data-detail='["assets/Рендери проєктів/Передній важіль підвіски автомобіля.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Передній важіль підвіски автомобіля.jpg" alt="Передній важіль підвіски автомобіля" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Передній важіль підвіски автомобіля</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Транспортувальний кейс для мікшерного пульта -  Allen & Heath SQ-5.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Транспортувальний кейс для мікшерного пульта -  Allen & Heath SQ-5.jpg" alt="Кейс Allen &amp; Heath SQ-5" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Кейс Allen &amp; Heath SQ-5</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Промислові вироби/ВЕРСТАК/Виробничий версат (1).jpg","assets/Рендери проєктів/Промислові вироби/ВЕРСТАК/Виробничий версат (2).jpg","assets/Рендери проєктів/Промислові вироби/ВЕРСТАК/Виробничий версат (3).jpg","assets/Рендери проєктів/Промислові вироби/ВЕРСТАК/Виробничий версат (4).jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Промислові вироби/ВЕРСТАК/Виробничий версат (1).jpg" alt="Виробничий верстак" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Виробничий верстак</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Промислові вироби/СТІЛЬЧИК/Виробнича табуретка (1).jpg","assets/Рендери проєктів/Промислові вироби/СТІЛЬЧИК/Виробнича табуретка (2).jpg","assets/Рендери проєктів/Промислові вироби/СТІЛЬЧИК/Виробнича табуретка (3).jpg","assets/Рендери проєктів/Промислові вироби/СТІЛЬЧИК/Виробнича табуретка (4).jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Промислові вироби/СТІЛЬЧИК/Виробнича табуретка (1).jpg" alt="Виробнича табуретка" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Виробнича табуретка</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Промислові вироби/ДВЕРІ_УРБАН СТРІТ/Двері двосторчасті (1).jpg","assets/Рендери проєктів/Промислові вироби/ДВЕРІ_УРБАН СТРІТ/Двері двосторчасті (2).jpg","assets/Рендери проєктів/Промислові вироби/ДВЕРІ_УРБАН СТРІТ/Двері двосторчасті (3).jpg","assets/Рендери проєктів/Промислові вироби/ДВЕРІ_УРБАН СТРІТ/Двері двосторчасті (4).jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Промислові вироби/ДВЕРІ_УРБАН СТРІТ/Двері двосторчасті (1).jpg" alt="Двері двостулкові Урбан Стріт" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Двері двостулкові Урбан Стріт</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Промислові вироби/ТРУБА ВИХЛОПНОЇ СИСТЕМИ/Труба вихлопної системи (1).jpg","assets/Рендери проєктів/Промислові вироби/ТРУБА ВИХЛОПНОЇ СИСТЕМИ/Труба вихлопної системи (2).jpg","assets/Рендери проєктів/Промислові вироби/ТРУБА ВИХЛОПНОЇ СИСТЕМИ/Труба вихлопної системи (3).jpg","assets/Рендери проєктів/Промислові вироби/ТРУБА ВИХЛОПНОЇ СИСТЕМИ/Труба вихлопної системи (4).jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Промислові вироби/ТРУБА ВИХЛОПНОЇ СИСТЕМИ/Труба вихлопної системи (1).jpg" alt="Труба вихлопної системи" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Труба вихлопної системи</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Промислові вироби/ЛЕВ/ЛЕВ.bip.6.1.jpg","assets/Рендери проєктів/Промислові вироби/ЛЕВ/ЛЕВ.bip.6.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Промислові вироби/ЛЕВ/ЛЕВ.bip.6.1.jpg" alt="Декоративна скульптура Лев" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Декоративна скульптура Лев</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Промислові вироби/ПІДСТАВКА/ПІДСТАВКА.9.1.jpg","assets/Рендери проєктів/Промислові вироби/ПІДСТАВКА/ПІДСТАВКА.9.2.jpg","assets/Рендери проєктів/Промислові вироби/ПІДСТАВКА/ПІДСТАВКА.9.3.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Промислові вироби/ПІДСТАВКА/ПІДСТАВКА.9.1.jpg" alt="Підставка" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Підставка</h3></div>
-                </div>
-<div class="pf-card pf-card--wide" data-detail='["assets/Рендери проєктів/Промислові вироби/ЛОГОТИП HARMONY/ЛОГОТИП HARMONY.7.1.jpg","assets/Рендери проєктів/Промислові вироби/ЛОГОТИП HARMONY/ЛОГОТИП HARMONY.7.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Промислові вироби/ЛОГОТИП HARMONY/ЛОГОТИП HARMONY.7.1.jpg" alt="3D-логотип Harmony" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>3D-логотип Harmony</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Промислові вироби/КОНСТРУКЦІЯ ЧАСТИНИ ТРАКТОРА/Конструкційна частина пересувного шасі (1).jpg","assets/Рендери проєктів/Промислові вироби/КОНСТРУКЦІЯ ЧАСТИНИ ТРАКТОРА/Конструкційна частина пересувного шасі (2).jpg","assets/Рендери проєктів/Промислові вироби/КОНСТРУКЦІЯ ЧАСТИНИ ТРАКТОРА/Конструкційна частина пересувного шасі (3).jpg","assets/Рендери проєктів/Промислові вироби/КОНСТРУКЦІЯ ЧАСТИНИ ТРАКТОРА/Конструкційна частина пересувного шасі (4).jpg","assets/Рендери проєктів/Промислові вироби/КОНСТРУКЦІЯ ЧАСТИНИ ТРАКТОРА/Конструкційна частина пересувного шасі (5).jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Промислові вироби/КОНСТРУКЦІЯ ЧАСТИНИ ТРАКТОРА/Конструкційна частина пересувного шасі (1).jpg" alt="Конструкційна частина пересувного шасі" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Конструкційна частина пересувного шасі</h3></div>
-                </div>
-            </div>
-        </div>
-    </section><section class="section pf-category" id="cat-03">
-        <div class="container">
-            <div class="pf-category__header" data-animate="fade-up">
-                <div class="pf-category__number">03</div>
-                <div class="pf-category__info">
-                    <h2 class="pf-category__title">Торгові вироби</h2>
-                    <p class="pf-category__desc">Торговельне обладнання, стенди та прилавки для роздрібної торгівлі</p>
-                </div>
-                <div class="pf-category__count">8</div>
-            </div>
-            <div class="pf-category__grid pf-category__grid--4">
-                <div class="pf-card " data-detail='["assets/Рендери проєктів/Торгові вироби/1/1/1.1.jpg","assets/Рендери проєктів/Торгові вироби/1/1/1.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Торгові вироби/1/1/1.1.jpg" alt="Торговий стенд 1" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Торговий стенд 1</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Торгові вироби/2/2/2.1.jpg","assets/Рендери проєктів/Торгові вироби/2/2/2.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Торгові вироби/2/2/2.1.jpg" alt="Торговий стенд 2" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Торговий стенд 2</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Торгові вироби/3/3/3.1.jpg","assets/Рендери проєктів/Торгові вироби/3/3/3.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Торгові вироби/3/3/3.1.jpg" alt="Торговий стенд 3" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Торговий стенд 3</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Торгові вироби/4/4/4.1.jpg","assets/Рендери проєктів/Торгові вироби/4/4/4.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Торгові вироби/4/4/4.1.jpg" alt="Торговий стенд 4" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Торговий стенд 4</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Торгові вироби/5/5/5.1.jpg","assets/Рендери проєктів/Торгові вироби/5/5/5.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Торгові вироби/5/5/5.1.jpg" alt="Торговий стенд 5" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Торговий стенд 5</h3></div>
-                </div>
-<div class="pf-card pf-card--tall" data-detail='["assets/Рендери проєктів/Торгові вироби/6/6/6.1.jpg","assets/Рендери проєктів/Торгові вироби/6/6/6.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Торгові вироби/6/6/6.1.jpg" alt="Торговий стенд 6" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Торговий стенд 6</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Торгові вироби/7/7/7.1.jpg","assets/Рендери проєктів/Торгові вироби/7/7/7.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Торгові вироби/7/7/7.1.jpg" alt="Торговий стенд 7" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Торговий стенд 7</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Торгові вироби/8/8/8.1.jpg","assets/Рендери проєктів/Торгові вироби/8/8/8.2.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Торгові вироби/8/8/8.1.jpg" alt="Торговий стенд 8" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Торговий стенд 8</h3></div>
-                </div>
-            </div>
-        </div>
-    </section><section class="section pf-category pf-category--alt" id="cat-04">
-        <div class="container">
-            <div class="pf-category__header" data-animate="fade-up">
-                <div class="pf-category__number">04</div>
-                <div class="pf-category__info">
-                    <h2 class="pf-category__title">Металокаркасні вироби</h2>
-                    <p class="pf-category__desc">Металокаркасні конструкції, навіси, опорні системи для сонячних електростанцій</p>
-                </div>
-                <div class="pf-category__count">3</div>
-            </div>
-            <div class="pf-category__grid ">
-                <div class="pf-card pf-card--wide" data-detail='["assets/Рендери проєктів/Металокаркасні вироби/Опорна конструкція СЕС 11х2/Опорна конструкція СЕС 11х2.1.jpg","assets/Рендери проєктів/Металокаркасні вироби/Опорна конструкція СЕС 11х2/Опорна конструкція СЕС 11х2.2.jpg","assets/Рендери проєктів/Металокаркасні вироби/Опорна конструкція СЕС 11х2/Опорна конструкція СЕС 11х2.3.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Металокаркасні вироби/Опорна конструкція СЕС 11х2/Опорна конструкція СЕС 11х2.1.jpg" alt="Опорна конструкція СЕС 11х2" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Опорна конструкція СЕС 11х2</h3></div>
-                </div>
-<div class="pf-card " data-detail='["assets/Рендери проєктів/Металокаркасні вироби/Технічне завдання №8/Технічне завдання №8. Опорна конструкція СЕС 6х2.1.jpg","assets/Рендери проєктів/Металокаркасні вироби/Технічне завдання №8/Технічне завдання №8. Опорна конструкція СЕС 6х2.2.jpg","assets/Рендери проєктів/Металокаркасні вироби/Технічне завдання №8/Технічне завдання №8. Опорна конструкція СЕС 6х2.3.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Металокаркасні вироби/Технічне завдання №8/Технічне завдання №8. Опорна конструкція СЕС 6х2.1.jpg" alt="Опорна конструкція СЕС 6х2" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Опорна конструкція СЕС 6х2</h3></div>
-                </div>
-<div class="pf-card pf-card--wide" data-detail='["assets/Рендери проєктів/Металокаркасні вироби/CARPORT_0/CARPORT.1.jpg","assets/Рендери проєктів/Металокаркасні вироби/CARPORT_0/CARPORT.2.jpg","assets/Рендери проєктів/Металокаркасні вироби/CARPORT_0/CARPORT.3.jpg","assets/Рендери проєктів/Металокаркасні вироби/CARPORT_0/CARPORT.4.jpg"]' data-animate="fade-up">
-                    <div class="pf-card__img"><img src="assets/Рендери проєктів/Металокаркасні вироби/CARPORT_0/CARPORT.1.jpg" alt="Carport навіс для сонячних панелей" loading="lazy"><div class="pf-card__overlay"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div></div>
-                    <div class="pf-card__body"><h3>Carport навіс для сонячних панелей</h3></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="portfolio-detail" id="portfolioDetail">
-        <div class="portfolio-detail__overlay"></div>
-        <div class="portfolio-detail__content">
-            <button class="portfolio-detail__close" id="portfolioDetailClose">&times;</button>
-            <h3 class="portfolio-detail__title" id="portfolioDetailTitle"></h3>
-            <div class="portfolio-detail__gallery" id="portfolioDetailGallery">
-                <img class="portfolio-detail__img" id="portfolioDetailImg" src="" alt="">
-            </div>
-            <div class="portfolio-detail__nav">
-                <button class="portfolio-detail__prev" id="portfolioDetailPrev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
-                <span class="portfolio-detail__counter" id="portfolioDetailCounter">1 / 1</span>
-                <button class="portfolio-detail__next" id="portfolioDetailNext"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-            </div>
-            <div class="portfolio-detail__thumbs" id="portfolioDetailThumbs"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+        <a href="/" class="mobile-menu__link">Головна</a>
+        <a href="/#services" class="mobile-menu__link">Послуги</a>
+        <a href="/#calc" class="mobile-menu__link">Прорахунок</a>
+        <a href="portfolio.html" class="mobile-menu__link">Портфоліо</a>
+        <a href="certificates.html" class="mobile-menu__link">Сертифікати</a>
+        <a href="drawings.html" class="mobile-menu__link">Креслення</a>
+        <a href="/#brief" class="mobile-menu__link">Контакт</a>
+    </nav>
+    <div class="mobile-menu__foot">
+        <a href="tel:+380980433420">+38 (098) 043-34-20</a>
+        <a href="https://t.me/overchenkoooo" target="_blank" rel="noopener">Telegram @overchenkoooo</a>
+    </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero__eyebrow" data-reveal>DWG-101 · ПОВНЕ ПОРТФОЛІО · 43+ ПРОЄКТІВ</div>
+        <h1 class="page-hero__title" data-reveal>Реалізовані <em>проєкти</em></h1>
+        <p class="page-hero__lead" data-reveal>43 проєкти у 4-х категоріях. Кожен — пройшов шлях від брифу до робочої документації, придатної для реального виробництва. Натисніть на проєкт, щоб переглянути всі рендери.</p>
+
+        <div class="page-hero__stats" data-reveal>
+            <div class="page-hero__stat"><strong>23</strong><span>Спорт<br>обладнання</span></div>
+            <div class="page-hero__stat"><strong>10</strong><span>Промислових<br>виробів</span></div>
+            <div class="page-hero__stat"><strong>8</strong><span>Торгових<br>стендів</span></div>
+            <div class="page-hero__stat"><strong>2</strong><span>Метало<br>каркасних</span></div>
         </div>
     </div>
+</section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__top">
-                <div class="footer__brand">
-                    <a href="index.html" class="header__logo"><span class="header__logo-mark">KO</span><span class="header__logo-text">engineer</span></a>
-                    <p>Engineering Precision meets Digital Elegance</p>
-                </div>
-                <div class="footer__links">
-                    <a href="index.html#about">Про мене</a>
-                    <a href="index.html#experience">Досвід</a>
-                    <a href="portfolio.html">Розробки</a>
-                    <a href="drawings.html">Креслення</a>
-                    <a href="certificates.html">Сертифікати</a>
-                    <a href="index.html#contact">Контакти</a>
-                </div>
-                <div class="footer__social">
-                    <a href="https://www.instagram.com/overchenkoooo" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
-                    <a href="https://t.me/overchenkoooo" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
-                    <a href="viber://chat?number=+380980433420" aria-label="Viber"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg></a>
-                </div>
+<!-- PORTFOLIO GRID -->
+<section class="sheet">
+    <div class="container--wide" data-filter-group>
+        <div class="filters" data-reveal>
+            <button class="filter is-active" data-filter="all">ВСІ <span>43</span></button>
+            <button class="filter" data-filter="sport">Спорт <span>23</span></button>
+            <button class="filter" data-filter="frame">Металокаркас <span>2</span></button>
+            <button class="filter" data-filter="industrial">Промислові <span>10</span></button>
+            <button class="filter" data-filter="retail">Торгові <span>8</span></button>
+        </div>
+
+        <div class="port-grid" data-reveal>
+            <!-- METAL FRAME -->
+            <a class="port-item" data-filter-item data-cat="frame" data-gallery="carport" data-title="CARPORT — навіс-парковка" href="#">
+                <img src="assets/Рендери проєктів/Металокаркасні вироби/CARPORT_0/CARPORT.1.jpg" alt="CARPORT" loading="lazy">
+                <div class="port-item__count">18 ФОТО</div>
+                <div class="port-item__info"><h3>CARPORT</h3><p>МЕТАЛОКАРКАС</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="frame" data-gallery="ses-11x2" data-title="Опорна конструкція СЕС 11×2" href="#">
+                <img src="assets/Рендери проєктів/Металокаркасні вироби/Опорна конструкція СЕС 11х2/Опорна конструкція СЕС 11х2.1.jpg" alt="СЕС 11×2" loading="lazy">
+                <div class="port-item__count">16 ФОТО</div>
+                <div class="port-item__info"><h3>СЕС 11×2</h3><p>МЕТАЛОКАРКАС</p></div>
+            </a>
+
+            <!-- SPORT -->
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="basketball-1" data-title="Баскетбольна стійка з регулюванням" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Баскетбольні стійки/Баскетбольна стійка 1/Баскетбольна стіфка з регулюванням висоти.1.jpg" alt="Баскетбольна стійка" loading="lazy">
+                <div class="port-item__count">16 ФОТО</div>
+                <div class="port-item__info"><h3>Баскетбольна стійка</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="basketball-2" data-title="Баскетбольна стійка №2" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Баскетбольні стійки/Баскетбольна стійка 2/Баскетбольна стійка 2.91.1.jpg" alt="Баскетбольна стійка 2" loading="lazy">
+                <div class="port-item__count">9 ФОТО</div>
+                <div class="port-item__info"><h3>Баскет. стійка №2</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="pull-up" data-title="Турнік" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Турнік/Турнік.87.1.jpg" alt="Турнік" loading="lazy">
+                <div class="port-item__count">5 ФОТО</div>
+                <div class="port-item__info"><h3>Турнік</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="volleyball" data-title="Волейбольна вишка" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Волейбольна суддівська вишка/Волейбольна суддівська вишка.1.jpg" alt="Волейбольна вишка" loading="lazy">
+                <div class="port-item__count">8 ФОТО</div>
+                <div class="port-item__info"><h3>Волейбольна вишка</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="gates" data-title="Ворота 2М" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Ворота для міні-футболу та гандболу, тип 2М/Ворота для міні-футболу та гандболу, тип 2М.1.jpg" alt="Ворота 2М" loading="lazy">
+                <div class="port-item__count">14 ФОТО</div>
+                <div class="port-item__info"><h3>Ворота 2М</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="bench" data-title="Лава зі зміною висоти" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Лава зі зміною висоти/Лава зі зміно висоти/Лава зі зміно висоти.1.jpg" alt="Лава" loading="lazy">
+                <div class="port-item__count">8 ФОТО</div>
+                <div class="port-item__info"><h3>Лава регульована</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="swedish" data-title="Шведська стінка" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Шведська стінка/Шведська стінка.1.jpg" alt="Шведська стінка" loading="lazy">
+                <div class="port-item__count">2 ФОТО</div>
+                <div class="port-item__info"><h3>Шведська стінка</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="lw-30" data-title="Спортивний комплекс LW-30" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Спортивний комплекс LW-30/Спортивний комплекс LW-30.1.jpg" alt="LW-30" loading="lazy">
+                <div class="port-item__count">10 ФОТО</div>
+                <div class="port-item__info"><h3>Комплекс LW-30</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="monkey-zmijka" data-title="Рукохід «змійка»" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Рукохід змійка/Рукохід змійка.1.jpg" alt="Рукохід змійка" loading="lazy">
+                <div class="port-item__count">10 ФОТО</div>
+                <div class="port-item__info"><h3>Рукохід «змійка»</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="monkey-mayatnyk" data-title="Рукохід «маятник»" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Рукохід маятник/Рукохід маятник.86.1.jpg" alt="Рукохід маятник" loading="lazy">
+                <div class="port-item__count">10 ФОТО</div>
+                <div class="port-item__info"><h3>Рукохід «маятник»</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="monkey-navis" data-title="Рукохід «навіс»" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Рукохід навіс/Рукохід навіс.1.jpg" alt="Рукохід навіс" loading="lazy">
+                <div class="port-item__count">8 ФОТО</div>
+                <div class="port-item__info"><h3>Рукохід «навіс»</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="monkey-pryamy" data-title="Рукохід прямий" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Рукохід прямий/Рукохід прямий.1.jpg" alt="Рукохід прямий" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Рукохід прямий</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="monkey-pidkutom" data-title="Рукохід під кутом" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Рукохід під кутом/Рукохід під кутом.1.jpg" alt="Рукохід під кутом" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Рукохід під кутом</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="monkey-ruchka" data-title="Рукохід «ручка»" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Рукохід ручка/Рукохід ручка.1.jpg" alt="Рукохід ручка" loading="lazy">
+                <div class="port-item__count">10 ФОТО</div>
+                <div class="port-item__info"><h3>Рукохід «ручка»</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="stand-rope" data-title="Стійка-канат" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Стійка канат/Стійка канат.1.jpg" alt="Стійка канат" loading="lazy">
+                <div class="port-item__count">7 ФОТО</div>
+                <div class="port-item__info"><h3>Стійка-канат</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="stand-ring" data-title="Стійка-кільце" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Стійка кільце/Стійка кільце.1.jpg" alt="Стійка кільце" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Стійка-кільце</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="wall-holds" data-title="Стінка з зачепами" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Стінка з зачепами/Стінка з зачепами.jpg" alt="Стінка з зачепами" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Стінка з зачепами</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="wall-rope" data-title="Стінка-канат" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Стінка канат/Стінка канат.1.jpg" alt="Стінка канат" loading="lazy">
+                <div class="port-item__count">8 ФОТО</div>
+                <div class="port-item__info"><h3>Стінка-канат</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="wall-handle" data-title="Стінка-ручка" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Стінка ручка/Стінка ручка.1.jpg" alt="Стінка ручка" loading="lazy">
+                <div class="port-item__count">5 ФОТО</div>
+                <div class="port-item__info"><h3>Стінка-ручка</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="press-rest" data-title="Упор для пресу" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Упор для пресу/Упор для пресу.89.1.jpg" alt="Упор для пресу" loading="lazy">
+                <div class="port-item__count">5 ФОТО</div>
+                <div class="port-item__info"><h3>Упор для пресу</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="arm-rest" data-title="Упор для рук" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Упор для рук/Упор для рук.1.jpg" alt="Упор для рук" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Упор для рук</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="push-ups" data-title="Упори для віджимання" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/Упори для віджимання/Упор для віджимання.1.jpg" alt="Упори для віджимання" loading="lazy">
+                <div class="port-item__count">7 ФОТО</div>
+                <div class="port-item__info"><h3>Упори для віджимання</h3><p>СПОРТ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="sport" data-gallery="trx" data-title="TRX-станція" href="#">
+                <img src="assets/Рендери проєктів/Спортивні вироби/TRX/TRX.1.jpg" alt="TRX" loading="lazy">
+                <div class="port-item__count">7 ФОТО</div>
+                <div class="port-item__info"><h3>TRX-станція</h3><p>СПОРТ</p></div>
+            </a>
+
+            <!-- INDUSTRIAL -->
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="workbench" data-title="Виробничий верстак" href="#">
+                <img src="assets/Рендери проєктів/Промислові вироби/ВЕРСТАК/Виробничий версат (1).jpg" alt="Верстак" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Верстак</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="doors" data-title="Двері Urban Street" href="#">
+                <img src="assets/Рендери проєктів/Промислові вироби/ДВЕРІ_УРБАН СТРІТ/Двері двосторчасті (1).jpg" alt="Двері" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Двері Urban Street</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="tractor" data-title="Конструкційна частина шасі" href="#">
+                <img src="assets/Рендери проєктів/Промислові вироби/КОНСТРУКЦІЯ ЧАСТИНИ ТРАКТОРА/Конструкційна частина пересувного шасі (1).jpg" alt="Шасі" loading="lazy">
+                <div class="port-item__count">5 ФОТО</div>
+                <div class="port-item__info"><h3>Частина шасі</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="exhaust" data-title="Труба вихлопної системи" href="#">
+                <img src="assets/Рендери проєктів/Промислові вироби/ТРУБА ВИХЛОПНОЇ СИСТЕМИ/Труба вихлопної системи (1).jpg" alt="Вихлоп" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Труба вихлопу</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="chair" data-title="Виробнича табуретка" href="#">
+                <img src="assets/Рендери проєктів/Промислові вироби/СТІЛЬЧИК/Виробнича табуретка (1).jpg" alt="Табуретка" loading="lazy">
+                <div class="port-item__count">5 ФОТО</div>
+                <div class="port-item__info"><h3>Табуретка</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="stand" data-title="Промислова підставка" href="#">
+                <img src="assets/Рендери проєктів/Промислові вироби/ПІДСТАВКА/ПІДСТАВКА.9.1.jpg" alt="Підставка" loading="lazy">
+                <div class="port-item__count">4 ФОТО</div>
+                <div class="port-item__info"><h3>Підставка</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="lev" data-title="Скульптурна форма «Лев»" href="#">
+                <img src="assets/Рендери проєктів/Промислові вироби/ЛЕВ/ЛЕВ.bip.6.1.jpg" alt="Лев" loading="lazy">
+                <div class="port-item__count">3 ФОТО</div>
+                <div class="port-item__info"><h3>Скульптура «Лев»</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="harmony" data-title="Логотип Harmony" href="#">
+                <img src="assets/Рендери проєктів/Промислові вироби/ЛОГОТИП HARMONY/ЛОГОТИП HARMONY.7.1.jpg" alt="Harmony" loading="lazy">
+                <div class="port-item__count">3 ФОТО</div>
+                <div class="port-item__info"><h3>Логотип Harmony</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="arm-suspension" data-title="Передній важіль підвіски авто" href="#">
+                <img src="assets/Рендери проєктів/Передній важіль підвіски автомобіля.jpg" alt="Важіль підвіски" loading="lazy">
+                <div class="port-item__info"><h3>Важіль підвіски</h3><p>АВТО</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="industrial" data-gallery="case-sq5" data-title="Кейс Allen & Heath SQ-5" href="#">
+                <img src="assets/Рендери проєктів/Транспортувальний кейс для мікшерного пульта -  Allen & Heath SQ-5.jpg" alt="Кейс SQ-5" loading="lazy">
+                <div class="port-item__info"><h3>Кейс Allen & Heath</h3><p>ПРОМИСЛОВЕ</p></div>
+            </a>
+
+            <!-- RETAIL -->
+            <a class="port-item" data-filter-item data-cat="retail" data-gallery="retail-1" data-title="Торговий стенд 01" href="#">
+                <img src="assets/Рендери проєктів/Торгові вироби/1/1/1.1.jpg" alt="Торговий стенд 1" loading="lazy">
+                <div class="port-item__count">10 ФОТО</div>
+                <div class="port-item__info"><h3>Торговий стенд 01</h3><p>ТОРГОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="retail" data-gallery="retail-2" data-title="Торговий стенд 02" href="#">
+                <img src="assets/Рендери проєктів/Торгові вироби/2/2/2.1.jpg" alt="Торговий стенд 2" loading="lazy">
+                <div class="port-item__count">7 ФОТО</div>
+                <div class="port-item__info"><h3>Торговий стенд 02</h3><p>ТОРГОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="retail" data-gallery="retail-3" data-title="Торговий стенд 03" href="#">
+                <img src="assets/Рендери проєктів/Торгові вироби/3/3/3.1.jpg" alt="Торговий стенд 3" loading="lazy">
+                <div class="port-item__count">7 ФОТО</div>
+                <div class="port-item__info"><h3>Торговий стенд 03</h3><p>ТОРГОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="retail" data-gallery="retail-4" data-title="Торговий стенд 04" href="#">
+                <img src="assets/Рендери проєктів/Торгові вироби/4/4/4.1.jpg" alt="Торговий стенд 4" loading="lazy">
+                <div class="port-item__count">6 ФОТО</div>
+                <div class="port-item__info"><h3>Торговий стенд 04</h3><p>ТОРГОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="retail" data-gallery="retail-5" data-title="Торговий стенд 05" href="#">
+                <img src="assets/Рендери проєктів/Торгові вироби/5/5/5.1.jpg" alt="Торговий стенд 5" loading="lazy">
+                <div class="port-item__count">11 ФОТО</div>
+                <div class="port-item__info"><h3>Торговий стенд 05</h3><p>ТОРГОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="retail" data-gallery="retail-6" data-title="Торговий стенд 06" href="#">
+                <img src="assets/Рендери проєктів/Торгові вироби/6/6/6.1.jpg" alt="Торговий стенд 6" loading="lazy">
+                <div class="port-item__count">9 ФОТО</div>
+                <div class="port-item__info"><h3>Торговий стенд 06</h3><p>ТОРГОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="retail" data-gallery="retail-7" data-title="Торговий стенд 07" href="#">
+                <img src="assets/Рендери проєктів/Торгові вироби/7/7/7.1.jpg" alt="Торговий стенд 7" loading="lazy">
+                <div class="port-item__count">7 ФОТО</div>
+                <div class="port-item__info"><h3>Торговий стенд 07</h3><p>ТОРГОВЕ</p></div>
+            </a>
+            <a class="port-item" data-filter-item data-cat="retail" data-gallery="retail-8" data-title="Торговий стенд 08" href="#">
+                <img src="assets/Рендери проєктів/Торгові вироби/8/8/8.1.jpg" alt="Торговий стенд 8" loading="lazy">
+                <div class="port-item__count">7 ФОТО</div>
+                <div class="port-item__info"><h3>Торговий стенд 08</h3><p>ТОРГОВЕ</p></div>
+            </a>
+        </div>
+
+        <div style="text-align:center; margin-top:80px" data-reveal>
+            <a href="/#brief" class="btn btn--primary" data-hover>
+                <span>Обговорити свій проєкт</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- LIGHTBOX GALLERY -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Галерея проєкту">
+    <button class="lightbox__close" aria-label="Закрити">✕</button>
+    <button class="lightbox__prev" aria-label="Попереднє">←</button>
+    <button class="lightbox__next" aria-label="Наступне">→</button>
+    <div class="lightbox__title"></div>
+    <img class="lightbox__img" alt="">
+    <div class="lightbox__counter">01 / 01</div>
+    <div class="lightbox__thumbs"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+    <div class="container">
+        <div class="foot-hero">ko / <em>design</em><br>engineer</div>
+        <div class="foot-grid">
+            <div class="foot-col">
+                <h4>Навігація</h4>
+                <ul>
+                    <li><a href="/#services">Послуги</a></li>
+                    <li><a href="/#calc">Прорахунок</a></li>
+                    <li><a href="portfolio.html">Портфоліо</a></li>
+                    <li><a href="drawings.html">Креслення</a></li>
+                    <li><a href="certificates.html">Сертифікати</a></li>
+                </ul>
             </div>
-            <div class="footer__bottom">
-                <span>&copy; 2026 Костянтин Оверченко. All rights reserved.</span>
-                <span>Created by overchenko studio</span>
+            <div class="foot-col">
+                <h4>Контакти</h4>
+                <ul>
+                    <li><a href="https://t.me/overchenkoooo" target="_blank" rel="noopener">Telegram · @overchenkoooo</a></li>
+                    <li><a href="tel:+380980433420">+38 098 043-34-20</a></li>
+                    <li><a href="mailto:kostik.bk.ua@gmail.com">kostik.bk.ua@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="foot-col">
+                <h4>Мови</h4>
+                <ul>
+                    <li><a href="/">Українська (UA)</a></li>
+                    <li><a href="/en/">English (EN)</a></li>
+                </ul>
+            </div>
+            <div class="foot-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li>© 2026 Костянтин Оверченко</li>
+                    <li>SolidWorks® — Dassault Systèmes</li>
+                </ul>
             </div>
         </div>
-    </footer>
+        <div class="foot-meta">
+            <span>DWG · KO-2026 · REV 02 · APR 2026</span>
+            <span>ukraine · worldwide</span>
+        </div>
+    </div>
+</footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-    (function () {
-        var modal = document.getElementById('portfolioDetail');
-        var modalOverlay = modal.querySelector('.portfolio-detail__overlay');
-        var modalClose = document.getElementById('portfolioDetailClose');
-        var modalTitle = document.getElementById('portfolioDetailTitle');
-        var modalImg = document.getElementById('portfolioDetailImg');
-        var modalCounter = document.getElementById('portfolioDetailCounter');
-        var modalPrev = document.getElementById('portfolioDetailPrev');
-        var modalNext = document.getElementById('portfolioDetailNext');
-        var modalThumbs = document.getElementById('portfolioDetailThumbs');
-        var currentImages = [], currentIndex = 0;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
-        function buildThumbs() {
-            modalThumbs.innerHTML = '';
-            if (currentImages.length <= 1) { modalThumbs.style.display = 'none'; return; }
-            modalThumbs.style.display = 'flex';
-            currentImages.forEach(function (src, i) {
-                var t = document.createElement('img');
-                t.src = src;
-                t.className = 'portfolio-detail__thumb' + (i === currentIndex ? ' portfolio-detail__thumb--active' : '');
-                t.addEventListener('click', function (e) { e.stopPropagation(); currentIndex = i; updateModal(); });
-                modalThumbs.appendChild(t);
-            });
-        }
-
-        function updateThumbActive() {
-            var thumbs = modalThumbs.querySelectorAll('.portfolio-detail__thumb');
-            thumbs.forEach(function (t, i) {
-                t.classList.toggle('portfolio-detail__thumb--active', i === currentIndex);
-            });
-        }
-
-        function updateModal() {
-            modalImg.style.opacity = '0';
-            setTimeout(function () {
-                modalImg.src = currentImages[currentIndex];
-                modalImg.style.opacity = '1';
-            }, 120);
-            modalCounter.textContent = (currentIndex + 1) + ' / ' + currentImages.length;
-            updateThumbActive();
-        }
-
-        function openModal(card) {
-            currentImages = JSON.parse(card.dataset.detail);
-            currentIndex = 0;
-            modalTitle.textContent = card.querySelector('h3').textContent;
-            buildThumbs();
-            modalImg.src = currentImages[0];
-            modalImg.style.opacity = '1';
-            modalCounter.textContent = '1 / ' + currentImages.length;
-            modal.classList.add('portfolio-detail--active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            modal.classList.remove('portfolio-detail--active');
-            document.body.style.overflow = '';
-        }
-
-        function nextImage() { currentIndex = (currentIndex + 1) % currentImages.length; updateModal(); }
-        function prevImage() { currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; updateModal(); }
-
-        /* Attach click to cards — ensure pointer-events work even during GSAP animation */
-        document.querySelectorAll('.pf-card').forEach(function (card) {
-            card.style.pointerEvents = 'auto';
-            card.addEventListener('click', function () { openModal(card); });
-        });
-
-        modalClose.addEventListener('click', closeModal);
-        modalOverlay.addEventListener('click', closeModal);
-        modalNext.addEventListener('click', function (e) { e.stopPropagation(); nextImage(); });
-        modalPrev.addEventListener('click', function (e) { e.stopPropagation(); prevImage(); });
-
-        document.addEventListener('keydown', function (e) {
-            if (!modal.classList.contains('portfolio-detail--active')) return;
-            if (e.key === 'Escape') closeModal();
-            if (e.key === 'ArrowRight') nextImage();
-            if (e.key === 'ArrowLeft') prevImage();
-        });
-
-        /* Touch swipe support */
-        var touchStartX = 0;
-        modal.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
-        modal.addEventListener('touchend', function (e) {
-            var dx = e.changedTouches[0].clientX - touchStartX;
-            if (Math.abs(dx) > 50) { dx < 0 ? nextImage() : prevImage(); }
-        }, { passive: true });
-    })();
-    </script>
-    <script>
-    /* ── Filter bar: scroll-to + sticky + IntersectionObserver active state ── */
-    (function () {
-        var filterBar = document.getElementById('pfFilter');
-        var filterBtns = filterBar.querySelectorAll('.pf-filter__btn');
-        var categories = document.querySelectorAll('.pf-category');
-
-        /* Scroll shadow */
-        window.addEventListener('scroll', function () {
-            filterBar.classList.toggle('pf-filter--scrolled', window.scrollY > 200);
-        }, { passive: true });
-
-        /* Button click: smooth-scroll to category */
-        filterBtns.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                filterBtns.forEach(function (b) { b.classList.remove('pf-filter__btn--active'); });
-                btn.classList.add('pf-filter__btn--active');
-
-                var target = btn.dataset.filter;
-                if (target === 'all') {
-                    window.scrollTo({ top: filterBar.offsetTop - 72, behavior: 'smooth' });
-                } else {
-                    var section = document.getElementById(target);
-                    if (section) {
-                        var offset = section.getBoundingClientRect().top + window.scrollY - filterBar.offsetHeight - 72 - 16;
-                        window.scrollTo({ top: offset, behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        /* IntersectionObserver: highlight active category while scrolling */
-        if ('IntersectionObserver' in window) {
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        var id = entry.target.id;
-                        filterBtns.forEach(function (btn) {
-                            var match = btn.dataset.filter === id;
-                            btn.classList.toggle('pf-filter__btn--active', match);
-                        });
-                    }
-                });
-            }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
-
-            categories.forEach(function (cat) { observer.observe(cat); });
-        }
-    })();
-    </script>
-
-    <script>
-    /* ── Category number count-up animation (GSAP ScrollTrigger) ── */
-    (function () {
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-        gsap.registerPlugin(ScrollTrigger);
-
-        var targets = [
-            { id: 'cat-01', target: 22 },
-            { id: 'cat-02', target: 10 },
-            { id: 'cat-03', target: 8  },
-            { id: 'cat-04', target: 3  }
-        ];
-
-        targets.forEach(function (t) {
-            var section = document.getElementById(t.id);
-            if (!section) return;
-            var numEl = section.querySelector('.pf-category__number');
-            if (!numEl) return;
-
-            var obj = { val: 0 };
-            ScrollTrigger.create({
-                trigger: section,
-                start: 'top 75%',
-                once: true,
-                onEnter: function () {
-                    gsap.to(obj, {
-                        val: t.target,
-                        duration: 1.2,
-                        ease: 'power2.out',
-                        onUpdate: function () {
-                            numEl.textContent = String(Math.round(obj.val)).padStart(2, '0');
-                        }
-                    });
-                }
-            });
-        });
-    })();
-
-    /* ── Staggered clip-path reveal for pf-cards ── */
-    (function () {
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
-        document.querySelectorAll('.pf-category__grid').forEach(function (grid) {
-            var cards = grid.querySelectorAll('.pf-card');
-            gsap.set(cards, { opacity: 0, y: 28, clipPath: 'inset(8% 0% 0% 0% round 20px)' });
-            ScrollTrigger.create({
-                trigger: grid,
-                start: 'top 82%',
-                once: true,
-                onEnter: function () {
-                    gsap.to(cards, {
-                        opacity: 1,
-                        y: 0,
-                        clipPath: 'inset(0% 0% 0% 0% round 20px)',
-                        duration: 0.65,
-                        stagger: 0.07,
-                        ease: 'power2.out'
-                    });
-                }
-            });
-        });
-    })();
-    </script>
 </body>
 </html>

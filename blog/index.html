@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог · Інженерні нотатки | Костянтин Оверченко</title>
+    <meta name="description" content="Статті про проєктування металоконструкцій, SolidWorks, робочу документацію. Практичний досвід інженера-конструктора з Топ-50 України.">
+    <meta name="theme-color" content="#F5F2E8">
+    <link rel="canonical" href="https://kodesignengineer.pages.dev/blog/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23F5F2E8'/%3E%3Crect x='2' y='2' width='36' height='36' fill='none' stroke='%230E0E0C' stroke-width='2'/%3E%3Ctext x='50%25' y='62%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='22' font-weight='400' fill='%23C5352A'%3Eko%3C/text%3E%3C/svg%3E">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="micrometer"><div class="micrometer__ticks"></div><div class="micrometer__fill" id="micrometerFill"></div></div>
+<div class="cursor" id="cursor"><div class="cursor__ring"></div></div>
+<div class="cursor-coords" id="cursorCoords">X:000 Y:000</div>
+
+<header class="site-head" id="siteHead">
+    <div class="container">
+        <div class="site-head__row">
+            <a href="/" class="brand">
+                <span class="brand__mark">k<em>o</em></span>
+                <span class="brand__meta"><span>DESIGN ENGINEER</span><span>BLOG · 2026</span></span>
+            </a>
+            <nav class="nav">
+                <a href="/#services" class="nav__link" data-hover>Послуги</a>
+                <a href="/#calc" class="nav__link" data-hover>Прорахунок</a>
+                <a href="/portfolio.html" class="nav__link" data-hover>Портфоліо</a>
+                <a href="/certificates.html" class="nav__link" data-hover>Сертифікати</a>
+                <a href="/drawings.html" class="nav__link" data-hover>Креслення</a>
+                <a href="/blog/" class="nav__link" data-hover style="color:var(--drafting)">Блог</a>
+            </nav>
+            <div class="head-actions">
+                <a href="/#brief" class="cta" data-hover><span class="cta__dot"></span><span>ОБГОВОРИТИ</span></a>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+        <a href="/" class="mobile-menu__link">Головна</a>
+        <a href="/portfolio.html" class="mobile-menu__link">Портфоліо</a>
+        <a href="/blog/" class="mobile-menu__link">Блог</a>
+        <a href="/#brief" class="mobile-menu__link">Контакт</a>
+    </nav>
+</div>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero__eyebrow" data-reveal>DWG-401 · ENGINEERING NOTES</div>
+        <h1 class="page-hero__title" data-reveal>Інженерні <em>нотатки</em></h1>
+        <p class="page-hero__lead" data-reveal>Що я бачу на 43+ проєктах — і чим можу поділитись. Практичні матеріали для тих, хто планує замовити металоконструкції чи хоче розуміти, як працює інженер-конструктор.</p>
+    </div>
+</section>
+
+<section class="sheet">
+    <div class="container--tight">
+        <div class="dwgs" data-reveal>
+            <a class="dwg" href="kd-vs-3d.html">
+                <span class="dwg__num">POST · 01</span>
+                <span class="dwg__name">КД vs 3D-модель: що замовляти і коли</span>
+                <span class="dwg__type">ОСНОВИ</span>
+                <span class="dwg__dl">ЧИТАТИ →</span>
+            </a>
+            <a class="dwg" href="#" style="opacity:0.5; pointer-events:none">
+                <span class="dwg__num">POST · 02</span>
+                <span class="dwg__name">Як скласти ТЗ інженеру: 7 пунктів, які заощадять тижні</span>
+                <span class="dwg__type">КОМУНІКАЦІЯ</span>
+                <span class="dwg__dl">СКОРО</span>
+            </a>
+            <a class="dwg" href="#" style="opacity:0.5; pointer-events:none">
+                <span class="dwg__num">POST · 03</span>
+                <span class="dwg__name">Ціна проєкту: з чого складається вартість КД</span>
+                <span class="dwg__type">БІЗНЕС</span>
+                <span class="dwg__dl">СКОРО</span>
+            </a>
+            <a class="dwg" href="#" style="opacity:0.5; pointer-events:none">
+                <span class="dwg__num">POST · 04</span>
+                <span class="dwg__name">СЕС-конструкції: помилки проєктування, які ламають окупність</span>
+                <span class="dwg__type">КЕЙС</span>
+                <span class="dwg__dl">СКОРО</span>
+            </a>
+            <a class="dwg" href="#" style="opacity:0.5; pointer-events:none">
+                <span class="dwg__num">POST · 05</span>
+                <span class="dwg__name">SolidWorks vs Компас: коли який інструмент</span>
+                <span class="dwg__type">ІНСТРУМЕНТИ</span>
+                <span class="dwg__dl">СКОРО</span>
+            </a>
+            <a class="dwg" href="#" style="opacity:0.5; pointer-events:none">
+                <span class="dwg__num">POST · 06</span>
+                <span class="dwg__name">Як обрати метал для навісу: марки, товщини, антикорозія</span>
+                <span class="dwg__type">МАТЕРІАЛИ</span>
+                <span class="dwg__dl">СКОРО</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-foot">
+    <div class="container">
+        <div class="foot-hero">ko / <em>design</em><br>engineer</div>
+        <div class="foot-meta" style="border:none; padding-top:40px"><span>DWG · KO-2026 · REV 02</span><span>ukraine · worldwide</span></div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>

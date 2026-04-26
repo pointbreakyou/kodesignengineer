@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КД vs 3D-модель: що замовляти і коли | KO Engineer Blog</title>
+    <meta name="description" content="3D-модель і робоча документація — це не одне і те саме. Розбираю, в яких випадках достатньо моделі, а коли потрібна повна КД.">
+    <meta name="theme-color" content="#F5F2E8">
+    <link rel="canonical" href="https://kodesignengineer.pages.dev/blog/kd-vs-3d.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23F5F2E8'/%3E%3Crect x='2' y='2' width='36' height='36' fill='none' stroke='%230E0E0C' stroke-width='2'/%3E%3Ctext x='50%25' y='62%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='22' font-weight='400' fill='%23C5352A'%3Eko%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "КД vs 3D-модель: що замовляти і коли",
+      "author": {"@type": "Person", "name": "Костянтин Оверченко"},
+      "datePublished": "2026-04-25",
+      "image": "https://kodesignengineer.pages.dev/assets/og-image.jpg",
+      "publisher": {"@type": "Person", "name": "Костянтин Оверченко"}
+    }
+    </script>
+    <style>
+        .article { max-width: 760px; margin: 0 auto; padding: 0 var(--gutter); }
+        .article h2 { font-family: var(--f-display); font-size: clamp(28px, 3vw, 38px); margin: 50px 0 16px; font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; }
+        .article h2 em { font-style: italic; color: var(--drafting); }
+        .article p { font-size: 17px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 18px; }
+        .article p strong { color: var(--ink); }
+        .article ul { margin: 18px 0 24px 0; padding-left: 0; list-style: none; }
+        .article li { padding: 8px 0 8px 24px; position: relative; font-size: 16px; line-height: 1.65; color: var(--ink-soft); border-bottom: 1px dashed rgba(14,14,12,0.1); }
+        .article li::before { content: '+'; position: absolute; left: 0; color: var(--drafting); font-family: var(--f-mono); font-weight: 600; }
+        .article blockquote { margin: 30px 0; padding: 20px 24px; border-left: 3px solid var(--drafting); background: var(--paper-dim); font-family: var(--f-display); font-size: 22px; line-height: 1.4; color: var(--ink); font-style: italic; }
+        .article-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .article-table th, .article-table td { padding: 12px 14px; text-align: left; border: 1px solid var(--ink); vertical-align: top; }
+        .article-table th { background: var(--ink); color: var(--paper); font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+<div class="micrometer"><div class="micrometer__ticks"></div><div class="micrometer__fill" id="micrometerFill"></div></div>
+<div class="cursor" id="cursor"><div class="cursor__ring"></div></div>
+<div class="cursor-coords" id="cursorCoords">X:000 Y:000</div>
+
+<header class="site-head" id="siteHead">
+    <div class="container">
+        <div class="site-head__row">
+            <a href="/" class="brand">
+                <span class="brand__mark">k<em>o</em></span>
+                <span class="brand__meta"><span>DESIGN ENGINEER</span><span>BLOG · 2026</span></span>
+            </a>
+            <nav class="nav">
+                <a href="/#services" class="nav__link" data-hover>Послуги</a>
+                <a href="/portfolio.html" class="nav__link" data-hover>Портфоліо</a>
+                <a href="/blog/" class="nav__link" data-hover>Блог</a>
+            </nav>
+            <div class="head-actions">
+                <a href="/#brief" class="cta" data-hover><span class="cta__dot"></span><span>ОБГОВОРИТИ</span></a>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container--tight article">
+        <div class="page-hero__eyebrow" data-reveal>POST · 01 · 25 КВІТНЯ 2026 · 6 ХВ ЧИТАННЯ</div>
+        <h1 class="page-hero__title" data-reveal style="font-size: clamp(44px, 6vw, 80px)">КД vs 3D-модель:<br><em>що замовляти і коли</em></h1>
+    </div>
+</section>
+
+<section class="sheet" style="padding-top: 40px">
+    <div class="article">
+        <p>Найпоширеніше питання, яке я чую від замовників: «Мені треба, щоб ви намалювали ось цю штуку». І тут починаються непорозуміння. Бо «намалювати» — це насправді 2 різні (або 3) послуги, з різною ціною, термінами і призначенням.</p>
+
+        <p>Розкладу по поличках. Прочитавши цю статтю — ви зекономите гроші на тому, що вам реально не потрібно, і не пропустите те, без чого виробництво не запуститься.</p>
+
+        <h2>Коротко: <em>3 рівні</em></h2>
+        <table class="article-table">
+            <thead>
+                <tr><th>Рівень</th><th>Що це</th><th>Для чого</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>3D-концепт</strong></td>
+                    <td>Швидка геометрія + рендер, без точних розмірів</td>
+                    <td>Презентація замовнику, маркетинг, прев'ю ідеї</td>
+                </tr>
+                <tr>
+                    <td><strong>3D-модель</strong></td>
+                    <td>Параметрична, точна, з матеріалами та збірками</td>
+                    <td>Передати в КД, ЧПУ-обробку, симуляцію, друк на 3D-принтері</td>
+                </tr>
+                <tr>
+                    <td><strong>Робоча КД</strong></td>
+                    <td>2D-креслення з усіма розмірами, допусками, BOM</td>
+                    <td>Виробництво. Без неї цех не запуститься.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Коли достатньо <em>тільки 3D</em></h2>
+        <ul>
+            <li><strong>Тільки візуалізація.</strong> Вам треба показати клієнту, як виглядатиме виріб. Креслення йому не потрібні.</li>
+            <li><strong>Виробництво на ЧПУ з STEP-файлу.</strong> Деякі сучасні цехи можуть приймати 3D-модель як виконавчий документ і програмувати ЧПК прямо з неї. Але це треба узгоджувати з конкретним заводом.</li>
+            <li><strong>3D-друк, фрезерування пластику.</strong> STL/STEP — і вперед.</li>
+            <li><strong>Маркетинг.</strong> Сайти, рекламні матеріали, Kickstarter-кампанії.</li>
+        </ul>
+
+        <h2>Коли <em>обов'язково потрібна КД</em></h2>
+        <ul>
+            <li><strong>Зварні металоконструкції.</strong> Зварник не читає 3D. Йому потрібні розгортки, шви з символами, специфікація електродів.</li>
+            <li><strong>Серійне виробництво.</strong> Допуски, контроль якості, паспорт виробу — все це частина КД.</li>
+            <li><strong>Сертифікація / держконтракти.</strong> Без креслень за ДСТУ — не пройдете експертизу.</li>
+            <li><strong>Будівельні / несучі конструкції.</strong> Робоча документація з печаткою інженера-конструктора — норма закону.</li>
+            <li><strong>Виріб з декількох постачальників.</strong> Один цех ріже, інший варить, третій фарбує — без єдиної КД ніхто нічого не поєднає.</li>
+        </ul>
+
+        <blockquote>«Якщо ви не впевнені — спочатку 3D-модель, потім із цеху отримуєте список «що нам треба у КД» і робите КД точково. Це часто дешевше, ніж замовляти повний пакет одразу.»</blockquote>
+
+        <h2>Реальний приклад <em>з мого досвіду</em></h2>
+        <p>До мене звернулись із замовленням на навіс-парковку (CARPORT). Замовник просив «3D-модель + рендери для презентації». Я зробив. Через місяць — пише: «Цех каже, треба креслення, бо вони не зрозуміли, як зварювати ферму».</p>
+        <p>В результаті — ще +40% часу і бюджету на повну КД. Якби з самого початку обговорили, що йде у виробництво — заощадили б тиждень комунікацій і нерви.</p>
+        <p><strong>Висновок:</strong> питайте у цеху, ЩО САМЕ їм потрібно, ДО початку проєктування. Це найдешевша порада в індустрії.</p>
+
+        <h2>Як <em>зекономити</em> на проєктуванні</h2>
+        <ul>
+            <li>Перевірте, чи є у вас уже готові аналоги. Часто можна зробити «адаптацію» — швидше і дешевше.</li>
+            <li>Розділіть проєкт на етапи: спершу концепт → потім деталізація. Дешевше виявити помилку на 10% бюджету.</li>
+            <li>Запитайте інженера, які допуски справді критичні. Половину можна послабити без впливу на функціональність.</li>
+            <li>Уніфікуйте розміри. Менше типорозмірів = менше креслень = менше грошей.</li>
+        </ul>
+
+        <h2>Що далі</h2>
+        <p>Якщо ви плануєте проєкт металоконструкції чи виробу — почніть із 15-хвилинної розмови. Я допоможу зрозуміти, який рівень документації вам реально потрібен — і скільки це буде коштувати.</p>
+        <p style="margin-top: 30px">
+            <a href="/#brief" class="btn btn--primary" data-hover>
+                <span>Обговорити проєкт</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/#calc" class="btn btn--ghost" data-hover style="margin-left: 10px">
+                <span>Калькулятор вартості</span>
+            </a>
+        </p>
+    </div>
+</section>
+
+<footer class="site-foot">
+    <div class="container">
+        <div class="foot-hero">ko / <em>design</em><br>engineer</div>
+        <div class="foot-meta" style="border:none; padding-top:40px"><span>DWG · KO-2026 · REV 02</span><span>ukraine · worldwide</span></div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>

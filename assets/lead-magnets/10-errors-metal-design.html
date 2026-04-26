@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>10 помилок у конструкції металовиробів | KO Design Engineer</title>
+<meta name="description" content="Безкоштовний чек-лист від інженера-конструктора SolidWorks CSWP. 10 помилок, які найдорожче коштують виробництву.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --paper: #F5F2E8;
+    --ink: #0E0E0C;
+    --pencil: #6B6A65;
+    --drafting: #C5352A;
+    --blueprint: #1B4A6B;
+    --paper-dim: #EBE6D6;
+    --f-display: 'Instrument Serif', Georgia, serif;
+    --f-body: 'IBM Plex Sans', sans-serif;
+    --f-mono: 'JetBrains Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--paper-dim); color: var(--ink); font-family: var(--f-body); line-height: 1.6; padding: 40px 20px; }
+.page {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    padding: 60px 70px;
+    position: relative;
+    background-image:
+        linear-gradient(to right, rgba(27,74,107,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(27,74,107,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+.page::before, .page::after {
+    content: ''; position: absolute; width: 12px; height: 12px;
+    border: 1px solid var(--ink); background: var(--paper);
+}
+.page::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.page::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+.title-block {
+    border: 1px solid var(--ink);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    font-family: var(--f-mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--pencil);
+    margin-bottom: 50px;
+}
+.title-block > div { padding: 8px 12px; border-right: 1px solid var(--ink); }
+.title-block > div:last-child { border-right: none; }
+.title-block strong { display: block; color: var(--ink); font-size: 11px; font-weight: 500; margin-top: 2px; }
+
+h1 {
+    font-family: var(--f-display);
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+}
+h1 em { color: var(--drafting); font-style: italic; }
+
+.subtitle {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--drafting);
+    margin-bottom: 24px;
+}
+.intro {
+    font-size: 15px;
+    color: #2A2927;
+    margin-bottom: 40px;
+    line-height: 1.7;
+    max-width: 56ch;
+}
+
+h2 {
+    font-family: var(--f-display);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 36px 0 12px;
+}
+h2 .num {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--drafting);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 6px;
+}
+h2 em { font-style: italic; color: var(--drafting); }
+.error { padding-top: 28px; border-top: 1px solid rgba(14,14,12,0.18); }
+.error:first-of-type { border-top: none; padding-top: 0; }
+
+.error p { margin-bottom: 12px; font-size: 15px; }
+.fix {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: var(--paper-dim);
+    border-left: 3px solid var(--drafting);
+    font-size: 14px;
+}
+.fix strong {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--drafting);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.cover-bar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--drafting) 0%, var(--drafting) 33%, var(--blueprint) 33%, var(--blueprint) 66%, var(--ink) 66%);
+    margin: 30px 0;
+}
+
+.outro {
+    margin-top: 50px;
+    padding: 30px;
+    background: var(--ink);
+    color: var(--paper);
+}
+.outro h3 {
+    font-family: var(--f-display);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+.outro h3 em { font-style: italic; color: #E54438; }
+.outro p { font-size: 14px; color: #A39F90; margin-bottom: 16px; }
+.outro a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 20px;
+    background: var(--paper);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.foot {
+    margin-top: 30px;
+    padding-top: 16px;
+    border-top: 1px solid var(--ink);
+    font-family: var(--f-mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: var(--pencil);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+
+.print-btn {
+    position: fixed;
+    top: 16px; right: 16px;
+    padding: 10px 16px;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 100;
+}
+
+@media print {
+    body { background: white; padding: 0; }
+    .page { border: none; max-width: none; padding: 30px 40px; box-shadow: none; }
+    .print-btn { display: none; }
+    .page::before, .page::after { display: none; }
+    @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">↓ Зберегти як PDF</button>
+
+<div class="page">
+    <div class="title-block">
+        <div>DOC № <strong>KO-LM-001</strong></div>
+        <div>SHEET <strong>01 / 12</strong></div>
+        <div>REV <strong>2026.04</strong></div>
+    </div>
+
+    <div class="subtitle">БЕЗКОШТОВНИЙ ЧЕК-ЛИСТ · 12 СТОРІНОК · APR 2026</div>
+    <h1>10 помилок у конструкції<br>металовиробів, що <em>коштують мільйони</em></h1>
+
+    <div class="cover-bar"></div>
+
+    <p class="intro">Цей документ — витяг з мого досвіду на 43+ проєктах. Кожна з помилок нижче була виявлена в реальному виробництві: на зварювальному столі, при монтажі або в експлуатації. Виправити їх на етапі 3D — копійки. Виправити після виготовлення — десятки тисяч гривень.</p>
+    <p class="intro" style="margin-bottom: 0;"><strong>Як читати:</strong> кожна помилка — діагноз + наслідок + рішення.</p>
+
+    <div class="error" style="margin-top: 50px;">
+        <h2><span class="num">ERROR 01 / 10</span>Неврахування <em>зварювальних деформацій</em></h2>
+        <p>Конструктор моделює ідеальну геометрію без заводу на зварювання. На виробництві після прохолодження шовів конструкція «веде» — кути, розміри, площинність гуляють на 3-15 мм.</p>
+        <p><strong>Наслідок:</strong> деталі не сходяться при монтажі, доводиться рихтувати молотком, зрізати, переварювати.</p>
+        <div class="fix"><strong>Як уникнути</strong>Закладайте припуск +1-3 мм на ключові розміри + зварний кутник для контролю прямолінійності. Послідовність зварювання — обов'язково в інструкції.</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 02 / 10</span>Допуски, які <em>не може забезпечити</em> цех</h2>
+        <p>Скопіювали допуск ±0.05 мм з підручника, а у замовника верстат тримає тільки ±0.5 мм. Або поставили H7/h6 на отвори, які свердлити вручну.</p>
+        <p><strong>Наслідок:</strong> 100% деталей у браку, або ціна множиться на 3 через ЧПК-обробку.</p>
+        <div class="fix"><strong>Як уникнути</strong>Ставте допуск той, який реально потрібен функцією. Перевірте можливості цеху замовника ДО креслення.</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 03 / 10</span>Складання, де <em>не пролазить рука</em></h2>
+        <p>Деталь зварили, фарбу нанесли, потім потрібно зсередини закрутити болт — а отвору під ключ не передбачили. Або зварний шов — у глухому куті, де електрод не дістає.</p>
+        <p><strong>Наслідок:</strong> монтажник виламує конструкцію, або шов недоварений → корозія, втрата міцності.</p>
+        <div class="fix"><strong>Як уникнути</strong>На ранньому етапі робіть «mental walkthrough» процесу збирання та зварювання. У SolidWorks — Interference Detection + симуляція збірки.</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 04 / 10</span>Заниження <em>навантажень</em></h2>
+        <p>Сніг на навісі ≠ табличному. Вітер у вашому регіоні може бути сильнішим. Дитячі майданчики — додаткові 100 кг динаміки на стрибках. Часто конструктор бере «середню» цифру замість найгіршого випадку.</p>
+        <p><strong>Наслідок:</strong> згинання, тріщини, обвал. У спорті/будівництві — судовий позов.</p>
+        <div class="fix"><strong>Як уникнути</strong>Використовуйте ДБН/ДСТУ для свого регіону + коефіцієнт безпеки 1.5-2.0. Для критичних — FEA в SolidWorks Simulation.</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 05 / 10</span><em>Прямі шви</em> на термонавантажених елементах</h2>
+        <p>Зварний шов проходить через зону максимального згину. Метал у зоні термообробки втрачає 20-40% міцності — і ламається саме по шву.</p>
+        <p><strong>Наслідок:</strong> поломка під навантаженням навіть менше розрахункового.</p>
+        <div class="fix"><strong>Як уникнути</strong>Проектуйте шви ПОЗА зонами максимального напруження. Якщо неминуче — підсилення накладкою або ребром жорсткості.</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 06 / 10</span>Конструкція без урахування <em>покраски</em></h2>
+        <p>Закриті порожнини, де немає виходу для повітря/розчинника — фарба тече, утворює пузирі, або гниє метал зсередини.</p>
+        <p><strong>Наслідок:</strong> протікання → корозія за 1-2 сезони.</p>
+        <div class="fix"><strong>Як уникнути</strong>Технологічні отвори ∅6-10 мм у нижніх точках замкнутих профілів. Перевіряти на стадії 3D, не на стадії «вже зварили».</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 07 / 10</span>Болти у <em>зрізі без шайби</em></h2>
+        <p>Болт у з'єднанні працює на зріз. Без шайби — продавлює тонкий метал, з'єднання слабшає. Поширена помилка у кріпленнях ≤4 мм товщини.</p>
+        <p><strong>Наслідок:</strong> розхитування з'єднання за тижні експлуатації.</p>
+        <div class="fix"><strong>Як уникнути</strong>Шайби ОБОВ'ЯЗКОВО на тонкому металі. Або підкладка — чим більше площа, тим довша служба.</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 08 / 10</span>Ігнорування <em>транспортування</em></h2>
+        <p>Виріб 4×3×2 м не пролазить у ворота цеху, на фуру, в ліфт. Не передбачено точок підняття краном.</p>
+        <p><strong>Наслідок:</strong> розрізати готовий виріб і зварити на місці = +30% бюджету і втрата якості.</p>
+        <div class="fix"><strong>Як уникнути</strong>З першого дня закладайте максимум габариту = ширина воріт − 100 мм. Передбачте розбірне з'єднання по довжині.</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 09 / 10</span>«<em>Не помітив</em>» технологічних особливостей</h2>
+        <p>Згинання листа з мінімальним радіусом 1×t = тріщина по краю. Радіус сверління в кут = поломка фрези. Гостра кромка на пористому листі = катастрофа.</p>
+        <p><strong>Наслідок:</strong> деталі ламаються при виготовленні, цех вимагає переробки креслення.</p>
+        <div class="fix"><strong>Як уникнути</strong>Знайте обмеження виробника + перевіряйте у DFM (Design for Manufacturing). У SolidWorks — Sheet Metal flat-pattern checker.</div>
+    </div>
+
+    <div class="error">
+        <h2><span class="num">ERROR 10 / 10</span>Креслення без <em>специфікації</em> матеріалу</h2>
+        <p>«Сталь» — і все. Без марки (Ст3, 09Г2С, AISI 304), товщини, ГОСТу. Постачальник купить найдешевше, конструкція «попливе».</p>
+        <p><strong>Наслідок:</strong> виріб не відповідає розрахунку; рекламації; повторне виробництво.</p>
+        <div class="fix"><strong>Як уникнути</strong>Завжди — марка, ГОСТ, постачальник або еквівалент. У BOM-таблиці. У штампі креслення.</div>
+    </div>
+
+    <div class="outro">
+        <h3>Хочете, щоб <em>цих помилок</em> не було у вашому проєкті?</h3>
+        <p>Я перевіряю кожну з цих позицій перед здачею робочої документації. На 43+ проєктах — жодного повернення з виробництва через конструктивну помилку.</p>
+        <p>Безкоштовний прорахунок вашого проєкту — за 24 години. Без зобов'язань.</p>
+        <a href="https://kodesignengineer.pages.dev/#brief">НАДІСЛАТИ БРИФ →</a>
+        <br><br>
+        <p style="margin-top: 12px;">Або напишіть напряму:<br>Telegram <strong style="color: #fff;">@overchenkoooo</strong> · Email <strong style="color: #fff;">kostik.bk.ua@gmail.com</strong></p>
+    </div>
+
+    <div class="foot">
+        <span>© 2026 Костянтин Оверченко · KO Design Engineer</span>
+        <span>kodesignengineer.pages.dev</span>
+    </div>
+</div>
+
+</body>
+</html>

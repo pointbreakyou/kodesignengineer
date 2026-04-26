@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /assets/lead-magnets/
 
-Sitemap: https://kodesignengineer.com/sitemap.xml
+Sitemap: https://kodesignengineer.pages.dev/sitemap.xml

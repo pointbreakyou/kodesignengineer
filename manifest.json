@@ -1,0 +1,26 @@
+{
+  "name": "KO Design Engineer · Костянтин Оверченко",
+  "short_name": "KO Engineer",
+  "description": "SolidWorks CSWP інженер-конструктор для виробництва. 43+ проєктів, 8 сертифікатів Dassault Systèmes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F2E8",
+  "theme_color": "#F5F2E8",
+  "orientation": "portrait-primary",
+  "lang": "uk",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%23F5F2E8'/%3E%3Crect x='10' y='10' width='172' height='172' fill='none' stroke='%230E0E0C' stroke-width='6'/%3E%3Ctext x='50%25' y='62%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='110' font-weight='400' fill='%23C5352A'%3Eko%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23F5F2E8'/%3E%3Crect x='28' y='28' width='456' height='456' fill='none' stroke='%230E0E0C' stroke-width='14'/%3E%3Ctext x='50%25' y='62%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='290' font-weight='400' fill='%23C5352A'%3Eko%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
