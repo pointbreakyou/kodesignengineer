@@ -1905,62 +1905,6 @@ body::after {
     border-top: 1px solid var(--dark-line);
 }
 
-/* ═══════ PORTFOLIO PREVIEW ═══════ */
-.port-preview {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 220px;
-    gap: 8px;
-}
-.port-card {
-    position: relative;
-    overflow: hidden;
-    background: var(--paper-dim);
-    border: 1px solid var(--ink);
-    cursor: pointer;
-    transition: all .5s var(--ease);
-}
-.port-card--wide { grid-column: span 2; }
-.port-card--tall { grid-row: span 2; }
-.port-card--xl { grid-column: span 3; grid-row: span 2; }
-.port-card img { width: 100%; height: 100%; object-fit: contain; padding: 18px; transition: transform 1s var(--ease); }
-.port-card:hover img { transform: scale(1.04); }
-.port-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(14,14,12,0.8) 100%);
-    opacity: 0;
-    transition: opacity .4s;
-}
-.port-card:hover::after { opacity: 1; }
-
-.port-card__info {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 20px;
-    color: var(--paper);
-    z-index: 2;
-    transform: translateY(12px);
-    opacity: 0;
-    transition: all .4s var(--ease);
-}
-.port-card:hover .port-card__info { transform: translateY(0); opacity: 1; }
-.port-card__cat {
-    font-family: var(--f-mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    color: var(--drafting-bright);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-}
-.port-card__name {
-    font-family: var(--f-display);
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1.1;
-}
-
 /* ═══════ ABOUT ═══════ */
 .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
 .about__photo {
@@ -2658,8 +2602,6 @@ body.motion-ready [data-reveal] { transition: none !important; }
     .brief { grid-template-columns: 1fr; }
     .foot-grid { grid-template-columns: repeat(2, 1fr); }
     .certs { grid-template-columns: repeat(2, 1fr); }
-    .port-preview { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 180px; }
-    .port-card--xl { grid-column: span 3; }
 }
 
 @media (max-width: 640px) {
@@ -2675,8 +2617,6 @@ body.motion-ready [data-reveal] { transition: none !important; }
     .case__result { border-right: none; border-bottom: 1px dashed rgba(14,14,12,0.2); padding: 14px; }
     .case__result:last-child { border-bottom: none; }
     .certs { grid-template-columns: 1fr; }
-    .port-preview { grid-template-columns: 1fr 1fr; }
-    .port-card--xl, .port-card--wide { grid-column: span 2; }
     .foot-grid { grid-template-columns: 1fr; gap: 28px; }
     .foot-meta { flex-direction: column; gap: 10px; }
     /* 4 колонки не влазили в 375px і розпирали сторінку — тепер 2×2 */
