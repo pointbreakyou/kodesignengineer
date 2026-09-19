@@ -1,5 +1,5 @@
 /* service-worker.js — kodesignengineer v2 (offline-first for shell) */
-const CACHE = 'ko-engineer-v2-2026.23';
+const CACHE = 'ko-engineer-v2-2026.26';
 const SHELL = [
     '/',
     '/index.html',

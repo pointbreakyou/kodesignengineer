@@ -120,10 +120,13 @@
                 tl.to(prev, { opacity: 0, duration: FADE }, at);
                 tl.fromTo([shot, card, over].filter(Boolean), { opacity: 0 }, { opacity: 1, duration: FADE }, at);
                 /* аркуш не наїжджає — він лягає на стіл, це робить addPlot */
-                if (!plot) tl.fromTo(shot, { scale: 1.06 }, { scale: 1, duration: FADE + HOLD }, at);
+                /* Масштаб іде знизу вгору (0.97 → 1), а не згори вниз.
+                   При 1.06 кадр вилазив за межі сцени, а .stage__viewport має
+                   overflow:hidden — боки картинки зрізало на весь час наїзду. */
+                if (!plot) tl.fromTo(shot, { scale: 0.97 }, { scale: 1, duration: FADE + HOLD }, at);
                 if (card) tl.fromTo(card, { y: 26 }, { y: 0, duration: FADE }, at);
             } else {
-                tl.fromTo(shot, { scale: 1.03 }, { scale: 1, duration: HOLD }, at);
+                tl.fromTo(shot, { scale: 0.985 }, { scale: 1, duration: HOLD }, at);
             }
 
             /* промальовування технічних ліній накладки */

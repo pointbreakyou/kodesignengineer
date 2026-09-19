@@ -42,9 +42,7 @@
                 'assets/services/reel/verstak.webp',
                 'assets/services/reel/dveri.webp',
                 'assets/services/reel/traktor.webp',
-                'assets/services/reel/stilchyk.webp',
-                'assets/services/reel/truba.webp',
-                'assets/services/reel/lev.webp'
+                'assets/services/reel/truba.webp'
             ]
         },
         'fea-study': {
