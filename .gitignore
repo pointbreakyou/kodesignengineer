@@ -1,0 +1,21 @@
+# Netlify CLI state
+.netlify/
+
+# Claude Code — воркtree-копії репозиторію, ~1 ГБ
+.claude/
+
+# Cloudflare Wrangler cache
+.wrangler/
+
+# Робочі теки: вихідники й розкладки, не вміст сайту
+_contact-sheets/
+_cad-sources/
+_achievements-sources/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp

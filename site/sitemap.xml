@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://overchenko.engineering/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://overchenko.engineering/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://overchenko.engineering/"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/portfolio.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://overchenko.engineering/en/portfolio.html"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/drawings.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/drawings.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://overchenko.engineering/en/drawings.html"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/achievements.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://overchenko.engineering/en/achievements.html"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/en/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://overchenko.engineering/en/"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/en/portfolio.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://overchenko.engineering/en/portfolio.html"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/en/drawings.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/drawings.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://overchenko.engineering/en/drawings.html"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/en/achievements.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/achievements.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://overchenko.engineering/en/achievements.html"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/blog/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/services.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/services.html"/>
+  </url>
+  <url>
+    <loc>https://overchenko.engineering/visualization.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://overchenko.engineering/visualization.html"/>
+  </url>
+</urlset>

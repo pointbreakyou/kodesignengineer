@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/lead-magnets/
+
+Sitemap: https://overchenko.engineering/sitemap.xml

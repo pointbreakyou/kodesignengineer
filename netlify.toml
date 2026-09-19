@@ -2,7 +2,7 @@
 # Static site — no build step required.
 
 [build]
-  publish = "."
+  publish = "site"
   command = ""
 
 [build.processing]
@@ -67,4 +67,19 @@
 [[redirects]]
   from = "/blog"
   to = "/blog/"
+  status = 200
+
+[[redirects]]
+  from = "/en/portfolio"
+  to = "/en/portfolio.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/certificates"
+  to = "/en/certificates.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/drawings"
+  to = "/en/drawings.html"
   status = 200

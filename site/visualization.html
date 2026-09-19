@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>3D-візуалізація в KeyShot · рендери промислових виробів | Костянтин Оверченко</title>
+    <meta name="description" content="Фотореалістична 3D-візуалізація промислових виробів у KeyShot: метал, порошкове фарбування, нержавійка. Рендери для каталогу, інвестора й маркетплейсу — до того, як виріб існує в металі.">
+    <meta name="theme-color" content="#F5F2E8">
+    <link rel="canonical" href="https://overchenko.engineering/visualization.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="3D-візуалізація в KeyShot | KO Design Engineer">
+    <meta property="og:description" content="318 рендерів промислових виробів. Фотореалістика до першого зразка.">
+    <meta property="og:image" content="https://overchenko.engineering/assets/og-image.jpg">
+    <meta property="og:url" content="https://overchenko.engineering/visualization.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23F5F2E8'/%3E%3Crect x='2' y='2' width='36' height='36' fill='none' stroke='%230E0E0C' stroke-width='2'/%3E%3Ctext x='50%25' y='62%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='22' font-weight='400' fill='%23C5352A'%3Eko%3C/text%3E%3C/svg%3E">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+    <div class="preloader__frame">
+        <div class="preloader__inner">
+            <div class="preloader__logo">k<em>o</em></div>
+            <div class="preloader__sweep"></div>
+        </div>
+    </div>
+    <div class="preloader__meta">
+        <span>DWG-301 · VISUALIZATION</span>
+        <span class="preloader__sep"></span>
+        <span data-count>0</span><span>%</span>
+    </div>
+</div>
+
+<header class="site-head" id="siteHead">
+    <div class="container">
+        <div class="site-head__row">
+            <a href="/" class="brand">
+                <span class="brand__mark">k<em>o</em></span>
+                <span class="brand__meta"><span>DESIGN ENGINEER</span><span>DWG · 2026</span></span>
+            </a>
+
+            <nav class="nav" aria-label="Головне меню">
+                <a href="/services.html" class="nav__link" data-hover>Послуги</a>
+                <a href="/portfolio.html" class="nav__link" data-hover>Портфоліо</a>
+                <a href="/visualization.html" class="nav__link is-current" aria-current="page" data-hover>Візуалізація</a>
+                <a href="/drawings.html" class="nav__link" data-hover>Креслення</a>
+                <a href="/achievements.html" class="nav__link" data-hover>Досягнення</a>
+                <a href="/#about" class="nav__link" data-hover>Про мене</a>
+            </nav>
+
+            <div class="head-actions">
+                <div class="lang-toggle">
+                    <button class="is-active" data-lang="ua">UA</button>
+                    <button data-lang="en" onclick="window.location.href='/en/'">EN</button>
+                </div>
+                <a href="/#brief" class="cta" data-hover><span class="cta__dot"></span><span>ОБГОВОРИТИ</span></a>
+                <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav" aria-label="Мобільне меню">
+        <a href="/" class="mobile-menu__link">Головна</a>
+        <a href="/services.html" class="mobile-menu__link">Послуги</a>
+        <a href="/portfolio.html" class="mobile-menu__link">Портфоліо</a>
+        <a href="/visualization.html" class="mobile-menu__link">Візуалізація</a>
+        <a href="/drawings.html" class="mobile-menu__link">Креслення</a>
+        <a href="/achievements.html" class="mobile-menu__link">Досягнення</a>
+        <a href="/#about" class="mobile-menu__link">Про мене</a>
+        <a href="/#brief" class="mobile-menu__link">Контакт</a>
+    </nav>
+    <div class="mobile-menu__foot">
+        <a href="tel:+380980433420">+38 (098) 043-34-20</a>
+        <a href="https://t.me/overchenkoooo" target="_blank" rel="noopener noreferrer">Telegram @overchenkoooo</a>
+    </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="live-grid live-grid--fine"></div>
+    <div class="container">
+        <div class="page-hero__eyebrow" data-reveal>DWG-301 · ВІЗУАЛІЗАЦІЯ · KEYSHOT</div>
+        <h1 class="page-hero__title" data-reveal>Виріб, якого ще <em>не існує</em></h1>
+        <p class="page-hero__lead" data-reveal>Фотореалістичний рендер із 3D-моделі: метал, порошкове фарбування, шліфована нержавійка, пластик. Те, що показують інвестору, кладуть у каталог і ставлять на маркетплейс — задовго до першого зразка в металі.</p>
+
+        <div class="page-hero__stats" data-reveal>
+            <div class="page-hero__stat"><strong>318</strong><span>Рендерів<br>у портфоліо</span></div>
+            <div class="page-hero__stat"><strong>4K</strong><span>Роздільність<br>на виході</span></div>
+            <div class="page-hero__stat"><strong>48</strong><span>Годин<br>типовий термін</span></div>
+            <div class="page-hero__stat"><strong>360°</strong><span>Обліт<br>за потреби</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- З CAD У СТУДІЮ -->
+<section class="sheet sheet--ink">
+    <div class="live-sweep"></div>
+    <div class="container">
+        <div class="sheet-head" data-reveal>
+            <div>
+                <div class="sheet-head__eyebrow">01 / ДО І ПІСЛЯ</div>
+                <h2 class="sheet-head__title">Та сама модель —<em>два світи.</em></h2>
+            </div>
+            <div class="sheet-head__meta"><strong>DWG-302</strong><br>CAD &rarr; STUDIO<br>SAME FILE</div>
+        </div>
+
+        <div class="disc" style="border-top:none; padding-top:0" data-reveal>
+            <div class="disc__media">
+                <div class="disc__plate" style="aspect-ratio:16/10; cursor:zoom-in" data-lightbox="assets/services/solidworks/sw-01-case-assembly.webp" data-title="SolidWorks — Кейс в зборі">
+                    <span class="disc__plate-tag">01 · SolidWorks · робоча модель</span>
+                    <img src="assets/services/solidworks/sw-01-case-assembly.webp" alt="Збірка транспортувального кейса у робочому вікні SolidWorks" width="1920" height="1032" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="disc__media">
+                <div class="disc__plate" style="aspect-ratio:16/10; cursor:zoom-in" data-lightbox="assets/services/reel/case.webp" data-title="KeyShot — фінальний рендер кейса">
+                    <span class="disc__plate-tag">02 · KeyShot · фінальний рендер</span>
+                    <img src="assets/services/reel/case.webp" alt="Фотореалістичний рендер транспортувального кейса для мікшера Allen &amp; Heath" width="1600" height="1000" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+
+        <p style="max-width:62ch; margin-top:28px; font-size:15px; line-height:1.75; color:var(--graphite)" data-reveal>
+            Ліворуч — реальний файл збірки з деревом побудови. Праворуч — той самий файл після призначення матеріалів, студійного HDRI-освітлення й прорахунку. Жодної переробки геометрії: візуалізація росте з тієї ж моделі, що піде в цех.
+        </p>
+    </div>
+</section>
+
+<!-- SHOWREEL -->
+<section class="sheet">
+    <div class="live-grid live-grid--fine"></div>
+    <div class="container--wide">
+        <div class="sheet-head" data-reveal>
+            <div>
+                <div class="sheet-head__eyebrow">02 / SHOWREEL</div>
+                <h2 class="sheet-head__title">Двадцять виробів —<em>у студійному світлі.</em></h2>
+            </div>
+            <div class="sheet-head__meta"><strong>DWG-303</strong><br>SELECTED WORK<br>20 FRAMES</div>
+        </div>
+
+        <div class="reel" data-reveal>
+            <figure class="reel__cell reel__cell--full" data-gallery="reel" data-title="Передній важіль підвіски">
+                <img src="assets/services/reel/susp.webp" alt="Передній важіль підвіски — рендер KeyShot" width="1600" height="1000" loading="eager" decoding="async">
+                <figcaption class="reel__meta"><strong>Передній важіль підвіски</strong><span>АВТОКОМПОНЕНТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell reel__cell--wide" data-gallery="reel" data-title="Кейс для мікшера Allen & Heath">
+                <img src="assets/services/reel/case.webp" alt="Кейс для мікшера Allen & Heath — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Кейс для мікшера Allen & Heath</strong><span>ТРАНСПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="CARPORT · навіс-парковка">
+                <img src="assets/services/reel/carport.webp" alt="CARPORT · навіс-парковка — рендер KeyShot" width="1600" height="1001" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>CARPORT · навіс-парковка</strong><span>МЕТАЛОКАРКАС</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Опорна конструкція СЕС 11×2">
+                <img src="assets/services/reel/ses.webp" alt="Опорна конструкція СЕС 11×2 — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Опорна конструкція СЕС 11×2</strong><span>СОНЯЧНА СТАНЦІЯ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Опорна конструкція СЕС 6×2">
+                <img src="assets/services/reel/tz8.webp" alt="Опорна конструкція СЕС 6×2 — рендер KeyShot" width="1600" height="1001" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Опорна конструкція СЕС 6×2</strong><span>МЕТАЛОКАРКАС</span></figcaption>
+            </figure>
+            <figure class="reel__cell reel__cell--wide" data-gallery="reel" data-title="Спортивний комплекс LW-30">
+                <img src="assets/services/reel/lw30.webp" alt="Спортивний комплекс LW-30 — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Спортивний комплекс LW-30</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Ворота 2М · мініфутбол">
+                <img src="assets/services/reel/gate.webp" alt="Ворота 2М · мініфутбол — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Ворота 2М · мініфутбол</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Волейбольна суддівська вишка">
+                <img src="assets/services/reel/vishka.webp" alt="Волейбольна суддівська вишка — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Волейбольна суддівська вишка</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Рукохід «змійка»">
+                <img src="assets/services/reel/zmiyka.webp" alt="Рукохід «змійка» — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Рукохід «змійка»</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell reel__cell--wide" data-gallery="reel" data-title="Рукохід «маятник»">
+                <img src="assets/services/reel/mayatnyk.webp" alt="Рукохід «маятник» — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Рукохід «маятник»</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Турнік">
+                <img src="assets/services/reel/turnik.webp" alt="Турнік — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Турнік</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Стінка з канатом">
+                <img src="assets/services/reel/stinka.webp" alt="Стінка з канатом — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Стінка з канатом</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Стійка TRX">
+                <img src="assets/services/reel/trx.webp" alt="Стійка TRX — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Стійка TRX</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell reel__cell--wide" data-gallery="reel" data-title="Упори для віджимання">
+                <img src="assets/services/reel/upory.webp" alt="Упори для віджимання — рендер KeyShot" width="1600" height="1000" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Упори для віджимання</strong><span>СПОРТ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Верстак слюсарний">
+                <img src="assets/services/reel/verstak.webp" alt="Верстак слюсарний — рендер KeyShot" width="1024" height="768" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Верстак слюсарний</strong><span>ПРОМИСЛОВЕ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Двері протипожежні">
+                <img src="assets/services/reel/dveri.webp" alt="Двері протипожежні — рендер KeyShot" width="1280" height="836" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Двері протипожежні</strong><span>ПРОМИСЛОВЕ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Вузол трактора">
+                <img src="assets/services/reel/traktor.webp" alt="Вузол трактора — рендер KeyShot" width="1024" height="768" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Вузол трактора</strong><span>ПРОМИСЛОВЕ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Стілець металевий">
+                <img src="assets/services/reel/stilchyk.webp" alt="Стілець металевий — рендер KeyShot" width="1022" height="1280" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Стілець металевий</strong><span>ПРОМИСЛОВЕ</span></figcaption>
+            </figure>
+            <figure class="reel__cell reel__cell--wide" data-gallery="reel" data-title="Труба вихлопної системи">
+                <img src="assets/services/reel/truba.webp" alt="Труба вихлопної системи — рендер KeyShot" width="1024" height="768" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Труба вихлопної системи</strong><span>ПРОМИСЛОВЕ</span></figcaption>
+            </figure>
+            <figure class="reel__cell" data-gallery="reel" data-title="Декоративна скульптура «Лев»">
+                <img src="assets/services/reel/lev.webp" alt="Декоративна скульптура «Лев» — рендер KeyShot" width="1280" height="1166" loading="lazy" decoding="async">
+                <figcaption class="reel__meta"><strong>Декоративна скульптура «Лев»</strong><span>ПРОМИСЛОВЕ</span></figcaption>
+            </figure>
+        </div>
+
+        <div style="text-align:center; margin-top:clamp(56px,7vw,88px)" data-reveal>
+            <a href="portfolio.html" class="btn btn--ghost btn--magnetic" data-hover><span>Усі 43 проєкти в портфоліо</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<!-- ЯК ЦЕ ПРАЦЮЄ -->
+<section class="sheet sheet--dark">
+    <div class="live-grid"></div>
+    <div class="container">
+        <div class="sheet-head" data-reveal>
+            <div>
+                <div class="sheet-head__eyebrow">03 / ПРОЦЕС</div>
+                <h2 class="sheet-head__title">Від моделі —<em>до кадру.</em></h2>
+            </div>
+            <div class="sheet-head__meta"><strong>DWG-304</strong><br>RENDER FLOW<br>03 STEPS</div>
+        </div>
+
+        <div class="process" data-reveal>
+            <div class="process__step">
+                <div class="process__num">01</div>
+                <h3 class="process__title">Матеріали</h3>
+                <p class="process__desc">Призначаю реальні покриття: порошкова фарба за RAL, шліфована або дзеркальна нержавійка, анодований алюміній, пластик, дерево.</p>
+                <div class="process__dur">2-4 год</div>
+            </div>
+            <div class="process__step">
+                <div class="process__num">02</div>
+                <h3 class="process__title">Світло і ракурс</h3>
+                <p class="process__desc">Студійне HDRI-освітлення, відбивачі, глибина різкості. Підбираю ракурси, які показують конструкцію, а не ховають її.</p>
+                <div class="process__dur">2-5 год</div>
+            </div>
+            <div class="process__step">
+                <div class="process__num">03</div>
+                <h3 class="process__title">Прорахунок</h3>
+                <p class="process__desc">Фінальний рендер у 4K. За потреби — рознесений вигляд, кадри вузлів, обліт по колу на 360°, версія з прозорим фоном.</p>
+                <div class="process__dur">1-2 доби</div>
+            </div>
+        </div>
+
+        <div class="deliv" style="margin-top:44px; max-width:760px" data-reveal>
+            <div class="deliv__item" style="background:var(--dark-bg-card); border-color:var(--dark-line)"><span class="deliv__ext" style="color:var(--dark-ink)">4K JPG</span><span class="deliv__what">Каталог<br>і сайт</span></div>
+            <div class="deliv__item" style="background:var(--dark-bg-card); border-color:var(--dark-line)"><span class="deliv__ext" style="color:var(--dark-ink)">PNG &alpha;</span><span class="deliv__what">Прозорий фон<br>під верстку</span></div>
+            <div class="deliv__item" style="background:var(--dark-bg-card); border-color:var(--dark-line)"><span class="deliv__ext" style="color:var(--dark-ink)">EXPL</span><span class="deliv__what">Рознесений<br>вигляд</span></div>
+            <div class="deliv__item" style="background:var(--dark-bg-card); border-color:var(--dark-line)"><span class="deliv__ext" style="color:var(--dark-ink)">360&deg;</span><span class="deliv__what">Обліт<br>по колу</span></div>
+        </div>
+
+        <div style="text-align:center; margin-top:clamp(48px,6vw,72px)" data-reveal>
+            <a href="/#brief" class="btn btn--primary btn--magnetic" data-hover><span>Замовити візуалізацію</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Перегляд зображення">
+    <button class="lightbox__close" aria-label="Закрити">✕</button>
+    <button class="lightbox__prev" aria-label="Попереднє">←</button>
+    <button class="lightbox__next" aria-label="Наступне">→</button>
+    <div class="lightbox__title"></div>
+    <img class="lightbox__img" alt="">
+    <div class="lightbox__counter">01 / 01</div>
+    <div class="lightbox__thumbs"></div>
+</div>
+
+<footer class="site-foot">
+    <div class="container">
+        <div class="foot-hero">ko / <em>design</em><br>engineer</div>
+        <div class="foot-grid">
+            <div class="foot-col"><h4>Послуги</h4><ul>
+                <li><a href="services.html#modeling">3D-моделювання</a></li>
+                <li><a href="services.html#analysis">Розрахунок навантаження</a></li>
+                <li><a href="services.html#drawings">Робоча документація</a></li>
+                <li><a href="visualization.html">Візуалізація KeyShot</a></li>
+            </ul></div>
+            <div class="foot-col"><h4>Роботи</h4><ul>
+                <li><a href="portfolio.html">Портфоліо</a></li>
+                <li><a href="visualization.html">Рендери</a></li>
+                <li><a href="drawings.html">Креслення</a></li>
+                <li><a href="achievements.html">Досягнення</a></li>
+            </ul></div>
+            <div class="foot-col"><h4>Контакти</h4><ul>
+                <li><a href="https://t.me/overchenkoooo" target="_blank" rel="noopener noreferrer">Telegram · @overchenkoooo</a></li>
+                <li><a href="tel:+380980433420">+38 098 043-34-20</a></li>
+                <li><a href="mailto:kostik.bk.ua@gmail.com">kostik.bk.ua@gmail.com</a></li>
+            </ul></div>
+            <div class="foot-col"><h4>Legal</h4><ul>
+                <li>© 2026 Костянтин Оверченко</li>
+                <li>SolidWorks® — Dassault Systèmes</li>
+            </ul></div>
+        </div>
+        <div class="foot-meta">
+            <span>DWG · KO-2026 · REV 03</span>
+            <span>ukraine · worldwide</span>
+            <span><a href="https://overchenko.studio" target="_blank" rel="noopener noreferrer">Розроблено Overchenko Studio</a></span>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="js/services-data.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/services.js" defer></script>
+
+</body>
+</html>
