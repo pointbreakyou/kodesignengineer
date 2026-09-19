@@ -1,4 +1,29 @@
-# DEPLOY.md — інструкція з публікації kodesignengineer
+> ## 🔴 ЯК ЦЕ ДЕПЛОЇТЬСЯ НАСПРАВДІ (станом на 2026-09-20)
+>
+> Сайт живе на **Cloudflare Pages**, проєкт `overchenkoengineering`, акаунт
+> kostik.bk.ua@gmail.com. Домен `overchenko.engineering` → CNAME на
+> `overchenkoengineering.pages.dev`.
+>
+> ```bash
+> npx wrangler@4 pages deploy site --project-name=overchenkoengineering --branch=main
+> ```
+>
+> **`git push` НІЧОГО не деплоїть.** Git-інтеграції з Pages тут немає, а
+> `netlify.toml` і `.netlify/` у корені — легасі з першого запуску, вони ні на
+> що не впливають. Я на це вже наступив: запушив у GitHub, чекав автодеплой,
+> а бойовий домен лишався на старій версії.
+>
+> Ліміт Cloudflare Pages — **25 MiB на файл**. Вихідники CAD винесені в
+> `_cad-sources/` поза `site/` саме тому. `.assetsignore` не рятує — лише
+> фізичне винесення.
+>
+> Після деплою перевіряти чистим URL (`/services`, не `/services.html` —
+> той віддає 308) і бампати `CACHE` у `site/service-worker.js`, інакше
+> користувачі бачитимуть стару CSS із кешу.
+
+---
+
+# DEPLOY.md — інструкція з публікації (історична, Netlify)
 
 Цей документ — крок за кроком запуск нового сайту в інтернет із **безкоштовним хостингом, безкоштовним SSL та безкоштовним справжнім доменом**.
 
