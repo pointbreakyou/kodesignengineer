@@ -1845,7 +1845,10 @@ body::after {
 /* ═══════ PROCESS ═══════ */
 .process {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    /* колонок рівно стільки, скільки кроків: на головній їх 5, на
+       візуалізації 3 — жорстке repeat(5) лишало дві порожні клітинки */
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     gap: 0;
     border: 1px solid var(--dark-line);
     position: relative;
@@ -2317,6 +2320,8 @@ body::after {
 .foot-col a:hover { color: var(--drafting-bright); }
 .foot-meta {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
     justify-content: space-between;
     padding-top: 24px;
     font-family: var(--f-mono);
@@ -2643,7 +2648,7 @@ body.motion-ready [data-reveal] { transition: none !important; }
     .case, .case:nth-child(even) { grid-template-columns: 1fr; }
     .case:nth-child(even) .case__visual { order: 0; border: none; border-bottom: 1px solid var(--ink); }
     .case__visual { aspect-ratio: 16/9; border-right: none; border-bottom: 1px solid var(--ink); }
-    .process { grid-template-columns: 1fr; }
+    .process { grid-auto-flow: row; grid-auto-columns: auto; grid-template-columns: 1fr; }
     .process__step { border-right: none; border-bottom: 1px solid var(--dark-line); min-height: auto; }
     .process__step:last-child { border-bottom: none; }
     .about { grid-template-columns: 1fr; }
